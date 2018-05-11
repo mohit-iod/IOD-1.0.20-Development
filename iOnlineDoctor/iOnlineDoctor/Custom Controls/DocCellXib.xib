@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocCellXib" id="yDa-55-gPd" customClass="DocCellXib">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDa-55-gPd" id="H1t-cm-y2f">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="document.png" translatesAutoresizingMaskIntoConstraints="NO" id="ehX-9X-ADV">
+                        <rect key="frame" x="14" y="12" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="FeR-qL-Z9k">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
+                            <constraint firstAttribute="width" constant="32" id="jyY-Nd-MBC">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXD-1W-XnD">
+                        <rect key="frame" x="54" y="18" width="228" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="6KH-GU-TIX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                        </variation>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCO-t2-P2z">
+                        <rect key="frame" x="330" y="15.5" width="28" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="QbP-MT-Gx5">
+                                <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                            </constraint>
+                            <constraint firstAttribute="height" constant="28" id="T7I-yZ-xS1">
+                                <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                            </constraint>
+                        </constraints>
+                        <state key="normal" image="download-Invoice.png"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meo-RR-uGj">
+                        <rect key="frame" x="290" y="16" width="28" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="MhW-9b-crV">
+                                <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                            </constraint>
+                            <constraint firstAttribute="height" constant="28" id="mrT-UO-PPz">
+                                <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                            </constraint>
+                        </constraints>
+                        <state key="normal" image="view-invoice.png"/>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.97252601390000004" green="0.97326189279999997" blue="0.97263997790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="IXD-1W-XnD" firstAttribute="leading" secondItem="ehX-9X-ADV" secondAttribute="trailing" constant="8" id="1jM-CF-ZtZ"/>
+                    <constraint firstAttribute="trailing" secondItem="wCO-t2-P2z" secondAttribute="trailing" constant="17" id="9n3-6q-vk9"/>
+                    <constraint firstItem="IXD-1W-XnD" firstAttribute="centerY" secondItem="H1t-cm-y2f" secondAttribute="centerY" constant="3.75" id="NrQ-kc-uh5"/>
+                    <constraint firstItem="ehX-9X-ADV" firstAttribute="centerY" secondItem="H1t-cm-y2f" secondAttribute="centerY" constant="3.25" id="UjH-oq-qwg"/>
+                    <constraint firstItem="ehX-9X-ADV" firstAttribute="leading" secondItem="H1t-cm-y2f" secondAttribute="leadingMargin" constant="6" id="V7z-os-m3D"/>
+                    <constraint firstItem="meo-RR-uGj" firstAttribute="centerY" secondItem="H1t-cm-y2f" secondAttribute="centerY" constant="5.25" id="dJg-fB-oEW"/>
+                    <constraint firstAttribute="trailing" secondItem="meo-RR-uGj" secondAttribute="trailing" constant="57" id="i7E-gP-Tng">
+                        <variation key="heightClass=regular-widthClass=regular" constant="65"/>
+                    </constraint>
+                    <constraint firstItem="meo-RR-uGj" firstAttribute="leading" secondItem="IXD-1W-XnD" secondAttribute="trailing" constant="8" id="j8I-Bl-NAa"/>
+                    <constraint firstItem="wCO-t2-P2z" firstAttribute="centerY" secondItem="H1t-cm-y2f" secondAttribute="centerY" constant="4.75" id="vOJ-gf-JO1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnDwnload" destination="wCO-t2-P2z" id="HEq-Vl-Owv"/>
+                <outlet property="btnView" destination="meo-RR-uGj" id="wsr-cc-XSH"/>
+                <outlet property="imgIcon" destination="ehX-9X-ADV" id="L63-2e-iOw"/>
+                <outlet property="lblCellText" destination="IXD-1W-XnD" id="JKZ-zT-2ff"/>
+            </connections>
+            <point key="canvasLocation" x="-21.5" y="-33"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="document.png" width="72" height="72"/>
+        <image name="download-Invoice.png" width="72" height="72"/>
+        <image name="view-invoice.png" width="72" height="72"/>
+    </resources>
+</document>

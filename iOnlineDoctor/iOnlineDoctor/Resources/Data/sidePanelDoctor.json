@@ -1,0 +1,60 @@
+{
+	"sidePanel": [
+			{
+			"id": "1",
+			"Title": "Home",
+			"imageName": "home-icon.png",
+			},
+           
+            {
+            "id": "1",
+            "Title": "My Profile",
+            "imageName": "edit-profile-icon.png",
+            },
+            {
+                "id": "1",
+                "Title": "Code Share",
+                "imageName": "Referral.png",
+             },
+			{
+			"id": "1",
+			"Title": "FAQ",
+			"imageName": "faq-icon.png",
+			},
+            {
+            "id":"1",
+            "Title":"Blogs",
+            "imageName":"blog-icon",
+            },
+			{
+			"id": "1",
+			"Title": "Share With Friends",
+			"imageName": "share-icon",
+			},
+			{
+			"id": "1",
+			"Title": "Services",
+			"imageName": "what-we-treat-icon",
+			},
+			{
+			"id": "1",
+			"Title": "How It Works",
+			"imageName": "how-it-works.png",
+			},
+			{
+			"id": "1",
+			"Title": "Terms And Conditions",
+			"imageName": "t_c-icon",
+			},
+			{
+			"id": "1",
+			"Title": "Contact Us",
+			"imageName": "contact-icon",
+			},
+            {
+            "id": "1",
+            "Title": "Logout",
+            "imageName": "logout-icon",
+            }
+	]
+}

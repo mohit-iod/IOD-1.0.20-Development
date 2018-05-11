@@ -1,0 +1,19 @@
+{
+    "healhCondition":[
+              "Acne",
+              "Allergy",
+              "Arthritis",
+              "Asthma",
+              "Diabetes",
+              "Dialysis",
+              "Epilepsy",
+              "Genetic Condition",
+              "Heart Disease",
+              "Hypertension",
+              "Mental Disorder",
+              "Obesity",
+              "Pregnancy",
+              "TB(Tuberculosis)",
+              "Other"
+              ]
+}

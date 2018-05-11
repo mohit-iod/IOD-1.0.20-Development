@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemberCollectionViewCell" id="gTV-IL-0wX" customClass="MemberCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKd-LC-Dsc">
+                        <rect key="frame" x="4" y="79" width="92" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="JhA-yx-r5e">
+                                <variation key="heightClass=regular-widthClass=regular" constant="22"/>
+                            </constraint>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        </variation>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D-calling-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="XbW-ah-bN3">
+                        <rect key="frame" x="17.5" y="0.0" width="75" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="Mid-HK-mlc">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
+                            <constraint firstAttribute="width" constant="75" id="g8a-Kr-6PM">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xsD-vw-5vs">
+                        <rect key="frame" x="64" y="48" width="28" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="8MW-M3-TwV">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint firstAttribute="height" constant="26" id="Ki5-A3-MzA">
+                                <variation key="heightClass=regular-widthClass=regular" constant="29"/>
+                            </constraint>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="DKd-LC-Dsc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="FGN-rx-1sz">
+                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="XbW-ah-bN3" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" constant="5" id="Q0V-Kf-bA1"/>
+                <constraint firstItem="DKd-LC-Dsc" firstAttribute="top" secondItem="xsD-vw-5vs" secondAttribute="bottom" constant="5" id="SlT-CC-Utc"/>
+                <constraint firstItem="xsD-vw-5vs" firstAttribute="trailing" secondItem="XbW-ah-bN3" secondAttribute="trailing" id="UQJ-kq-Rru"/>
+                <constraint firstItem="DKd-LC-Dsc" firstAttribute="top" secondItem="XbW-ah-bN3" secondAttribute="bottom" constant="4" id="fFy-Bx-lhq"/>
+                <constraint firstItem="XbW-ah-bN3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oHs-Vq-ByI"/>
+                <constraint firstAttribute="trailing" secondItem="DKd-LC-Dsc" secondAttribute="trailing" constant="4" id="qtK-cF-I9e">
+                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                </constraint>
+            </constraints>
+            <size key="customSize" width="145" height="107"/>
+            <connections>
+                <outlet property="img" destination="xsD-vw-5vs" id="eH3-Ix-7Da"/>
+                <outlet property="imgCell" destination="XbW-ah-bN3" id="AFq-iK-TcS"/>
+                <outlet property="lblTitle" destination="DKd-LC-Dsc" id="Tt7-EZ-1QI"/>
+            </connections>
+            <point key="canvasLocation" x="-202" y="-241"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="D-calling-icon.png" width="320" height="320"/>
+    </resources>
+</document>

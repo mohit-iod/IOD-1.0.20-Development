@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PatientListCell" rowHeight="60" id="LGT-EC-DEm" customClass="PatientListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LGT-EC-DEm" id="ltz-4e-TzY">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payment-invoice-icn.png" translatesAutoresizingMaskIntoConstraints="NO" id="t7y-DT-XDa">
+                        <rect key="frame" x="36" y="13" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="9HX-dg-MCC">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
+                            <constraint firstAttribute="height" constant="35" id="n9E-bb-lZl">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihv-ni-kiQ">
+                        <rect key="frame" x="280" y="14" width="30" height="30"/>
+                        <color key="backgroundColor" red="0.22319054599999999" green="0.51894831659999996" blue="0.37062942980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="8Y4-U2-qlz">
+                                <variation key="heightClass=regular-widthClass=regular" constant="35"/>
+                            </constraint>
+                            <constraint firstAttribute="height" constant="30" id="lay-4Q-o79">
+                                <variation key="heightClass=regular-widthClass=regular" constant="35"/>
+                            </constraint>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Name" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XND-hU-os9">
+                        <rect key="frame" x="80" y="11" width="180" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="180" id="7UO-lS-hAN"/>
+                            <constraint firstAttribute="height" constant="19" id="D8d-iw-XJY">
+                                <variation key="heightClass=regular-widthClass=regular" constant="23"/>
+                            </constraint>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="19"/>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Apt. Date:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-hI-IQs">
+                        <rect key="frame" x="80" y="31" width="180" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="QSJ-tw-DLH">
+                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
+                            <constraint firstAttribute="width" constant="180" id="bn9-1I-QDH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        </variation>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.85061949491500854" green="0.85196489095687866" blue="0.86526745557785034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="XND-hU-os9" firstAttribute="leading" secondItem="t7y-DT-XDa" secondAttribute="trailing" constant="9" id="DoF-9g-Fgf"/>
+                    <constraint firstAttribute="trailing" secondItem="ihv-ni-kiQ" secondAttribute="trailing" constant="10" id="K75-no-aS7"/>
+                    <constraint firstItem="XND-hU-os9" firstAttribute="top" secondItem="ltz-4e-TzY" secondAttribute="top" constant="11" id="T4f-cA-xlL">
+                        <variation key="heightClass=regular-widthClass=regular" constant="15"/>
+                    </constraint>
+                    <constraint firstItem="ihv-ni-kiQ" firstAttribute="top" secondItem="ltz-4e-TzY" secondAttribute="top" constant="14" id="Yww-AO-mNg">
+                        <variation key="heightClass=regular-widthClass=regular" constant="19"/>
+                    </constraint>
+                    <constraint firstItem="9GT-hI-IQs" firstAttribute="top" secondItem="XND-hU-os9" secondAttribute="bottom" constant="1" id="ZpQ-RS-fCm"/>
+                    <constraint firstItem="t7y-DT-XDa" firstAttribute="top" secondItem="ltz-4e-TzY" secondAttribute="top" constant="13" id="ecF-Zw-3Ud">
+                        <variation key="heightClass=regular-widthClass=regular" constant="15"/>
+                    </constraint>
+                    <constraint firstItem="9GT-hI-IQs" firstAttribute="leading" secondItem="t7y-DT-XDa" secondAttribute="trailing" constant="9" id="mXv-Dm-T3W"/>
+                    <constraint firstItem="t7y-DT-XDa" firstAttribute="leading" secondItem="ltz-4e-TzY" secondAttribute="leading" constant="36" id="xIJ-Wn-Iab"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="btnStatus" destination="ihv-ni-kiQ" id="A9Q-6j-2MQ"/>
+                <outlet property="imgV" destination="t7y-DT-XDa" id="isa-0A-Xg2"/>
+                <outlet property="lblDate" destination="9GT-hI-IQs" id="KJ1-xY-XbS"/>
+                <outlet property="lblDoctorName" destination="XND-hU-os9" id="yVk-KO-lWU"/>
+            </connections>
+            <point key="canvasLocation" x="64" y="90"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="payment-invoice-icn.png" width="72" height="72"/>
+    </resources>
+</document>

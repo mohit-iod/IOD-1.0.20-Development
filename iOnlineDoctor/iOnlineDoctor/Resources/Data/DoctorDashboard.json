@@ -1,0 +1,25 @@
+{
+    "DoctorDashboard": [
+                        
+                        {
+                        "id": "1",
+                        "imageName": "icn-explore.png",
+                        "Title": "Explore",
+                        "Color": "#ee5655"
+                        },
+                         {
+                         "id": "1",
+                         "imageName": "icn-my-p-atient.png",
+                         "Title": "My Patients",
+                         "Color": "#bed661"
+                         
+                         },
+                         {
+                         "id": "1",
+                         "imageName": "icn-business-hours.png",
+                         "Title": "Business Hours",
+                         "Color": "#ee5655"
+                         },
+                        
+	]
+}

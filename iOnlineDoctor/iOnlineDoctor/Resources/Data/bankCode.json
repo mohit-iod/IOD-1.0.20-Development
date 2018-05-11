@@ -1,0 +1,20 @@
+{
+	"code": [
+			{
+			"id": "1",
+			"Title": "IBAN",
+			},
+			{
+			"id": "2",
+			"Title": "SWIFT CODE",
+			},
+			{
+			"id": "3",
+			"Title": "National ID",
+			},
+			{
+			"id": "4",
+			"Title": "IFSC CODE",
+			}
+	]
+}

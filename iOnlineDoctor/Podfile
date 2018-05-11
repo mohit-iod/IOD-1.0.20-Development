@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'iOnlineDoctor' do
+    # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+    # use_frameworks!
+    # for AFNetworking
+    pod 'AFNetworking', '~> 2.5.4'
+    pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'PayeezySDK', :git => 'https://github.com/payeezy/payeezy_ios.git'
+    pod 'Firebase/Core'  # Pods for iOnlineDoctor
+    pod 'OpenTok', '~> 2.11.0'
+    pod 'Firebase/Messaging'
+target 'iOnlineDoctorTests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+    target 'iOnlineDoctorUITests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+end

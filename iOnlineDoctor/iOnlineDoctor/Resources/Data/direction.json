@@ -1,0 +1,29 @@
+{
+	"direction": [
+			{
+			"id": "1",
+			"Title": "30 Minutes After Meals",
+			},
+			{
+			"id": "2",
+			"Title": "30 Minutes Before Meals",
+			},
+			{
+			"id": "3",
+			"Title": "After Meals",
+			},
+			{
+			"id": "4",
+			"Title": "Before Meals",
+			},
+			{
+			"id": "5",
+			"Title": "With Meals",
+			},
+			{
+			"id": "6",
+			"Title": "With Plenty of Water",
+			}
+
+	]
+}

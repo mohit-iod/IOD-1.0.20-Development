@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoUploadCell" id="gTV-IL-0wX" customClass="UploadDocCell">
+            <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdK-Ab-Fbp">
+                        <rect key="frame" x="0.0" y="10" width="70" height="67"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce4-bm-O2Q">
+                        <rect key="frame" x="49" y="4" width="25" height="25"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="i5b-wX-8kF"/>
+                            <constraint firstAttribute="height" constant="25" id="l0l-Sw-Orv"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="close-icon.png"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="wdK-Ab-Fbp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="288-SB-DIP"/>
+                <constraint firstItem="wdK-Ab-Fbp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ERz-LB-K1j"/>
+                <constraint firstAttribute="trailing" secondItem="wdK-Ab-Fbp" secondAttribute="trailing" constant="7" id="G1u-Vk-WFc"/>
+                <constraint firstAttribute="bottom" secondItem="wdK-Ab-Fbp" secondAttribute="bottom" id="Hhe-I8-oAl"/>
+                <constraint firstItem="Ce4-bm-O2Q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="KIP-Fv-WA0"/>
+                <constraint firstAttribute="trailing" secondItem="Ce4-bm-O2Q" secondAttribute="trailing" constant="3" id="LUN-CY-9Un"/>
+                <constraint firstAttribute="trailing" secondItem="wdK-Ab-Fbp" secondAttribute="trailing" constant="7" id="LyM-CW-iGO"/>
+                <constraint firstAttribute="bottom" secondItem="wdK-Ab-Fbp" secondAttribute="bottom" id="TVI-mk-wxA"/>
+                <constraint firstItem="wdK-Ab-Fbp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dlU-za-kaD"/>
+                <constraint firstItem="wdK-Ab-Fbp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="k1b-KZ-SXA"/>
+            </constraints>
+            <size key="customSize" width="96" height="93"/>
+            <connections>
+                <outlet property="deleteButton" destination="Ce4-bm-O2Q" id="PIj-yM-2sF"/>
+                <outlet property="uploadButon" destination="wdK-Ab-Fbp" id="cOe-Rm-vfi"/>
+            </connections>
+            <point key="canvasLocation" x="-86.5" y="66.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="close-icon.png" width="32" height="32"/>
+    </resources>
+</document>

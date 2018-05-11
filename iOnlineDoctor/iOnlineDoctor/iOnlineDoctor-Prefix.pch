@@ -1,0 +1,44 @@
+//
+//  iOnlineDoctor-Prefix.pch
+//  iOnlineDoctor
+//
+//  Created by Deepak Patel on 8/28/17.
+//  Copyright © 2017 iOnlineDoctor. All rights reserved.
+//
+
+#import <Availability.h>
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "Constants.h"
+#import "ColorsConstants.h"
+#import "ValidMacros.h"
+#import "Reachability.h"
+#import "MBProgressHUD.h"
+#import "IODUtils.h"
+#import "UIColor+HexString.h"
+#import "UIViewController+Extra.h"
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define SHARED_INSTANCE(...) ({ \
+static dispatch_once_t pred; \
+static id sharedObject; \
+dispatch_once(&pred, ^ { \
+sharedObject = (__VA_ARGS__); \
+}); \
+sharedObject; \
+})
+
+#define NDEBUG 0
+#define ENCRYPTION 1
+
+//#ifdef DEBUG
+//#define NSLog(...)       //NSLog(__VA_ARGS__)
+//#else
+//#define NSLog(...)/* //NSLog prints empty strings when app is in non debug mode (i.e. production) */
+
+//#endif /* iOnlineDoctor_Prefix_pch */

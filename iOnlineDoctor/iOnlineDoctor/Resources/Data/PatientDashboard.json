@@ -1,0 +1,37 @@
+{
+	"PatientDashboard": [{
+			"id": "1",
+			"imageName": "icn-video-call.png",
+			"Title": "Consult \n Doctor Now",
+            "Color": "#bed661"
+		},
+                                           
+		{
+			"id": "2",
+			"imageName": "icn-calendar.png",
+			"Title": "Book \n Doctor's \n Appointment",
+            "Color": "#1eae93"
+		},
+                         {
+			"id": "3",
+			"imageName": "icn-doc.png",
+			"Title": "Get Doctor's \n Second \n Opinion",
+          "Color": "#811d5b"
+		}, {
+			"id": "4",
+			"imageName": "icn-explore.png",
+			"Title": "Explore",
+            "Color": "#ee5655"
+		}, {
+			"id": "5",
+			"imageName": "icn-health-record.png",
+			"Title": "Health \n Record",
+             "Color": "#01c78c"
+		}, {
+			"id": "6",
+			"imageName": "icn-my-appointment.png",
+			"Title": "My \n Appointments",
+            "Color": "#1082a6"
+		}
+	]
+}

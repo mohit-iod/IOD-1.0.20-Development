@@ -1,0 +1,14 @@
+{
+	"currency": [
+			{
+			"id": "1",
+			"Title": "Payment in USD",
+             "image":"usd.png"
+			},
+			{
+			"id": "2",
+			"Title": "Payment in INR",
+             "image":"inr.png"
+			}
+	]
+}

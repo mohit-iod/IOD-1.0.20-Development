@@ -1,0 +1,16 @@
+{
+	"slot": [
+			{
+			"id": "1",
+			"Title": "For next 7 days",
+			},
+			{
+			"id": "2",
+			"Title": "For next 15 days",
+			},
+             {
+            "id": "2",
+              "Title": "For next 1 month",
+              }
+	]
+}
