@@ -482,7 +482,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
         [[[UIApplication sharedApplication] delegate] window].backgroundColor = [UIColor whiteColor];
         [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
     }
-
+    //dfasdf
     //sanjay second
     //mohit second
     //set Notififier for check internet connection
