@@ -483,8 +483,6 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
         [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
     }
 
-    //dsfasdffdasf
-    //sanjay
     //sanjay second
     //mohit second
     //set Notififier for check internet connection
