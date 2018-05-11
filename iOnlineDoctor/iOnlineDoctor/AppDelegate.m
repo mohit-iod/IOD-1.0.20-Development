@@ -482,7 +482,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
         [[[UIApplication sharedApplication] delegate] window].backgroundColor = [UIColor whiteColor];
         [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
     }
-    
+    //dsfasdf
     //set Notififier for check internet connection
     internetReachable = [Reachability reachabilityWithHostname:kreachability];
     [internetReachable connectionRequired];
