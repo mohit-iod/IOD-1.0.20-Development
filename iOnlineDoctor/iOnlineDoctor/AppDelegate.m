@@ -486,6 +486,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     //dsfasdffdasf
     //sanjay
     //sanjay second
+    //mohit second
     //set Notififier for check internet connection
     internetReachable = [Reachability reachabilityWithHostname:kreachability];
     [internetReachable connectionRequired];
