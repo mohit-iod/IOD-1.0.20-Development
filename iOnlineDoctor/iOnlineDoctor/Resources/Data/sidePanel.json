@@ -3,12 +3,12 @@
 			{
 			"id": "1",
 			"Title": "Home",
-			"imageName": "home-icon.png",
+			"imageName": "explore-home",
 			},
             {
             "id": "1",
             "Title": "My Profile",
-            "imageName": "edit-profile-icon.png",
+            "imageName": "explore-my-profile",
             },
             {
             "id": "1",
@@ -18,42 +18,42 @@
 			{
 			"id": "1",
 			"Title": "FAQ",
-			"imageName": "faq-icon.png",
+			"imageName": "explore-FAQ",
 			},
             {
             "id":"1",
             "Title":"Blogs",
-            "imageName":"blog-icon",
+            "imageName":"explore-blogs",
             },
 			{
 			"id": "1",
 			"Title": "Share With Friends",
-			"imageName": "share-icon",
+			"imageName": "explore-share",
 			},
 			{
 			"id": "1",
 			"Title": "Services",
-			"imageName": "what-we-treat-icon",
+			"imageName": "explore-health",
 			},
 			{
 			"id": "1",
 			"Title": "How It Works",
-			"imageName": "how-it-works.png",
+			"imageName": "explore-HowItWorks",
 			},
 			{
 			"id": "1",
 			"Title": "Terms And Conditions",
-			"imageName": "t_c-icon",
+			"imageName": "explore-tnc",
 			},
 			{
 			"id": "1",
 			"Title": "Contact Us",
-			"imageName": "contact-icon",
+			"imageName": "explore-contactus",
 			},
             {
             "id": "1",
             "Title": "Logout",
-            "imageName": "logout-icon",
+            "imageName": "explore-logout",
             }
 	]
 }
