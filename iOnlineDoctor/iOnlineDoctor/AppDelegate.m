@@ -483,10 +483,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
         [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
     }
     
-    
-    
-    
-    //Notification for check internet connection
+    //set Notififier for check internet connection
     internetReachable = [Reachability reachabilityWithHostname:kreachability];
     [internetReachable connectionRequired];
     [internetReachable startNotifier];
