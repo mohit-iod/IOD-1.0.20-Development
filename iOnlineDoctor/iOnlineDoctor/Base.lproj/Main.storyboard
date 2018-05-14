@@ -6750,6 +6750,7 @@
                         <outlet property="imgProfile" destination="lpk-qk-Q2g" id="9Ox-YF-BFg"/>
                         <outlet property="lblLocation" destination="GPk-Dk-ZmR" id="oTx-1y-9N2"/>
                         <outlet property="lblName" destination="HfI-mq-GoJ" id="0xU-Uu-lgC"/>
+                        <outlet property="tableView" destination="GbC-QQ-s2d" id="LBO-0I-dTq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5iB-f3-pT9" userLabel="First Responder" sceneMemberID="firstResponder"/>

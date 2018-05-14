@@ -65,6 +65,38 @@
             endingLineNumber = "138"
             landmarkName = "-getToken"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PaymentViewController viewWillAppear:]"
+                  moduleName = "iOnlineDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mohit%20-%20iOS/Project/Refactor%20-%20iOS/IOD-1.0.20-Development/iOnlineDoctor/iOnlineDoctor/Payment/PaymentViewController.m"
+                  timestampString = "547966345.412477"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "2408">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PaymentViewController viewWillAppear:]"
+                  moduleName = "iOnlineDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mohit%20-%20iOS/Project/Refactor%20-%20iOS/IOD-1.0.20-Development/iOnlineDoctor/iOnlineDoctor/Payment/PaymentViewController.m"
+                  timestampString = "547966345.4169919"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "2420">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -161,6 +193,38 @@
             endingLineNumber = "53"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BookAppointmentVC slotsWithBookedEvent]"
+                  moduleName = "iOnlineDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mohit%20-%20iOS/Project/Refactor%20-%20iOS/IOD-1.0.20-Development/iOnlineDoctor/iOnlineDoctor/Book%20Appointment/BookAppointmentVC.m"
+                  timestampString = "547966345.4884371"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BookAppointmentVC setSlotsWithBookedEvent:]"
+                  moduleName = "iOnlineDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mohit%20-%20iOS/Project/Refactor%20-%20iOS/IOD-1.0.20-Development/iOnlineDoctor/iOnlineDoctor/Book%20Appointment/BookAppointmentVC.m"
+                  timestampString = "547966345.493664"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

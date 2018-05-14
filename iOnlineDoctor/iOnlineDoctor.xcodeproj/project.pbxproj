@@ -20,6 +20,8 @@
 		7C0D914E1F594F1000694120 /* D-my-patients.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D914B1F594F1000694120 /* D-my-patients.png */; };
 		7C0D914F1F594F1000694120 /* D-my-profile-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D914C1F594F1000694120 /* D-my-profile-icon.png */; };
 		7C0D915C1F59983A00694120 /* Upload-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D91591F59983A00694120 /* Upload-btn.png */; };
+		7C129EDB20A9466F00271F25 /* ExploreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C129ED920A9466F00271F25 /* ExploreCell.m */; };
+		7C129EDC20A9466F00271F25 /* ExploreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EDA20A9466F00271F25 /* ExploreCell.xib */; };
 		7C1678901F70CBCB00DEFA10 /* MedicalInfoDropDownVIews.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C16788C1F70CBCB00DEFA10 /* MedicalInfoDropDownVIews.m */; };
 		7C1678911F70CBCB00DEFA10 /* medicalInfoMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C16788E1F70CBCB00DEFA10 /* medicalInfoMainVC.m */; };
 		7C1678951F70CF5500DEFA10 /* medicalInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1678921F70CF5500DEFA10 /* medicalInfoCell.xib */; };
@@ -161,13 +163,7 @@
 		CA1303161FC2B3A900A4F729 /* Signin-DEA.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1303151FC2B3A900A4F729 /* Signin-DEA.png */; };
 		CA1303181FC2BBC600A4F729 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1303171FC2BBC600A4F729 /* AVFoundation.framework */; };
 		CA1334ED1F5AEA9600FCF93E /* sidePanel.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1334EC1F5AEA9600FCF93E /* sidePanel.json */; };
-		CA1334F71F5AEAEE00FCF93E /* blog-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334EF1F5AEAEE00FCF93E /* blog-icon.png */; };
-		CA1334F81F5AEAEE00FCF93E /* contact-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F01F5AEAEE00FCF93E /* contact-icon.png */; };
-		CA1334F91F5AEAEE00FCF93E /* faq-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F11F5AEAEE00FCF93E /* faq-icon.png */; };
-		CA1334FA1F5AEAEE00FCF93E /* home-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F21F5AEAEE00FCF93E /* home-icon.png */; };
-		CA1334FB1F5AEAEE00FCF93E /* how-it-works.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F31F5AEAEE00FCF93E /* how-it-works.png */; };
 		CA1334FC1F5AEAEE00FCF93E /* share-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F41F5AEAEE00FCF93E /* share-icon.png */; };
-		CA1334FD1F5AEAEE00FCF93E /* t_c-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F51F5AEAEE00FCF93E /* t_c-icon.png */; };
 		CA1334FE1F5AEAEE00FCF93E /* what-we-treat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F61F5AEAEE00FCF93E /* what-we-treat-icon.png */; };
 		CA14A17F2036F0A200F67B10 /* coupon-discount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA14A17D2036F0A200F67B10 /* coupon-discount@2x.png */; };
 		CA14A1802036F0A200F67B10 /* coupon-discount.png in Resources */ = {isa = PBXBuildFile; fileRef = CA14A17E2036F0A200F67B10 /* coupon-discount.png */; };
@@ -231,7 +227,6 @@
 		CA4380F12010A4A400A5128B /* blogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4380EF2010A4A400A5128B /* blogTableViewCell.m */; };
 		CA4380F22010A4A400A5128B /* blogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4380F02010A4A400A5128B /* blogTableViewCell.xib */; };
 		CA4380F52010ADA200A5128B /* BlogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4380F42010ADA200A5128B /* BlogsViewController.m */; };
-		CA4380F72010BE9B00A5128B /* edit-profile-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4380F62010BE9B00A5128B /* edit-profile-icon.png */; };
 		CA4380F92010D02F00A5128B /* small-no-img.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4380F82010D02F00A5128B /* small-no-img.png */; };
 		CA4380FE2011DEC600A5128B /* icn-business-hours.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4380FC2011DEC600A5128B /* icn-business-hours.png */; };
 		CA4380FF2011DEC600A5128B /* icn-my-p-atient.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4380FD2011DEC600A5128B /* icn-my-p-atient.png */; };
@@ -571,7 +566,6 @@
 		CAF4F7F51F88909600996FB3 /* Bubble-1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7F01F88909600996FB3 /* Bubble-1.png */; };
 		CAF4F7F61F88909600996FB3 /* Bubble-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7F11F88909600996FB3 /* Bubble-1@2x.png */; };
 		CAF4F7F91F8890A200996FB3 /* -burger-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7F71F8890A200996FB3 /* -burger-menu.png */; };
-		CAF4F7FA1F8890A200996FB3 /* logout-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7F81F8890A200996FB3 /* logout-icon.png */; };
 		CAF4F7FE1F8890B800996FB3 /* burger-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7FB1F8890B800996FB3 /* burger-menu.png */; };
 		CAF4F7FF1F8890B800996FB3 /* health-record-2nd-op.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7FC1F8890B800996FB3 /* health-record-2nd-op.png */; };
 		CAF4F8001F8890B800996FB3 /* health-record-e-visit.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7FD1F8890B800996FB3 /* health-record-e-visit.png */; };
@@ -628,6 +622,9 @@
 		7C0D914B1F594F1000694120 /* D-my-patients.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D-my-patients.png"; sourceTree = "<group>"; };
 		7C0D914C1F594F1000694120 /* D-my-profile-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D-my-profile-icon.png"; sourceTree = "<group>"; };
 		7C0D91591F59983A00694120 /* Upload-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload-btn.png"; sourceTree = "<group>"; };
+		7C129ED820A9466F00271F25 /* ExploreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExploreCell.h; sourceTree = "<group>"; };
+		7C129ED920A9466F00271F25 /* ExploreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExploreCell.m; sourceTree = "<group>"; };
+		7C129EDA20A9466F00271F25 /* ExploreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCell.xib; sourceTree = "<group>"; };
 		7C16788B1F70CBCB00DEFA10 /* MedicalInfoDropDownVIews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalInfoDropDownVIews.h; sourceTree = "<group>"; };
 		7C16788C1F70CBCB00DEFA10 /* MedicalInfoDropDownVIews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalInfoDropDownVIews.m; sourceTree = "<group>"; };
 		7C16788D1F70CBCB00DEFA10 /* medicalInfoMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = medicalInfoMainVC.h; sourceTree = "<group>"; };
@@ -819,13 +816,7 @@
 		CA1303151FC2B3A900A4F729 /* Signin-DEA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signin-DEA.png"; sourceTree = "<group>"; };
 		CA1303171FC2BBC600A4F729 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CA1334EC1F5AEA9600FCF93E /* sidePanel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sidePanel.json; sourceTree = "<group>"; };
-		CA1334EF1F5AEAEE00FCF93E /* blog-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blog-icon.png"; sourceTree = "<group>"; };
-		CA1334F01F5AEAEE00FCF93E /* contact-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact-icon.png"; sourceTree = "<group>"; };
-		CA1334F11F5AEAEE00FCF93E /* faq-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "faq-icon.png"; sourceTree = "<group>"; };
-		CA1334F21F5AEAEE00FCF93E /* home-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-icon.png"; sourceTree = "<group>"; };
-		CA1334F31F5AEAEE00FCF93E /* how-it-works.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "how-it-works.png"; sourceTree = "<group>"; };
 		CA1334F41F5AEAEE00FCF93E /* share-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-icon.png"; sourceTree = "<group>"; };
-		CA1334F51F5AEAEE00FCF93E /* t_c-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "t_c-icon.png"; sourceTree = "<group>"; };
 		CA1334F61F5AEAEE00FCF93E /* what-we-treat-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "what-we-treat-icon.png"; sourceTree = "<group>"; };
 		CA14A17D2036F0A200F67B10 /* coupon-discount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon-discount@2x.png"; sourceTree = "<group>"; };
 		CA14A17E2036F0A200F67B10 /* coupon-discount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon-discount.png"; sourceTree = "<group>"; };
@@ -909,7 +900,6 @@
 		CA4380F02010A4A400A5128B /* blogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = blogTableViewCell.xib; path = Dashboard/blogTableViewCell.xib; sourceTree = "<group>"; };
 		CA4380F32010ADA200A5128B /* BlogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlogsViewController.h; path = Dashboard/BlogsViewController.h; sourceTree = "<group>"; };
 		CA4380F42010ADA200A5128B /* BlogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlogsViewController.m; path = Dashboard/BlogsViewController.m; sourceTree = "<group>"; };
-		CA4380F62010BE9B00A5128B /* edit-profile-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-profile-icon.png"; sourceTree = "<group>"; };
 		CA4380F82010D02F00A5128B /* small-no-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-no-img.png"; sourceTree = "<group>"; };
 		CA4380FC2011DEC600A5128B /* icn-business-hours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn-business-hours.png"; sourceTree = "<group>"; };
 		CA4380FD2011DEC600A5128B /* icn-my-p-atient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn-my-p-atient.png"; sourceTree = "<group>"; };
@@ -1415,7 +1405,6 @@
 		CAF4F7F01F88909600996FB3 /* Bubble-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble-1.png"; sourceTree = "<group>"; };
 		CAF4F7F11F88909600996FB3 /* Bubble-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble-1@2x.png"; sourceTree = "<group>"; };
 		CAF4F7F71F8890A200996FB3 /* -burger-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "-burger-menu.png"; sourceTree = "<group>"; };
-		CAF4F7F81F8890A200996FB3 /* logout-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-icon.png"; sourceTree = "<group>"; };
 		CAF4F7FB1F8890B800996FB3 /* burger-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger-menu.png"; sourceTree = "<group>"; };
 		CAF4F7FC1F8890B800996FB3 /* health-record-2nd-op.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health-record-2nd-op.png"; sourceTree = "<group>"; };
 		CAF4F7FD1F8890B800996FB3 /* health-record-e-visit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health-record-e-visit.png"; sourceTree = "<group>"; };
@@ -2088,19 +2077,11 @@
 				CA8907722026DCDD008D8D94 /* Referral@2x.png */,
 				CA8907732026DCDD008D8D94 /* Referral.png */,
 				CA4380F82010D02F00A5128B /* small-no-img.png */,
-				CA4380F62010BE9B00A5128B /* edit-profile-icon.png */,
 				CA4380EA20109CBA00A5128B /* edit_Explore.png */,
 				CA4380EC20109E5A00A5128B /* locaion-black.png */,
 				CA4380E82010989F00A5128B /* top-profile-bg.png */,
 				CAF4F7F71F8890A200996FB3 /* -burger-menu.png */,
-				CAF4F7F81F8890A200996FB3 /* logout-icon.png */,
-				CA1334EF1F5AEAEE00FCF93E /* blog-icon.png */,
-				CA1334F01F5AEAEE00FCF93E /* contact-icon.png */,
-				CA1334F11F5AEAEE00FCF93E /* faq-icon.png */,
-				CA1334F21F5AEAEE00FCF93E /* home-icon.png */,
-				CA1334F31F5AEAEE00FCF93E /* how-it-works.png */,
 				CA1334F41F5AEAEE00FCF93E /* share-icon.png */,
-				CA1334F51F5AEAEE00FCF93E /* t_c-icon.png */,
 				CA1334F61F5AEAEE00FCF93E /* what-we-treat-icon.png */,
 			);
 			path = sidePanel;
@@ -2158,6 +2139,9 @@
 				CA89077020259779008D8D94 /* ReferalViewController.h */,
 				CA4380E520107DEB00A5128B /* ExploreViewController.h */,
 				CA4380E620107DEB00A5128B /* ExploreViewController.m */,
+				7C129ED820A9466F00271F25 /* ExploreCell.h */,
+				7C129ED920A9466F00271F25 /* ExploreCell.m */,
+				7C129EDA20A9466F00271F25 /* ExploreCell.xib */,
 				CA4380EE2010A4A400A5128B /* blogTableViewCell.h */,
 				CA4380EF2010A4A400A5128B /* blogTableViewCell.m */,
 				CA4380F02010A4A400A5128B /* blogTableViewCell.xib */,
@@ -2887,7 +2871,6 @@
 				CA35BC151FFA2FCC00D2C7F1 /* medi-sub-icon.png in Resources */,
 				CA6B74271F5C88AB0068B760 /* Signin-D-Additional-Qualification.png in Resources */,
 				CA14A183203AAB6300F67B10 /* icn-coupon-referral.png in Resources */,
-				CA1334FD1F5AEAEE00FCF93E /* t_c-icon.png in Resources */,
 				CA9670BE204A80CA000A3C73 /* Pulse-Rate@2x.png in Resources */,
 				7C3CE19C1F53C8AD00D1648E /* Roboto-LightItalic.ttf in Resources */,
 				CAD171581F82204A0034A2B4 /* DocCellXib.xib in Resources */,
@@ -2963,7 +2946,6 @@
 				CAA795691F908A3C00AD1826 /* Default-iPhone6.png in Resources */,
 				7C74147B1F6D395400E0107B /* card-num-icon.png in Resources */,
 				CAA35A0C1F8D34D200BA7A43 /* medi-icon.png in Resources */,
-				CA1334F71F5AEAEE00FCF93E /* blog-icon.png in Resources */,
 				CAD239BC201851CB00316438 /* dashboard-doctor-bg.png in Resources */,
 				CAF4F7D81F888E9B00996FB3 /* ERXtableviewcell.xib in Resources */,
 				CADB3A031FE386A500F9F385 /* Overlay.png in Resources */,
@@ -3036,7 +3018,6 @@
 				CA79340F20A40EC500DFA9A6 /* iPad.storyboard in Resources */,
 				CAD824AC20514A3700743A7B /* steper6.png in Resources */,
 				CA4380CE200F74CD00A5128B /* selected.png in Resources */,
-				CA1334FA1F5AEAEE00FCF93E /* home-icon.png in Resources */,
 				7C94DF3B1F6FA2670087DE20 /* height-icon.png in Resources */,
 				7C7414831F6D395400E0107B /* radio-active.png in Resources */,
 				7CAECE8D1F52A3970086B736 /* Icn-uncheck.png in Resources */,
@@ -3070,7 +3051,6 @@
 				CA9670B7204A80CA000A3C73 /* Blood-Glucose.png in Resources */,
 				CAD824AD20514A3700743A7B /* steper7.png in Resources */,
 				7C16789B1F71332900DEFA10 /* CreditcardType.json in Resources */,
-				CAF4F7FA1F8890A200996FB3 /* logout-icon.png in Resources */,
 				7C94DF3A1F6FA2670087DE20 /* blood-group-icon.png in Resources */,
 				CA4380D0200F74CD00A5128B /* unselected.png in Resources */,
 				7C7414801F6D395400E0107B /* expiry-date-icon.png in Resources */,
@@ -3100,7 +3080,6 @@
 				7C3CE1A31F53C8AD00D1648E /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				CA9D9A2D1F8B71C400A1834C /* smile-1.png in Resources */,
 				CAA7956C1F908A3C00AD1826 /* Default-Portrait~ipad.png in Resources */,
-				CA1334F81F5AEAEE00FCF93E /* contact-icon.png in Resources */,
 				CA7933FB209B28DB00DFA9A6 /* star.png in Resources */,
 				CA4380E92010989F00A5128B /* top-profile-bg.png in Resources */,
 				7CAECEC61F52E6EA0086B736 /* Roboto-Bold.ttf in Resources */,
@@ -3109,7 +3088,6 @@
 				CAF4F7F21F88909600996FB3 /* appleiphone.mp3 in Resources */,
 				CA6B744E1F5DD03D0068B760 /* invoiceCell.xib in Resources */,
 				7CAECE921F52A3970086B736 /* Signin-10-pin.png in Resources */,
-				CA1334F91F5AEAEE00FCF93E /* faq-icon.png in Resources */,
 				CAD171CB1F8227410034A2B4 /* PrescriptionXIBCell.xib in Resources */,
 				CA179BDE1F8340E500EFABA6 /* slotsType.json in Resources */,
 				CA8907752026DCDD008D8D94 /* Referral.png in Resources */,
@@ -3173,7 +3151,6 @@
 				CAD824A720514A3700743A7B /* steper1.png in Resources */,
 				CAD171E41F823E5B0034A2B4 /* view-document-2.png in Resources */,
 				CA79341320A422B100DFA9A6 /* no-internet.png in Resources */,
-				CA1334FB1F5AEAEE00FCF93E /* how-it-works.png in Resources */,
 				CAA71C6A205CFDF40044C3BB /* SO.png in Resources */,
 				CA7FC1B71FE9313400E120F4 /* inr.png in Resources */,
 				CA6B742F1F5C88AB0068B760 /* Signin-D-Uni.png in Resources */,
@@ -3184,7 +3161,6 @@
 				7CEBF3991F55416400713584 /* cities.json in Resources */,
 				CAF4F7E71F88908000996FB3 /* call-interrupted-icon.png in Resources */,
 				CAA71C68205CFDF30044C3BB /* BA.png in Resources */,
-				CA4380F72010BE9B00A5128B /* edit-profile-icon.png in Resources */,
 				7CAECEC41F52E6EA0086B736 /* Roboto-Black.ttf in Resources */,
 				7CAECECA1F52E6EA0086B736 /* Roboto-LightItalic.ttf in Resources */,
 				CA1334ED1F5AEA9600FCF93E /* sidePanel.json in Resources */,
@@ -3200,6 +3176,7 @@
 				7C0D91491F594C2600694120 /* edit.png in Resources */,
 				CA960B6B204FB9580039AF49 /* New-mem-active.png in Resources */,
 				7C77931D1F5FE9B7008E30AF /* video-icon.png in Resources */,
+				7C129EDC20A9466F00271F25 /* ExploreCell.xib in Resources */,
 				CA6B74051F5BF9B30068B760 /* doctorOnlineCell.xib in Resources */,
 				CA6B74301F5C88AB0068B760 /* Signin-D-Upload.png in Resources */,
 				CA9670BB204A80CA000A3C73 /* Body-Temperature.png in Resources */,
@@ -3485,6 +3462,7 @@
 				CAADF0CF1FF2C6C30061AF13 /* CouponListViewController.m in Sources */,
 				CAD171781F82204A0034A2B4 /* IQPreviousNextView.m in Sources */,
 				7C94DF531F6FE1D60087DE20 /* doctorDocVC.m in Sources */,
+				7C129EDB20A9466F00271F25 /* ExploreCell.m in Sources */,
 				CADB39FA1FE386A500F9F385 /* ELCAsset.m in Sources */,
 				CAD1716C1F82204A0034A2B4 /* IODregisterView.m in Sources */,
 				CAD171711F82204A0034A2B4 /* IQUIView+Hierarchy.m in Sources */,
