@@ -20,9 +20,8 @@
 
 @implementation paymentInvoiceVC
 
--(void)backPop{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
 
@@ -54,10 +53,8 @@
     self.tabBarController.title =@"Payment Invoice";
     
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+#pragma mark - Tableview Delegate & Datasource Methods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -86,6 +83,7 @@
     return cell;
 }
 
+#pragma mark - IBAction Methods
 
 -(IBAction)btnDownloadPressed:(UIButton*)sender {
    // NSLog(@"Download Pressed");
@@ -126,6 +124,12 @@
     [self.navigationController pushViewController:fileviewervc animated:YES];
 }
 
+#pragma mark - Void Methods
+
+-(void)backPop{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)getPatientPaymentInvoice {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:@"1",@"categoryId",nil];
@@ -153,15 +157,5 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

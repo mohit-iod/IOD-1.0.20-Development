@@ -25,9 +25,8 @@
 
 @implementation addMemberVC
 
--(void)backPop{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
 
@@ -36,6 +35,7 @@
     [[self tblMember] registerNib:nib forCellReuseIdentifier:@"memberCell"];
         // Do any additional setup after loading the view.
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     self.tabBarController.title =@"Add Member";
     Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
@@ -52,10 +52,8 @@
     [lblNoData setHidden:YES];
     
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+#pragma mark - Tableview Delegate & Datasource Methods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -64,21 +62,6 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return memberArray.count;
 }
-
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    addMemberCell *cell=[tableView dequeueReusableCellWithIdentifier:@"memberCell"];
-    NSString *strAge =[[memberArray objectAtIndex:indexPath.row]valueForKey:@"dob"];
-
-    cell.lblTitle.text = [NSString stringWithFormat:@"%@",[[memberArray objectAtIndex:indexPath.row]valueForKey:@"name"]];
-    NSInteger age = [IODUtils calculateAge:strAge];
-    strAge = [NSString stringWithFormat:@"Age: %ld",(long)age];
-    [cell.btnAge.layer setCornerRadius:15.0];
-    [cell.btnAge setTitle:strAge forState:UIControlStateNormal];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    return cell;
-}
-
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -96,6 +79,18 @@
     [UIView commitAnimations];
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    addMemberCell *cell=[tableView dequeueReusableCellWithIdentifier:@"memberCell"];
+    NSString *strAge =[[memberArray objectAtIndex:indexPath.row]valueForKey:@"dob"];
+
+    cell.lblTitle.text = [NSString stringWithFormat:@"%@",[[memberArray objectAtIndex:indexPath.row]valueForKey:@"name"]];
+    NSInteger age = [IODUtils calculateAge:strAge];
+    strAge = [NSString stringWithFormat:@"Age: %ld",(long)age];
+    [cell.btnAge.layer setCornerRadius:15.0];
+    [cell.btnAge setTitle:strAge forState:UIControlStateNormal];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    return cell;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -116,16 +111,11 @@
     [self.navigationController pushViewController:addMember animated:YES];
 }
 
+#pragma mark - Void Methods
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)backPop{
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
 
 -(void) getAllMembers{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -154,6 +144,8 @@
     } ];
     
 }
+
+#pragma mark - IBAction Methods
 
 -(IBAction)addNewMember:(id)sender {
     addMemberRegisterVC *addMember = [[addMemberRegisterVC alloc] init];

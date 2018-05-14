@@ -23,6 +23,9 @@
 -(void)backPop{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
 
@@ -65,19 +68,7 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigationz
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark - UITextfield Delegate Methods
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
@@ -179,7 +170,8 @@
     [_datePickerView removeFromSuperview];
 }
 
-#pragma mark - StringPickerViewDelegate
+#pragma mark - StringPickerView Delegate
+
 - (void)stringPickerViewDidSelectDone:(StringPickerView *)view
 {
     if( [self.pickerView.refernceView isKindOfClass:[UITextField class]] )
@@ -199,6 +191,8 @@
     [self.pickerView removeFromSuperview];
     self.pickerView = nil;
 }
+
+#pragma mark - IBAction Methods
 
 -(IBAction)btnSubmitPressed:(id)sender {
     if (![IODUtils getError:self.txtfullName minVlue:@"4" minVlue:@"50" onlyNumeric:nil onlyChars:YES canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]) {
@@ -227,6 +221,8 @@
         }
     }
 }
+
+#pragma mark - Void Methods
 
 -(void)addNewMember{
     int gender = [IODUtils getGenderId:_txtGender.text];

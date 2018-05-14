@@ -10,13 +10,15 @@
 
 @interface MyEarningsViewController ()
 {
-     NSMutableArray *arrMyEarnings;
+    NSMutableArray *arrMyEarnings;
     NSDictionary *response;
     UILabel *lblNoData;
 }
 @end
 
 @implementation MyEarningsViewController
+
+#pragma mark - View Controller Methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,20 +47,8 @@
     self.tabBarController.title =@"My Earnings";
  
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Tableview Delegate & Datasource Methods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -89,15 +79,7 @@
     return cell;
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Void Methods
 
 -(void) getMyEarnings{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -125,6 +107,7 @@
     }];
 }
 
+#pragma mark - IBAction Methods
 
 - (IBAction)segmentSwitch:(UISegmentedControl *)sender {
     [lblNoData setHidden:YES];
@@ -176,6 +159,8 @@
     }
     [_tblMyEarnings reloadData];
 }
+
+#pragma mark - RefreshView Methods If Internet Connection Lost
 
 -(void)refreshView:(NSNotification*)notification{
     [self getMyEarnings];

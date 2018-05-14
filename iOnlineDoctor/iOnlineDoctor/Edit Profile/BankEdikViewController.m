@@ -28,9 +28,8 @@
 
 @implementation BankEdikViewController
 
--(void)backPop{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
     
@@ -61,9 +60,10 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Void Methods
+
+-(void)backPop{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)getAllBAnkDetails{
@@ -153,6 +153,43 @@
         }];
 }
 
+//Error labele after textfield
++(UILabel *)getErrorLabel:(UITextField *)useText{
+    @try {
+        for(UIView *v in useText.superview.subviews ){
+            if (v.tag == 10) {
+                return (UILabel *)v;
+            }
+        }
+    } @catch (NSException *exception) {
+    }
+    return [UILabel new];
+}
+
+-(void)editDetails{
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
+    NSMutableDictionary *parameter  = [[NSMutableDictionary alloc] init];
+    [parameter setObject:[NSNumber numberWithInt:selectedAccountType] forKey:kaccounttype];
+    [parameter setObject:_txtAcName.text forKey:kaccountname];
+    [parameter setObject:_txtAcHolderAddress.text forKey:kaccountholderAddress];
+    [parameter setObject:[NSNumber numberWithInt:selectedAccountCode] forKey:kaccounttypeDetailid];
+    [parameter setObject:_txtIban.text forKey:kaccounttypedetailvalue];
+    [parameter setObject:_txtBankName.text forKey:kbankname];
+    [parameter setObject:_txtBankAdress.text forKey:kbankaddress];
+    [parameter setObject:_txtBankAcNumber.text forKey:kbankaccountno];
+    [parameter setObject:_txt15minsCharge.text forKey:klcprice];
+    [parameter setObject:_txt30minsCharge.text forKey:ksoprice];
+    [parameter setObject:[NSNumber numberWithInt:0] forKey:ksignatureflag];
+    
+    [service editBAnkDetails:parameter WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [IODUtils showFCAlertMessage:@"Succesfully saved"  withTitle:@"" withViewController:self with:@"error"];
+    }];
+}
+
+#pragma mark - UITextfield Delegate Methods
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
@@ -219,7 +256,7 @@
     return YES;
 }
 
-#pragma mark - StringPickerViewDelegate
+#pragma mark - StringPickerView Delegate
 - (void)stringPickerViewDidSelectDone:(StringPickerView *)view
 {
     if( [self.pickerView.refernceView isKindOfClass:[UITextField class]] )
@@ -243,6 +280,8 @@
     [self.pickerView removeFromSuperview];
     self.pickerView = nil;
 }
+
+#pragma mark - IBAction Methods
 
 -(IBAction)submit:(id)sender {
    
@@ -281,42 +320,7 @@
     }
 }
 
-//Error labele after textfield
-+(UILabel *)getErrorLabel:(UITextField *)useText{
-    @try {
-        for(UIView *v in useText.superview.subviews ){
-            if (v.tag == 10) {
-                return (UILabel *)v;
-            }
-        }
-    } @catch (NSException *exception) {
-    }
-    return [UILabel new];
-}
-
--(void)editDetails{
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
-    NSMutableDictionary *parameter  = [[NSMutableDictionary alloc] init];
-    [parameter setObject:[NSNumber numberWithInt:selectedAccountType] forKey:kaccounttype];
-    [parameter setObject:_txtAcName.text forKey:kaccountname];
-    [parameter setObject:_txtAcHolderAddress.text forKey:kaccountholderAddress];
-    [parameter setObject:[NSNumber numberWithInt:selectedAccountCode] forKey:kaccounttypeDetailid];
-    [parameter setObject:_txtIban.text forKey:kaccounttypedetailvalue];
-    [parameter setObject:_txtBankName.text forKey:kbankname];
-    [parameter setObject:_txtBankAdress.text forKey:kbankaddress];
-    [parameter setObject:_txtBankAcNumber.text forKey:kbankaccountno];
-    [parameter setObject:_txt15minsCharge.text forKey:klcprice];
-    [parameter setObject:_txt30minsCharge.text forKey:ksoprice];
-    [parameter setObject:[NSNumber numberWithInt:0] forKey:ksignatureflag];
-    
-    [service editBAnkDetails:parameter WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [IODUtils showFCAlertMessage:@"Succesfully saved"  withTitle:@"" withViewController:self with:@"error"];
-    }];
-}
-
+#pragma mark - RefreshView Methods If Internet Connection Lost
 
 -(void)refreshView:(NSNotification*)notification{
     [self getAllBAnkDetails];

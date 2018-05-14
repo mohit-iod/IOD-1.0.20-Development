@@ -19,13 +19,8 @@
     PatientAppointService *patientService;
 }
 
--(void)viewWillLayoutSubviews{
-    self.tabBar.itemPositioning = UITabBarItemPositioningFill;
-}
+#pragma mark - View Controller Methods
 
--(void)backPop{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 - (void)viewDidLoad {
     patientService = [PatientAppointService sharedManager];
     NSString *strSelectedTab = patientService.selectedTab;
@@ -61,6 +56,17 @@
     UITabBarItem *tabItem = [self.tabBar.items objectAtIndex:tab];
     [self tabBar:self.tabBar didSelectItem:tabItem];
 }
+
+#pragma mark - Void Methods
+
+-(void)viewWillLayoutSubviews{
+    self.tabBar.itemPositioning = UITabBarItemPositioningFill;
+}
+
+-(void)backPop{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     
