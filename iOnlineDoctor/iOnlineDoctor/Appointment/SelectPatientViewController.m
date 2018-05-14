@@ -45,8 +45,8 @@
     //[self performSelectorInBackground:@selector(getallReferralDoctor) withObject:nil];
     
    // [self getallReferralDoctor];
-    
-    hvc =  [self.storyboard instantiateViewControllerWithIdentifier:@"SymptomsViewController"];
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+    hvc =  [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"SymptomsViewController"];
 
     // Initializatin
     arrSelection = [[NSMutableArray alloc] initWithObjects:@"NO",@"NO" ,nil];

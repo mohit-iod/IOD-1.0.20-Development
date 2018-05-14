@@ -65,38 +65,6 @@
             endingLineNumber = "176"
             landmarkName = "-getAllSpecialization"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[localDoctorTypeVC getAllSpecialization]"
-                  moduleName = "iOnlineDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/meghnakpatel/Desktop/Project/ionlineDoc%20EC2%20copy/ionlinedoctor-ios/iOnlineDoctor/iOnlineDoctor/Appointment/localDoctorTypeVC.m"
-                  timestampString = "547474866.4819469"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "213">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[localDoctorTypeVC getAllSpecialization]_block_invoke"
-                  moduleName = "iOnlineDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/meghnakpatel/Desktop/Project/ionlineDoc%20EC2%20copy/ionlinedoctor-ios/iOnlineDoctor/iOnlineDoctor/Appointment/localDoctorTypeVC.m"
-                  timestampString = "547474866.484661"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -272,6 +240,22 @@
             startingLineNumber = "164"
             endingLineNumber = "164"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOnlineDoctor/Registration/RegisterPatientVCViewController.m"
+            timestampString = "547984029.619472"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-btnNext:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -309,7 +309,9 @@
             patientService.slot_id = @"";
             patientService.documentName = [[NSMutableArray alloc] init];
             patientService.arrDocumentData = [[NSMutableArray alloc] init];
-            SelectPatientViewController *selectPatientVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"];
+
+        UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+         SelectPatientViewController *selectPatientVC = [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"];
             [self.navigationController pushViewController:selectPatientVC animated:YES];
     }
     if(indexPath.item == 1) {

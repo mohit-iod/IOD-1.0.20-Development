@@ -155,19 +155,15 @@
 		A7874CA6EEC0787E3E551F35 /* libPods-iOnlineDoctorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD48F16B30E557B388C00E33 /* libPods-iOnlineDoctorTests.a */; };
 		BB4D40A1ECBDA8FB0C73905C /* libPods-iOnlineDoctorUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6007CDC5A12FE2BCBBB682 /* libPods-iOnlineDoctorUITests.a */; };
 		C49CF8E320A45EA300A746F7 /* close-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C49CF8E220A45EA300A746F7 /* close-icon.png */; };
+		C4B5BC2F20A9481D0019F828 /* NoInternet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B5BC2D20A9481C0019F828 /* NoInternet.storyboard */; };
+		C4B5BC3120A94B850019F828 /* MedicalInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B5BC3020A94B840019F828 /* MedicalInfo.storyboard */; };
 		CA010B9F1F8A2F2900E4DB9F /* secondOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA010B9E1F8A2F2900E4DB9F /* secondOpinionViewController.m */; };
 		CA010BA41F8A2F3500E4DB9F /* PatientDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CA010BA11F8A2F3500E4DB9F /* PatientDocVC.m */; };
 		CA010BA51F8A2F3500E4DB9F /* PatientViewDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CA010BA31F8A2F3500E4DB9F /* PatientViewDetailVC.m */; };
 		CA1303161FC2B3A900A4F729 /* Signin-DEA.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1303151FC2B3A900A4F729 /* Signin-DEA.png */; };
 		CA1303181FC2BBC600A4F729 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1303171FC2BBC600A4F729 /* AVFoundation.framework */; };
 		CA1334ED1F5AEA9600FCF93E /* sidePanel.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1334EC1F5AEA9600FCF93E /* sidePanel.json */; };
-		CA1334F71F5AEAEE00FCF93E /* blog-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334EF1F5AEAEE00FCF93E /* blog-icon.png */; };
-		CA1334F81F5AEAEE00FCF93E /* contact-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F01F5AEAEE00FCF93E /* contact-icon.png */; };
-		CA1334F91F5AEAEE00FCF93E /* faq-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F11F5AEAEE00FCF93E /* faq-icon.png */; };
-		CA1334FA1F5AEAEE00FCF93E /* home-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F21F5AEAEE00FCF93E /* home-icon.png */; };
-		CA1334FB1F5AEAEE00FCF93E /* how-it-works.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F31F5AEAEE00FCF93E /* how-it-works.png */; };
 		CA1334FC1F5AEAEE00FCF93E /* share-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F41F5AEAEE00FCF93E /* share-icon.png */; };
-		CA1334FD1F5AEAEE00FCF93E /* t_c-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F51F5AEAEE00FCF93E /* t_c-icon.png */; };
 		CA1334FE1F5AEAEE00FCF93E /* what-we-treat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1334F61F5AEAEE00FCF93E /* what-we-treat-icon.png */; };
 		CA14A17F2036F0A200F67B10 /* coupon-discount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA14A17D2036F0A200F67B10 /* coupon-discount@2x.png */; };
 		CA14A1802036F0A200F67B10 /* coupon-discount.png in Resources */ = {isa = PBXBuildFile; fileRef = CA14A17E2036F0A200F67B10 /* coupon-discount.png */; };
@@ -231,7 +227,6 @@
 		CA4380F12010A4A400A5128B /* blogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4380EF2010A4A400A5128B /* blogTableViewCell.m */; };
 		CA4380F22010A4A400A5128B /* blogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4380F02010A4A400A5128B /* blogTableViewCell.xib */; };
 		CA4380F52010ADA200A5128B /* BlogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4380F42010ADA200A5128B /* BlogsViewController.m */; };
-		CA4380F72010BE9B00A5128B /* edit-profile-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4380F62010BE9B00A5128B /* edit-profile-icon.png */; };
 		CA4380F92010D02F00A5128B /* small-no-img.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4380F82010D02F00A5128B /* small-no-img.png */; };
 		CA4380FE2011DEC600A5128B /* icn-business-hours.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4380FC2011DEC600A5128B /* icn-business-hours.png */; };
 		CA4380FF2011DEC600A5128B /* icn-my-p-atient.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4380FD2011DEC600A5128B /* icn-my-p-atient.png */; };
@@ -287,7 +282,6 @@
 		CA7933FF20A00DC700DFA9A6 /* one.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CA7933FE20A00DC700DFA9A6 /* one.pdf */; };
 		CA79340220A3206D00DFA9A6 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79340120A3206D00DFA9A6 /* SQLiteManager.m */; };
 		CA79340520A4077900DFA9A6 /* NoInternetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79340420A4077900DFA9A6 /* NoInternetVC.m */; };
-		CA79340820A407C100DFA9A6 /* NoInternet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA79340620A407C100DFA9A6 /* NoInternet.storyboard */; };
 		CA79340F20A40EC500DFA9A6 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA79340920A40EC500DFA9A6 /* iPad.storyboard */; };
 		CA79341020A40EC500DFA9A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA79340B20A40EC500DFA9A6 /* Main.storyboard */; };
 		CA79341120A40EC500DFA9A6 /* StoryboardDoctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA79340D20A40EC500DFA9A6 /* StoryboardDoctor.storyboard */; };
@@ -571,7 +565,6 @@
 		CAF4F7F51F88909600996FB3 /* Bubble-1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7F01F88909600996FB3 /* Bubble-1.png */; };
 		CAF4F7F61F88909600996FB3 /* Bubble-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7F11F88909600996FB3 /* Bubble-1@2x.png */; };
 		CAF4F7F91F8890A200996FB3 /* -burger-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7F71F8890A200996FB3 /* -burger-menu.png */; };
-		CAF4F7FA1F8890A200996FB3 /* logout-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7F81F8890A200996FB3 /* logout-icon.png */; };
 		CAF4F7FE1F8890B800996FB3 /* burger-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7FB1F8890B800996FB3 /* burger-menu.png */; };
 		CAF4F7FF1F8890B800996FB3 /* health-record-2nd-op.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7FC1F8890B800996FB3 /* health-record-2nd-op.png */; };
 		CAF4F8001F8890B800996FB3 /* health-record-e-visit.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF4F7FD1F8890B800996FB3 /* health-record-e-visit.png */; };
@@ -610,6 +603,9 @@
 /* Begin PBXFileReference section */
 		4DBBC34897C5174C583C97B8 /* Pods-iOnlineDoctorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctorUITests/Pods-iOnlineDoctorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		52CC60D3AD5DAAE301E5F920 /* Pods-iOnlineDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctorTests/Pods-iOnlineDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A3A04C42CC5EBFE2AB87282 /* Pods-iOnlineDoctorTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctorTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctorTests/Pods-iOnlineDoctorTests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		5CD591F8D53BE3B09E6A91D0 /* Pods-iOnlineDoctorUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctorUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctorUITests/Pods-iOnlineDoctorUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		69444560B4E9D83E53C36E00 /* Pods-iOnlineDoctor.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctor.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor.adhoc.xcconfig"; sourceTree = "<group>"; };
 		6DEE25BDC365D59C9827792D /* Pods-iOnlineDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		7B6007CDC5A12FE2BCBBB682 /* libPods-iOnlineDoctorUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOnlineDoctorUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C07EBF81F6E354D00CD3626 /* height.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = height.json; sourceTree = "<group>"; };
@@ -810,6 +806,8 @@
 		BF2B88D7D6A416384C7A72D1 /* Pods-iOnlineDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor.debug.xcconfig"; sourceTree = "<group>"; };
 		C11BACC8AF5A52A57ABD0F1E /* libPods-iOnlineDoctor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOnlineDoctor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49CF8E220A45EA300A746F7 /* close-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-icon.png"; sourceTree = "<group>"; };
+		C4B5BC2E20A9481C0019F828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NoInternet.storyboard; sourceTree = "<group>"; };
+		C4B5BC3020A94B840019F828 /* MedicalInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MedicalInfo.storyboard; sourceTree = "<group>"; };
 		CA010B9D1F8A2F2900E4DB9F /* secondOpinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondOpinionViewController.h; sourceTree = "<group>"; };
 		CA010B9E1F8A2F2900E4DB9F /* secondOpinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondOpinionViewController.m; sourceTree = "<group>"; };
 		CA010BA01F8A2F3500E4DB9F /* PatientDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientDocVC.h; sourceTree = "<group>"; };
@@ -819,13 +817,7 @@
 		CA1303151FC2B3A900A4F729 /* Signin-DEA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signin-DEA.png"; sourceTree = "<group>"; };
 		CA1303171FC2BBC600A4F729 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CA1334EC1F5AEA9600FCF93E /* sidePanel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sidePanel.json; sourceTree = "<group>"; };
-		CA1334EF1F5AEAEE00FCF93E /* blog-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blog-icon.png"; sourceTree = "<group>"; };
-		CA1334F01F5AEAEE00FCF93E /* contact-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact-icon.png"; sourceTree = "<group>"; };
-		CA1334F11F5AEAEE00FCF93E /* faq-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "faq-icon.png"; sourceTree = "<group>"; };
-		CA1334F21F5AEAEE00FCF93E /* home-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-icon.png"; sourceTree = "<group>"; };
-		CA1334F31F5AEAEE00FCF93E /* how-it-works.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "how-it-works.png"; sourceTree = "<group>"; };
 		CA1334F41F5AEAEE00FCF93E /* share-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-icon.png"; sourceTree = "<group>"; };
-		CA1334F51F5AEAEE00FCF93E /* t_c-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "t_c-icon.png"; sourceTree = "<group>"; };
 		CA1334F61F5AEAEE00FCF93E /* what-we-treat-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "what-we-treat-icon.png"; sourceTree = "<group>"; };
 		CA14A17D2036F0A200F67B10 /* coupon-discount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon-discount@2x.png"; sourceTree = "<group>"; };
 		CA14A17E2036F0A200F67B10 /* coupon-discount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon-discount.png"; sourceTree = "<group>"; };
@@ -909,7 +901,6 @@
 		CA4380F02010A4A400A5128B /* blogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = blogTableViewCell.xib; path = Dashboard/blogTableViewCell.xib; sourceTree = "<group>"; };
 		CA4380F32010ADA200A5128B /* BlogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlogsViewController.h; path = Dashboard/BlogsViewController.h; sourceTree = "<group>"; };
 		CA4380F42010ADA200A5128B /* BlogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlogsViewController.m; path = Dashboard/BlogsViewController.m; sourceTree = "<group>"; };
-		CA4380F62010BE9B00A5128B /* edit-profile-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-profile-icon.png"; sourceTree = "<group>"; };
 		CA4380F82010D02F00A5128B /* small-no-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-no-img.png"; sourceTree = "<group>"; };
 		CA4380FC2011DEC600A5128B /* icn-business-hours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn-business-hours.png"; sourceTree = "<group>"; };
 		CA4380FD2011DEC600A5128B /* icn-my-p-atient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn-my-p-atient.png"; sourceTree = "<group>"; };
@@ -984,7 +975,6 @@
 		CA79340120A3206D00DFA9A6 /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteManager.m; path = Utils/SQLiteManager.m; sourceTree = "<group>"; };
 		CA79340320A4077900DFA9A6 /* NoInternetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInternetVC.h; sourceTree = "<group>"; };
 		CA79340420A4077900DFA9A6 /* NoInternetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInternetVC.m; sourceTree = "<group>"; };
-		CA79340720A407C100DFA9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NoInternet.storyboard; sourceTree = "<group>"; };
 		CA79340A20A40EC500DFA9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		CA79340C20A40EC500DFA9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA79340E20A40EC500DFA9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StoryboardDoctor.storyboard; sourceTree = "<group>"; };
@@ -1415,7 +1405,6 @@
 		CAF4F7F01F88909600996FB3 /* Bubble-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble-1.png"; sourceTree = "<group>"; };
 		CAF4F7F11F88909600996FB3 /* Bubble-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble-1@2x.png"; sourceTree = "<group>"; };
 		CAF4F7F71F8890A200996FB3 /* -burger-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "-burger-menu.png"; sourceTree = "<group>"; };
-		CAF4F7F81F8890A200996FB3 /* logout-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-icon.png"; sourceTree = "<group>"; };
 		CAF4F7FB1F8890B800996FB3 /* burger-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger-menu.png"; sourceTree = "<group>"; };
 		CAF4F7FC1F8890B800996FB3 /* health-record-2nd-op.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health-record-2nd-op.png"; sourceTree = "<group>"; };
 		CAF4F7FD1F8890B800996FB3 /* health-record-e-visit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health-record-e-visit.png"; sourceTree = "<group>"; };
@@ -1478,6 +1467,9 @@
 				52CC60D3AD5DAAE301E5F920 /* Pods-iOnlineDoctorTests.release.xcconfig */,
 				4DBBC34897C5174C583C97B8 /* Pods-iOnlineDoctorUITests.debug.xcconfig */,
 				9DA5A4BFD0D528BF8BAED523 /* Pods-iOnlineDoctorUITests.release.xcconfig */,
+				69444560B4E9D83E53C36E00 /* Pods-iOnlineDoctor.adhoc.xcconfig */,
+				5A3A04C42CC5EBFE2AB87282 /* Pods-iOnlineDoctorTests.adhoc.xcconfig */,
+				5CD591F8D53BE3B09E6A91D0 /* Pods-iOnlineDoctorUITests.adhoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1523,10 +1515,7 @@
 		7C2FD4CB1F4FFC0000D27CB1 /* iOnlineDoctor */ = {
 			isa = PBXGroup;
 			children = (
-				CA79340920A40EC500DFA9A6 /* iPad.storyboard */,
-				CA79340B20A40EC500DFA9A6 /* Main.storyboard */,
-				CA79340D20A40EC500DFA9A6 /* StoryboardDoctor.storyboard */,
-				CA79340620A407C100DFA9A6 /* NoInternet.storyboard */,
+				C4C03CC620A9462E0093111B /* StoryBoard */,
 				CA79340320A4077900DFA9A6 /* NoInternetVC.h */,
 				CA79340420A4077900DFA9A6 /* NoInternetVC.m */,
 				CA4259E7207DD0C0005909C8 /* include */,
@@ -1539,8 +1528,8 @@
 				CAF4F7C91F888A8E00996FB3 /* HealthRecord */,
 				CAF4F7C21F87BBE600996FB3 /* Book Appointment */,
 				CAD171F11F824CE40034A2B4 /* Evisit */,
-				7C2FD4D01F4FFC0000D27CB1 /* AppDelegate.m */,
 				CABE33F21FF36B2100ABA3C6 /* AppDelegate.h */,
+				7C2FD4D01F4FFC0000D27CB1 /* AppDelegate.m */,
 				7C2FD4DB1F4FFC0000D27CB1 /* Assets.xcassets */,
 				7C2FD4DD1F4FFC0000D27CB1 /* LaunchScreen.storyboard */,
 				7C2FD4E01F4FFC0000D27CB1 /* Info.plist */,
@@ -2082,25 +2071,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C4C03CC620A9462E0093111B /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				C4B5BC3020A94B840019F828 /* MedicalInfo.storyboard */,
+				C4B5BC2D20A9481C0019F828 /* NoInternet.storyboard */,
+				CA79340920A40EC500DFA9A6 /* iPad.storyboard */,
+				CA79340B20A40EC500DFA9A6 /* Main.storyboard */,
+				CA79340D20A40EC500DFA9A6 /* StoryboardDoctor.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		CA1334EE1F5AEAEE00FCF93E /* sidePanel */ = {
 			isa = PBXGroup;
 			children = (
 				CA8907722026DCDD008D8D94 /* Referral@2x.png */,
 				CA8907732026DCDD008D8D94 /* Referral.png */,
 				CA4380F82010D02F00A5128B /* small-no-img.png */,
-				CA4380F62010BE9B00A5128B /* edit-profile-icon.png */,
 				CA4380EA20109CBA00A5128B /* edit_Explore.png */,
 				CA4380EC20109E5A00A5128B /* locaion-black.png */,
 				CA4380E82010989F00A5128B /* top-profile-bg.png */,
 				CAF4F7F71F8890A200996FB3 /* -burger-menu.png */,
-				CAF4F7F81F8890A200996FB3 /* logout-icon.png */,
-				CA1334EF1F5AEAEE00FCF93E /* blog-icon.png */,
-				CA1334F01F5AEAEE00FCF93E /* contact-icon.png */,
-				CA1334F11F5AEAEE00FCF93E /* faq-icon.png */,
-				CA1334F21F5AEAEE00FCF93E /* home-icon.png */,
-				CA1334F31F5AEAEE00FCF93E /* how-it-works.png */,
 				CA1334F41F5AEAEE00FCF93E /* share-icon.png */,
-				CA1334F51F5AEAEE00FCF93E /* t_c-icon.png */,
 				CA1334F61F5AEAEE00FCF93E /* what-we-treat-icon.png */,
 			);
 			path = sidePanel;
@@ -2754,8 +2747,6 @@
 				7C2FD4C51F4FFC0000D27CB1 /* Sources */,
 				7C2FD4C61F4FFC0000D27CB1 /* Frameworks */,
 				7C2FD4C71F4FFC0000D27CB1 /* Resources */,
-				4D4B994A20FD7265DCFF3B50 /* [CP] Embed Pods Frameworks */,
-				3D40A861F006BE6DF5F09C67 /* [CP] Copy Pods Resources */,
 				CAD228D7206A2BAB00C8CE22 /* ShellScript */,
 			);
 			buildRules = (
@@ -2775,8 +2766,6 @@
 				7C2FD4E11F4FFC0000D27CB1 /* Sources */,
 				7C2FD4E21F4FFC0000D27CB1 /* Frameworks */,
 				7C2FD4E31F4FFC0000D27CB1 /* Resources */,
-				A0B17D684CFE5763EC40F10D /* [CP] Embed Pods Frameworks */,
-				4C2EB4971E39AC95CD4F75A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2796,8 +2785,6 @@
 				7C2FD4EC1F4FFC0000D27CB1 /* Sources */,
 				7C2FD4ED1F4FFC0000D27CB1 /* Frameworks */,
 				7C2FD4EE1F4FFC0000D27CB1 /* Resources */,
-				8FC84A54A7F5742BCDA3C353 /* [CP] Embed Pods Frameworks */,
-				259D0D2771018E1C70332AFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2887,13 +2874,13 @@
 				CA35BC151FFA2FCC00D2C7F1 /* medi-sub-icon.png in Resources */,
 				CA6B74271F5C88AB0068B760 /* Signin-D-Additional-Qualification.png in Resources */,
 				CA14A183203AAB6300F67B10 /* icn-coupon-referral.png in Resources */,
-				CA1334FD1F5AEAEE00FCF93E /* t_c-icon.png in Resources */,
 				CA9670BE204A80CA000A3C73 /* Pulse-Rate@2x.png in Resources */,
 				7C3CE19C1F53C8AD00D1648E /* Roboto-LightItalic.ttf in Resources */,
 				CAD171581F82204A0034A2B4 /* DocCellXib.xib in Resources */,
 				7CAECED11F52E6EA0086B736 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				CA960B64204FAF560039AF49 /* gender-f-active.png in Resources */,
 				CAE75E472028181200A61597 /* CopponCell.xib in Resources */,
+				C4B5BC3120A94B850019F828 /* MedicalInfo.storyboard in Resources */,
 				CA9670B9204A80CA000A3C73 /* blood-pressure.png in Resources */,
 				CA4380CF200F74CD00A5128B /* selected@2x.png in Resources */,
 				7CAECECD1F52E6EA0086B736 /* Roboto-Regular.ttf in Resources */,
@@ -2938,6 +2925,7 @@
 				CAA7956D1F908A3C00AD1826 /* Default.png in Resources */,
 				CAF4F7E81F88908000996FB3 /* download-Invoice.png in Resources */,
 				7C1678951F70CF5500DEFA10 /* medicalInfoCell.xib in Resources */,
+				C4B5BC2F20A9481D0019F828 /* NoInternet.storyboard in Resources */,
 				7C3CE19B1F53C8AD00D1648E /* Roboto-Light.ttf in Resources */,
 				CA89076E202585EB008D8D94 /* referrals-icn.png in Resources */,
 				CA14A184203AAB6300F67B10 /* icn-coupon-referral@2x.png in Resources */,
@@ -2963,7 +2951,6 @@
 				CAA795691F908A3C00AD1826 /* Default-iPhone6.png in Resources */,
 				7C74147B1F6D395400E0107B /* card-num-icon.png in Resources */,
 				CAA35A0C1F8D34D200BA7A43 /* medi-icon.png in Resources */,
-				CA1334F71F5AEAEE00FCF93E /* blog-icon.png in Resources */,
 				CAD239BC201851CB00316438 /* dashboard-doctor-bg.png in Resources */,
 				CAF4F7D81F888E9B00996FB3 /* ERXtableviewcell.xib in Resources */,
 				CADB3A031FE386A500F9F385 /* Overlay.png in Resources */,
@@ -2982,7 +2969,6 @@
 				CA9787E91F972DA8009C2443 /* P-calling-icon.png in Resources */,
 				CA179BD51F83393700EFABA6 /* payment-invoice-icn.png in Resources */,
 				CA77D55920171587008FC656 /* mute-off.png in Resources */,
-				CA79340820A407C100DFA9A6 /* NoInternet.storyboard in Resources */,
 				7C3CE1951F53C8AD00D1648E /* Apache License.txt in Resources */,
 				CAA35A0D1F8D34D200BA7A43 /* Quantity-icon.png in Resources */,
 				CAF4F7EB1F88908000996FB3 /* Payment-fail-icon.png in Resources */,
@@ -3036,7 +3022,6 @@
 				CA79340F20A40EC500DFA9A6 /* iPad.storyboard in Resources */,
 				CAD824AC20514A3700743A7B /* steper6.png in Resources */,
 				CA4380CE200F74CD00A5128B /* selected.png in Resources */,
-				CA1334FA1F5AEAEE00FCF93E /* home-icon.png in Resources */,
 				7C94DF3B1F6FA2670087DE20 /* height-icon.png in Resources */,
 				7C7414831F6D395400E0107B /* radio-active.png in Resources */,
 				7CAECE8D1F52A3970086B736 /* Icn-uncheck.png in Resources */,
@@ -3070,7 +3055,6 @@
 				CA9670B7204A80CA000A3C73 /* Blood-Glucose.png in Resources */,
 				CAD824AD20514A3700743A7B /* steper7.png in Resources */,
 				7C16789B1F71332900DEFA10 /* CreditcardType.json in Resources */,
-				CAF4F7FA1F8890A200996FB3 /* logout-icon.png in Resources */,
 				7C94DF3A1F6FA2670087DE20 /* blood-group-icon.png in Resources */,
 				CA4380D0200F74CD00A5128B /* unselected.png in Resources */,
 				7C7414801F6D395400E0107B /* expiry-date-icon.png in Resources */,
@@ -3100,7 +3084,6 @@
 				7C3CE1A31F53C8AD00D1648E /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				CA9D9A2D1F8B71C400A1834C /* smile-1.png in Resources */,
 				CAA7956C1F908A3C00AD1826 /* Default-Portrait~ipad.png in Resources */,
-				CA1334F81F5AEAEE00FCF93E /* contact-icon.png in Resources */,
 				CA7933FB209B28DB00DFA9A6 /* star.png in Resources */,
 				CA4380E92010989F00A5128B /* top-profile-bg.png in Resources */,
 				7CAECEC61F52E6EA0086B736 /* Roboto-Bold.ttf in Resources */,
@@ -3109,7 +3092,6 @@
 				CAF4F7F21F88909600996FB3 /* appleiphone.mp3 in Resources */,
 				CA6B744E1F5DD03D0068B760 /* invoiceCell.xib in Resources */,
 				7CAECE921F52A3970086B736 /* Signin-10-pin.png in Resources */,
-				CA1334F91F5AEAEE00FCF93E /* faq-icon.png in Resources */,
 				CAD171CB1F8227410034A2B4 /* PrescriptionXIBCell.xib in Resources */,
 				CA179BDE1F8340E500EFABA6 /* slotsType.json in Resources */,
 				CA8907752026DCDD008D8D94 /* Referral.png in Resources */,
@@ -3173,7 +3155,6 @@
 				CAD824A720514A3700743A7B /* steper1.png in Resources */,
 				CAD171E41F823E5B0034A2B4 /* view-document-2.png in Resources */,
 				CA79341320A422B100DFA9A6 /* no-internet.png in Resources */,
-				CA1334FB1F5AEAEE00FCF93E /* how-it-works.png in Resources */,
 				CAA71C6A205CFDF40044C3BB /* SO.png in Resources */,
 				CA7FC1B71FE9313400E120F4 /* inr.png in Resources */,
 				CA6B742F1F5C88AB0068B760 /* Signin-D-Uni.png in Resources */,
@@ -3184,7 +3165,6 @@
 				7CEBF3991F55416400713584 /* cities.json in Resources */,
 				CAF4F7E71F88908000996FB3 /* call-interrupted-icon.png in Resources */,
 				CAA71C68205CFDF30044C3BB /* BA.png in Resources */,
-				CA4380F72010BE9B00A5128B /* edit-profile-icon.png in Resources */,
 				7CAECEC41F52E6EA0086B736 /* Roboto-Black.ttf in Resources */,
 				7CAECECA1F52E6EA0086B736 /* Roboto-LightItalic.ttf in Resources */,
 				CA1334ED1F5AEA9600FCF93E /* sidePanel.json in Resources */,
@@ -3243,66 +3223,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		259D0D2771018E1C70332AFF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctorUITests/Pods-iOnlineDoctorUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3D40A861F006BE6DF5F09C67 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C2EB4971E39AC95CD4F75A4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctorTests/Pods-iOnlineDoctorTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D4B994A20FD7265DCFF3B50 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		797CB88996F91C0E1E58A7E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3319,36 +3239,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FC84A54A7F5742BCDA3C353 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctorUITests/Pods-iOnlineDoctorUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A0B17D684CFE5763EC40F10D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctorTests/Pods-iOnlineDoctorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A16606E3EA5E0A59BA05C229 /* [CP] Check Pods Manifest.lock */ = {
@@ -3669,10 +3559,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		CA79340620A407C100DFA9A6 /* NoInternet.storyboard */ = {
+		C4B5BC2D20A9481C0019F828 /* NoInternet.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CA79340720A407C100DFA9A6 /* Base */,
+				C4B5BC2E20A9481C0019F828 /* Base */,
 			);
 			name = NoInternet.storyboard;
 			sourceTree = "<group>";
@@ -3975,7 +3865,7 @@
 		};
 		CAD9F5DD1FB2CD5A00F82D72 /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DEE25BDC365D59C9827792D /* Pods-iOnlineDoctor.release.xcconfig */;
+			baseConfigurationReference = 69444560B4E9D83E53C36E00 /* Pods-iOnlineDoctor.adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOnlineDoctor/iOnlineDoctor.entitlements;
@@ -4011,7 +3901,7 @@
 		};
 		CAD9F5DE1FB2CD5A00F82D72 /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52CC60D3AD5DAAE301E5F920 /* Pods-iOnlineDoctorTests.release.xcconfig */;
+			baseConfigurationReference = 5A3A04C42CC5EBFE2AB87282 /* Pods-iOnlineDoctorTests.adhoc.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = iOnlineDoctorTests/Info.plist;
@@ -4024,7 +3914,7 @@
 		};
 		CAD9F5DF1FB2CD5A00F82D72 /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DA5A4BFD0D528BF8BAED523 /* Pods-iOnlineDoctorUITests.release.xcconfig */;
+			baseConfigurationReference = 5CD591F8D53BE3B09E6A91D0 /* Pods-iOnlineDoctorUITests.adhoc.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = iOnlineDoctorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

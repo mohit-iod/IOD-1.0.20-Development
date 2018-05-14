@@ -677,8 +677,8 @@
 
 
 -(void)setPageController {
-  //  SymptomsViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"SymptomsViewController"];
-    SelectPatientViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"];
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+    SelectPatientViewController *svc = [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"];
     [self.navigationController pushViewController:svc animated:YES];
 }
 

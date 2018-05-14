@@ -74,6 +74,7 @@
     }];
     
     
+    
     self.constraintTreatment.constant=_txtTreatment.contentSize.height+20;
     self.constraintDiagnose.constant=_ttDiagnose.contentSize.height+20;
     
@@ -237,8 +238,8 @@
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    // return CGSizeMake(collectionView.frame.size.width/4.1,collectionView.frame.size.height/4.1);
-    return CGSizeMake(collectionView.frame.size.width,collectionView.frame.size.height);
+    return CGSizeMake(collectionView.frame.size.width,collectionView.frame.size.height
+                      );
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -247,22 +248,22 @@
     
     
     UIImageView *imgHont = [[UIImageView alloc] init];
-    imgHont.image = [UIImage imageNamed:@"Qus-icon"];
+    imgHont.image = [UIImage imageNamed:@""];
     imgHont.frame = CGRectMake(10, 10, 25,25);
     
     UILabel *lblTitle = [[UILabel alloc] init];
-    lblTitle.frame = CGRectMake(40, 15, cell.frame.size.width-20, 20);
+    lblTitle.frame = CGRectMake(10, 10, cell.frame.size.width-20, 20);
     lblTitle.text = [NSString stringWithFormat:@"%@",[[arrQnadA objectAtIndex:indexPath.item] valueForKey:@"question"]];
     [cell.contentView addSubview:lblTitle];
     
     
     UIImageView *imgLine = [[UIImageView alloc] init];
     imgLine.backgroundColor = [UIColor colorWithHexRGB:kBorderColor];
-    imgLine.frame = CGRectMake(0, 45,cell.frame.size.width ,1);
+    imgLine.frame = CGRectMake(0, 20,cell.frame.size.width ,1);
 
 
     UITextView *txtv = [[UITextView alloc] init];
-    txtv.frame = CGRectMake(10, 50, cell.frame.size.width, cell.frame.size.height-60);
+    txtv.frame = CGRectMake(10, 30, cell.frame.size.width, cell.frame.size.height-40);
     
     if([lblTitle.text isEqualToString:@"Allergies"])
     {
@@ -369,7 +370,7 @@
     
     [cell.contentView addSubview:lblTitle];
    // [cell.contentView addSubview:imgHont];
-    [cell.contentView addSubview:imgLine];
+   // [cell.contentView addSubview:imgLine];
 
     [cell.layer setCornerRadius:5.0];
     [cell.layer setBorderWidth:1];
