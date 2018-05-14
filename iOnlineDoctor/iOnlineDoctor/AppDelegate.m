@@ -498,9 +498,9 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
         //if Internet is available dismiss No Internet View
         if(!isInternetAvailable){
             NSLog(@"Reachable");
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshView" object:nil];
-            [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissViewControllerAnimated:YES completion:nil];
-            isInternetAvailable = YES;
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshView" object:nil];
+                [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissViewControllerAnimated:YES completion:nil];
+                isInternetAvailable = YES;
         }
     }
     else {

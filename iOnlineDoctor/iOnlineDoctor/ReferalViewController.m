@@ -24,13 +24,9 @@
     
     self.title = @"Code Share";
     _lblReferalCode.text = referalCode;
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - IBAction Methods
 
 -(IBAction)btnSharePressed:(id)sender {
     
@@ -46,13 +42,16 @@
             [self presentViewController:activityViewController animated:YES completion:nil];
         });
     }
-    else
-    {
-        NSLog(@"iPhone");
+    else{
         [self presentViewController:activityViewController
                            animated:YES
                          completion:nil];
     }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*
