@@ -26,7 +26,8 @@
     [super viewDidLoad];
     // Set the title for navigation bar.
     self.title = @"Medical Info";
-    hvc =  [self.storyboard instantiateViewControllerWithIdentifier:@"UploadDocumentsViewController"];
+    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    hvc =  [mainSB instantiateViewControllerWithIdentifier:@"UploadDocumentsViewController"];
     patientService = [PatientAppointService sharedManager];
   
     //set the UI for

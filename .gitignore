@@ -19,3 +19,6 @@ iOnlineDoctor/Pods/OpenTok/OpenTok.framework/OpenTok
 iOnlineDoctor/Pods/OpenTok/OpenTok.framework/PrivateHeaders/OTNetworkDeviceManagement.h
 iOnlineDoctor/Pods/OpenTok/OpenTok.framework/PrivateHeaders/OTNetworkReachabilityMonitor.h
 iOnlineDoctor/Pods/OpenTok/README.md
+iOnlineDoctor/.DS_Store
+iOnlineDoctor/.DS_Store
+*.xcbkptlist

@@ -21,7 +21,6 @@
 #import "PaymentViewController.h"
 #import "SymptomsViewController.h"
 #import "SelectPatientViewController.h"
-#import "Message+Constant.h"
 
 @interface BookAppointmentVC ()<FSCalendarDataSource,FSCalendarDelegate,FSCalendarDelegateAppearance>
 {
@@ -678,8 +677,8 @@
 
 
 -(void)setPageController {
-  //  SymptomsViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"SymptomsViewController"];
-    SelectPatientViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"];
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+    SelectPatientViewController *svc = [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"];
     [self.navigationController pushViewController:svc animated:YES];
 }
 

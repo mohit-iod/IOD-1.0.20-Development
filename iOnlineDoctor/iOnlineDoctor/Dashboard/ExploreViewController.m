@@ -18,27 +18,23 @@
 #include "ContactUsViewController.h"
 #include "BlogsViewController.h"
 #import "ReferalViewController.h"
-#import "ExploreCell.h"
 
 @interface ExploreViewController ()<UITableViewDataSource,UITableViewDataSource>
+
 {
     NSMutableArray *arrListMenu;
     FileViewController *fileViewMe ;
     NSDictionary *dictData;
     NSString *strProfile;
     NSString *fileName;
+    
 }
 @end
 
 @implementation ExploreViewController
 
-#pragma mark - View Controller Methods
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UINib *nib = [UINib nibWithNibName:@"ExploreCell" bundle:[NSBundle mainBundle]];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"exploreCell"];
     
     [self.navigationController setNavigationBarHidden:FALSE animated:FALSE];
     if([_userType isEqualToString:@"patient"]){
@@ -65,7 +61,20 @@
     arrListMenu = [dictSidePanel valueForKey:@"sidePanel"];
     NSIndexPath *ip=[NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView selectRowAtIndexPath:ip animated:YES scrollPosition:UITableViewScrollPositionBottom];
+    
+    self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.opaque = NO;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorColor = [UIColor clearColor];
+    self.tableView.backgroundColor = [[UIColor colorWithHexRGB:@"#2e323e"] colorWithAlphaComponent:1.0];
+    self.tableView.tableHeaderView = ({
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 60.0f)];
+        view;
+    });
 }
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [self getUserPrfile];
@@ -77,12 +86,12 @@
     [_imgProfile.layer setBorderColor:[UIColor whiteColor].CGColor];
 }
 
-#pragma mark - UITableView Datasource & Delegate Methods
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex{
-    return 0;
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
+#pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.backgroundColor = [UIColor clearColor];
@@ -100,71 +109,39 @@
     cell.alpha = 1;
     cell.layer.shadowOffset = CGSizeMake(0, 0);
     [UIView commitAnimations];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.01f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.row ==  arrListMenu.count){
-        return 40;
-    }
-    else {
-        return 54;
-    }
-    return 40;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
-{
-    return arrListMenu.count+1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ExploreCell * expell = [tableView dequeueReusableCellWithIdentifier:@"exploreCell"];
-    expell.lblText.tintColor=[UIColor blackColor];
     
-    if(indexPath.row == arrListMenu.count){
-        expell.lblText.text = kversion;
-        expell.imgView.image = nil;
-        expell.backgroundColor = [UIColor colorWithHexRGB:kNavigatinBarColor];
-        expell.lblText.textColor = [UIColor whiteColor];
-        [expell.contentView setBackgroundColor:[UIColor colorWithHexRGB:kNavigatinBarColor]];
-        
-    }
-    else{
-        [expell.contentView setBackgroundColor:[UIColor clearColor]];
-        expell.lblText.text =   [[arrListMenu objectAtIndex:indexPath.row] valueForKey:@"Title"];
-        expell.lblText.textColor =[UIColor grayColor];
-        expell.selectionStyle=UITableViewCellSelectionStyleGray;
-        expell.imgView.image = [UIImage imageNamed:[[arrListMenu objectAtIndex:indexPath.row] valueForKey:@"imageName"]];
-        expell.selectionStyle = UITableViewCellSelectionStyleNone;
-        expell.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-        expell.selectedBackgroundView.backgroundColor = [UIColor redColor];
-    }
-    return expell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex
+{
+    return 0;
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     if( indexPath.row == 0)
-        [self homePressed]; //Home
+        //Home
+        [self homePressed];
     
     else  if( indexPath.row == 1)
-        [self myProfile]; //Profile
+        //Profile
+        [self myProfile];
+    
     
     else if( indexPath.row == 2)
-        [self shareReferal]; // Share Referal
+        [self shareReferal];
+    
     
     else if( indexPath.row == 3)
-        [self Faq]; // FAQ
+        //faq
+        [self Faq];
     
     else if(indexPath.row == 4)
-        [self Blogs]; // Blogs
+        //blogs
+        [self Blogs];
+    
     
     else if( indexPath.row == 5){
         //share
@@ -185,39 +162,163 @@
                 [self presentViewController:activityViewController animated:YES completion:nil];
             });
         }
-        else{
+        else
+        {
+            NSLog(@"iPhone");
             [self presentViewController:activityViewController
                                animated:YES
                              completion:nil];
         }
     }else if( indexPath.row == 6)
-        [self whatWeTreat]; // Services
+        // how it works
+        [self whatWeTreat];
     
     else if( indexPath.row == 7)
-        [self HowItWorks]; // How it works
+        //terms and condition
+        [self HowItWorks];
     
     else if( indexPath.row == 8)
-        [self Terms]; // Terms and Conditions
+        //Contact us
+        [self Terms];
     
     else if( indexPath.row == 9)
-        [self ContactUs]; // Contact us
+        //Contact us
+        [self ContactUs];
     
     else if(indexPath.row == 10)
-        [self logOut]; // Logout
+        [self logOut];
 }
 
-#pragma mark - Eplore Click Methods
 
+
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    if( indexPath.row == 0)
+//        //Home
+//        [self homePressed];
+//    
+//    else  if( indexPath.row == 1)
+//        //Profile
+//        [self myProfile];
+//        
+//    
+//    else if( indexPath.row == 2)
+//        [self shareReferal];
+//    
+//    
+//    else if( indexPath.row == 3)
+//        //faq
+//        [self Faq];
+//    
+//    else if(indexPath.row == 4)
+//        //blogs
+//        [self Blogs];
+//        
+//    
+//    else if( indexPath.row == 5)
+//        //share
+//        [self Share];
+//      
+//     else if( indexPath.row == 6)
+//        // how it works
+//         [self whatWeTreat];
+//    
+//    else if( indexPath.row == 7)
+//        //terms and condition
+//        [self HowItWorks];
+//        
+//    else if( indexPath.row == 8)
+//        //Contact us
+//        [self Terms];
+//    
+//    else if( indexPath.row == 9)
+//        //Contact us
+//        [self ContactUs];
+//    
+//    else
+//        [self logOut];
+//    
+//}
+
+#pragma mark -
+#pragma mark UITableView Datasource
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.01f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row ==  arrListMenu.count){
+        return 40;
+    }
+    else {
+        return 54;
+    }
+    return 40;
+  }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
+{
+    return arrListMenu.count+1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    cell.textLabel.tintColor=[UIColor blackColor];
+
+    if(indexPath.row == arrListMenu.count){
+        cell.textLabel.text = kversion;
+        cell.imageView.image = nil;
+        cell.backgroundColor = [UIColor colorWithHexRGB:kNavigatinBarColor];
+        cell.textLabel.textColor = [UIColor whiteColor];
+        [cell.contentView setBackgroundColor:[UIColor colorWithHexRGB:kNavigatinBarColor]];
+
+    }
+    else{
+        
+        [cell.contentView setBackgroundColor:[UIColor clearColor]];
+        cell.textLabel.text =   [[arrListMenu objectAtIndex:indexPath.row] valueForKey:@"Title"];
+        cell.textLabel.textColor =[UIColor grayColor];
+        cell.selectionStyle=UITableViewCellSelectionStyleGray;
+        cell.imageView.image= [UIImage imageNamed:[[arrListMenu objectAtIndex:indexPath.row] valueForKey:@"imageName"]];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+        cell.selectedBackgroundView.backgroundColor = [UIColor redColor];
+    }
+
+    return cell;
+}
+
+#pragma mark - Click Events
+
+
+//Click on Edit Profile button
 -(IBAction)editImgClicked:(id)sender{
-    //Edit Profile
     UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarEdit"];
     [self.navigationController pushViewController:viewTab animated:YES];
 }
 
+
+//Click on logout button
 -(void)logout {
-    //Logout
     
-    //NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     // [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
     [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
@@ -246,19 +347,18 @@
     }];
 }
 
+
 -(void)homePressed{
-    // Home
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+
 -(void)myProfile{
-    // My Profile
     UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarEdit"];
     [self.navigationController pushViewController:viewTab animated:YES];
 }
 
 -(void)Faq{
-    //FAQ
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewController"];
     
@@ -268,14 +368,12 @@
 }
 
 -(void)Blogs{
-    //Blogs
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *blogsView=[sb instantiateViewControllerWithIdentifier:@"BlogsViewController"];
     [self.navigationController pushViewController:blogsView animated:YES];
 }
 
 -(void)Share{
-    //Share
     NSString *url=@"https://itunes.apple.com/us/app/i-online-doc/id1299763701?ls=1&mt=8";
     NSString * title =[NSString stringWithFormat:@"I am excited to share %@ link for I Online Doctor Mobile App. Download and Video Call Doctor from your Mobile!",url];
     
@@ -286,7 +384,6 @@
 }
 
 -(void)whatWeTreat{
-    //Services
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewController"];
     fileViewMe.strFilePath = kWhatWeTreat;
@@ -295,7 +392,6 @@
 }
 
 -(void)HowItWorks{
-    //How it works
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewController"];
     fileViewMe.strFilePath= kHowItWorks;
@@ -304,7 +400,6 @@
 }
 
 -(void)Terms{
-    //Terms and Conditions
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewController"];
     fileViewMe.strFilePath= kTermsLink;
@@ -313,14 +408,12 @@
 }
 
 -(void)ContactUs{
-    //Contact us
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ContactUsViewController *contactUs  = [sb instantiateViewControllerWithIdentifier:@"ContactUsViewController"];
     [self.navigationController pushViewController:contactUs animated:YES];
 }
 
 -(void)logOut{
-    //Logout Alert Dialouge
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:kLogoutMessage message:@"" preferredStyle:UIAlertControllerStyleAlert];
     //We add buttons to the alert controller by creating UIAlertActions:
     UIAlertAction *yesPressed = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -341,14 +434,12 @@
 }
 
 -(void)shareReferal{
-    //Share Referal
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ReferalViewController *referral  = [sb instantiateViewControllerWithIdentifier:@"ReferalViewController"];
     [self.navigationController pushViewController:referral animated:YES];
 }
 
--(void)getUserPrfile{
-    //Get User Profile
+- (void) getUserPrfile{
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
      [MBProgressHUD showHUDAddedTo:_imgProfile animated:YES];
     [service getUserProfile:^(NSDictionary *responseCode, NSError *error) {
@@ -364,9 +455,5 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

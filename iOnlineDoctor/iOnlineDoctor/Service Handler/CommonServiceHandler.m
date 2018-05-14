@@ -358,6 +358,7 @@
 -(void)getAllDoctorCategories:(NSDictionary *)parameter andVisitID:(NSString *)visitId WithCompletionBlock:(callBackBlock)completionBlock{
     NSString *category = [parameter valueForKey:@"categoryId"];
     NSString *url = [NSString stringWithFormat:@"%@%@/%@", [AppSettings cmsUrl],kgetAllDoctorCategoryList,visitId];
+   
     [self getDataWithUrl:url requestType:get requestParameters:nil requestHeaders:nil withDataType:nil success:^(id response, BaseServiceHandler *context) {
         completionBlock(response,nil);
     } failure:^(NSError *error, BaseServiceHandler *context) {

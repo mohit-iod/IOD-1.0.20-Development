@@ -19,7 +19,6 @@
 #import "IODUtils.h"
 #import "UIColor+HexString.h"
 #import "UIViewController+Extra.h"
-#import "Message+Constant.h"
 #endif
 
 // Include any system framework and library headers here that should be included in all compilation units.

@@ -29,9 +29,6 @@
 -(void)backPop{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-#pragma mark - View Controller Methods
-
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
 
@@ -63,7 +60,11 @@
  
 }
 
-#pragma mark - UITextfield Delegate Methods
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
@@ -131,8 +132,9 @@
     return YES;
 }
 
-#pragma mark - StringPickerView Delegate
 
+
+#pragma mark - StringPickerViewDelegate
 - (void)stringPickerViewDidSelectDone:(StringPickerView *)view
 {
     if( [self.pickerView.refernceView isKindOfClass:[UITextField class]] )
@@ -156,8 +158,6 @@
     [self.pickerView removeFromSuperview];
     self.pickerView = nil;
 }
-
-#pragma mark - IBAction Methods
 
 -(IBAction)submit:(id)sender {
     
@@ -210,9 +210,22 @@
     }
     return [UILabel new];
 }
+/*
+ 
+ @property (weak, nonatomic) IBOutlet UITextField *txtAcNumber;
+ @property (weak, nonatomic) IBOutlet UITextField *txtAcType;
+ 
+ @property (weak, nonatomic) IBOutlet UITextField *txtAcName;
+ @property (weak, nonatomic) IBOutlet UITextField *txtAcHolderAddress;
+ @property (weak, nonatomic) IBOutlet UITextField *txtAcCode;
+ 
+ @property (weak, nonatomic) IBOutlet UITextField *txtIban;
+ @property (weak, nonatomic) IBOutlet UITextField *txtBankName;
+ @property (weak, nonatomic) IBOutlet UITextField *txtBankAdress;
+ @property (weak, nonatomic) IBOutlet UITextField *txtBankAcNumber;
 
-#pragma mark - Void Methods
-
+ 
+ */
 - (void)nextScreen {
 //    else {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -281,13 +294,13 @@
 
 
 // Mohit
-#pragma mark - RefreshView Methods If Internet Connection Lost
 
 -(void)refreshView:(NSNotification *) notification {
    [self getAllBAnkDetails];
 }
 
--(void)viewDidUnload{
+-(void)viewDidUnload
+{
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"RefreshView" object:nil];
 }
 

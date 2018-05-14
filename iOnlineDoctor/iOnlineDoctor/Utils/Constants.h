@@ -182,6 +182,8 @@
 #define kappointment_slot_id @"appointment_slot_id"
 #define ktime_slot_id @"time_slot_id"
 
+
+
 //Mohit
 #define kBadgeCount @"/patient-appoitment/get-unread-count"
 #define kDoctorMSG @"/patient-appoitment/details/"
@@ -261,6 +263,21 @@
 #define kBookNow @"Book Now"
 
 
+//Messages
+#define kResendEmail @"Please check your email and follow the instructions to verify your account. If you did not receive an email or if it expired, you can resend one."
+#define kAccountVerfied @"Account is not verified."
+#define kTermsConditions @"Terms & Conditions, Privacy Policy"
+#define kMicrophonePermission @"Please ensure your Microphone/Camera are enable in order to receive call"
+#define kLogoutMessage @"Are you sure you want to logout?"
+#define kTimeover @"You are not allowed to call as time limit is over! Please refresh for new data."
+#define kBusy @"Busy with some other work"
+#define kNoConsultation @"No consultation required"
+#define kCancelApptReason @"Reason To Cancel Appointment"
+#define kAskCancelAppointment @"Are you sure you wish to cancel the appointment?"
+#define kChooseReason @"Choose Reason"
+#define kGotoNextPage @"Do you wish to Prescribe Medicine, Lab Work or Sick Leave Note?"
+#define kAgreeTerms @"Please agree to terms and conditions"
+
 //Explore page links
 #define kTermsLink  @"http://www.ionlinedoctor.com/termsandconditionsm"
 #define kFaq @"https://www.ionlinedoctor.com/faqm"
@@ -296,4 +313,5 @@
 #define kLCPricePlaceholderInr @"Price/Consult - Live Call In INR";
 #define kSOPricePlaceholderInr @"Price/Consult - 2nd Opinion In INR"
 
+#define kSecondopinionMessage @"Please choose a date after 1 week (7 days) to book Second opinion Video Consultation to give Doctor sufficient time to review your case."
 #endif /* Constants_h */

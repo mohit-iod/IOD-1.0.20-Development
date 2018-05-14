@@ -41,7 +41,19 @@ static int selectedCityId;
 
 @implementation EditDoctorViewController
 
-#pragma mark - View Controller Methods
+-(void)viewDidLayoutSubviews{
+    _imgProfile.layer.cornerRadius=_imgProfile.frame.size.height/2;
+    [_imgProfile.layer setBorderWidth:2.0];
+    _imgProfile.clipsToBounds = YES;
+    [_imgProfile.layer setBorderColor:[UIColor whiteColor].CGColor];
+    _imgProfile.layer.masksToBounds=YES;
+}
+-(void)backPop{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(IBAction)changeImage:(id)sender {
+    [self editImgClicked:sender];
+}
 
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
@@ -57,6 +69,7 @@ static int selectedCityId;
     }else {
         //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
     }
+    
     
     NSDictionary *dictData;
     NSString *strProfile;
@@ -85,28 +98,15 @@ static int selectedCityId;
     // Do any additional setup after loading the view.
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    self.tabBarController.title =@"My Profile";
-    // [_dea setHidden:YES];
-    // [_state setHidden:YES];
-}
 
 -(void)setPlaceHolder{
     
 }
 
-#pragma mark - Void Methods
-
--(void)viewDidLayoutSubviews{
-    _imgProfile.layer.cornerRadius=_imgProfile.frame.size.height/2;
-    [_imgProfile.layer setBorderWidth:2.0];
-    _imgProfile.clipsToBounds = YES;
-    [_imgProfile.layer setBorderColor:[UIColor whiteColor].CGColor];
-    _imgProfile.layer.masksToBounds=YES;
-}
-
--(void)backPop{
-    [self.navigationController popViewControllerAnimated:YES];
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.title =@"My Profile";
+    // [_dea setHidden:YES];
+    // [_state setHidden:YES];
 }
 
 - (void) getUserPrfile{
@@ -197,190 +197,17 @@ static int selectedCityId;
     }];
 }
 
--(void)saveImage{
-    NSData *imageData = UIImageJPEGRepresentation(_imgProfile.image, 0.2);
-    // UDSet(@"propic", [NSKeyedArchiver archivedDataWithRootObject:_imgProfile.image]);
-    NSArray *arrimage = [[NSArray alloc] initWithObjects:imageData, nil];
-    NSArray *arrimageNames = [[NSArray alloc] initWithObjects:@"profile_pic", nil];
-    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
-    [service editProfilePicture:nil andImageName:arrimage andImages:arrimageNames WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-        //   NSLog(@"Response");
-    }];
-}
-
-- (void)updateLabel {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy"];
-    NSString *dateStr = [df stringFromDate:yearPicker.date];
-    _txtQualificationyear.text = [NSString stringWithFormat:@"%@", dateStr];
-}
-
-- (void)takePhoto{
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:picker animated:YES completion:NULL];
-}
-
-- (void)selectPhoto {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:picker animated:YES completion:NULL];
-}
-
-#pragma mark -- API Calls
--(void)getAllStatesWith:(int)countryId {
-    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-    BOOL reachable = reach. isReachable;
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    if (reachable){
-        if (countryId > 0) {
-            CommonServiceHandler *service = [[CommonServiceHandler alloc]init];
-            NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:countryId] ,@"country_id", nil];
-            selectedCountryId = countryId;
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [service getAllStatesgetDataWith:parameter WithCompletionBlock:^(NSArray *state, NSError *error) {
-                arrStateList = state;
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            }];
-        }
-    }
-    else {
-        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-        _txtCountry.text =@"";
-        _txtState.text = @"";
-        _txtCity.text = @"";
-    }
-}
-
--(void)getAllCitieWith:(int)stateId {
-    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-    BOOL reachable = reach. isReachable;
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    if (reachable){
-        CommonServiceHandler *service = [[CommonServiceHandler alloc]init];
-        NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:stateId] ,@"state_id", nil];
-        selectedStateId = stateId;
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [service getAllCityDataWith:parameter WithCompletionBlock:^(NSArray *state, NSError *error) {
-            //NSLog(@"States %@",state.class);
-            arrcityList = state;
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }];
-    }
-    else {
-        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-        _txtCountry.text = @"";
-        _txtCity.text = @"";
-        _txtState.text = @"";
-    }
-}
-
--(void)editProfile{
-    NSData *imageData = UIImageJPEGRepresentation(_imgProfile.image, 0.2);
-    NSArray *arrimage = [[NSArray alloc] initWithObjects:imageData, nil];
-    NSArray *arrimageNames = [[NSArray alloc] initWithObjects:@"profile_pic", nil];
-    
-    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    NSDate *orignalDate   =  [dateFormatter dateFromString:_txtDOB.text];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *strDob = [dateFormatter stringFromDate:orignalDate];
-    
-    NSMutableDictionary *parameter =[[NSMutableDictionary alloc] init];
-    int gender = [IODUtils getGenderId:_txtgender.text];
-    if(_txtgender.text.length >0){
-        [parameter setObject:[NSNumber numberWithInt:gender] forKey:@"gender"];
-    }
-    else{
-    }
-    [parameter setObject:_txtFullName.text forKey:@"name"];
-    // [parameter setObject:[NSNumber numberWithInt:gender] forKey:@"gender"];
-    [parameter setObject:_txtEmail.text forKey:@"email"];
-    [parameter setObject:_txtMobile.text forKey:@"mobile"];
-    [parameter setObject:_txtPinCode.text forKey:@"pincode"];
-    [parameter setObject:_txtViewAdress.text forKey:@"address"];
-    [parameter setObject:strDob forKey:@"dob"];
-    [parameter setObject:_txtQualificationyear.text forKey:@"qualification_year"];
-    [parameter setObject:_txtDea.text forKey:@"dea_no"];
-    [parameter setObject:_txtExperince.text forKey:@"experience"];
-    [parameter setObject:_txtUnitversity.text forKey:@"university"];
-    [parameter setObject:specializationList forKey:@"specialization_id"];
-    [parameter setObject:_txtHighestQualificaion.text forKey:@"qualification"];
-    [parameter setObject:_txtregistration.text forKey:@"registration_no_npi_no"];
-    [parameter setObject:_txtLanguageKnown.text forKey:@"language"];
-    [parameter setObject:_txtAdditionalQualification.text forKey:@"additional_qualification"];
-    [parameter setObject:[NSNumber numberWithInt:selectedCountryId] forKey:@"country"];
-    [parameter setObject:[NSNumber numberWithInt:selectedStateId] forKey:@"state"];
-    
-    if(_txtCity.text.length > 0){
-        [parameter setObject:[NSNumber numberWithInt:selectedCityId] forKey:@"city"];
-    }
-    
-    [parameter setObject:strDob forKey:@"dob"];
-    [parameter setObject:_txtViewAboutMe.text forKey:@"about_me"];
-    
-    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [service editDoctorProfile:parameter andImageName:arrimageNames andImages:arrimage WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-        
-        //NSLog(@"response code");
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        // if([[responseCode valueForKey:@"status"] isEqualToString:@"success"])
-        
-        {
-            [self.navigationController popViewControllerAnimated:YES];
-            //
-            [IODUtils showFCAlertMessage:[responseCode valueForKey:@"message"] withTitle:@"" withViewController:self with:@"error"];
-            
-            UDSet(@"propicdoc", [NSKeyedArchiver archivedDataWithRootObject:_imgProfile.image]);
-            
-            NSString *strname = _txtFullName.text;
-            NSString *strCountry = _txtCountry.text;
-            NSString *strState = [NSString stringWithFormat:@"%@,", _txtState.text ];
-            NSString *strCity =_txtCity.text;
-            
-            if([strCity isEqualToString:@""]){
-                strCity = @"";
-            }
-            else{
-                strCity = [NSString stringWithFormat:@"%@, ", strCity];
-            }
-            
-            if([strState isEqualToString:@""]){
-                strState = @"";
-            }
-            else{
-                strState = [NSString stringWithFormat:@"%@, ", strState];
-            }
-            
-            NSString *strAddress = [NSString stringWithFormat:@"%@%@%@",strCity,strState,strCountry];
-            strAddress = [strAddress stringByReplacingOccurrencesOfString:@",," withString:@","];
-            UDSet(@"userinfodoc", ([NSKeyedArchiver archivedDataWithRootObject:@{@"name":strname,@"address":strAddress}]));
-            
-        }
-    }];
-}
-
 #pragma mark - Date Picker
-
 -(void)onDoneButtonYearPicker
 {
     [self updateLabel];
     [self.txtQualificationyear resignFirstResponder];
 }
-
 -(void)onCancelButtonYearPicker {
     [self.txtQualificationyear resignFirstResponder];
     [_datePickerView removeFromSuperview];
 }
-
-#pragma mark -  Year Picker
+#pragma mark Year Picker
 // Initialize the picker
 - (void) setYearPicker {
     yearPicker = [[NTMonthYearPicker alloc] init];
@@ -418,9 +245,64 @@ static int selectedCityId;
 - (void)onDatePicked:(UITapGestureRecognizer *)gestureRecognizer {
     [self updateLabel];
 }
+- (void)updateLabel {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy"];
+    NSString *dateStr = [df stringFromDate:yearPicker.date];
+    _txtQualificationyear.text = [NSString stringWithFormat:@"%@", dateStr];
+}
 
-#pragma mark - UITextfield Delegate Methods
+#pragma mark -- API Calls
+-(void)getAllStatesWith:(int)countryId {
+    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+    BOOL reachable = reach. isReachable;
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if (reachable){
+        if (countryId > 0) {
+            CommonServiceHandler *service = [[CommonServiceHandler alloc]init];
+            NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:countryId] ,@"country_id", nil];
+            selectedCountryId = countryId;
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [service getAllStatesgetDataWith:parameter WithCompletionBlock:^(NSArray *state, NSError *error) {
+                arrStateList = state;
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }];
+        }
+    }
+    else {
+        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
+        _txtCountry.text =@"";
+        _txtState.text = @"";
+        _txtCity.text = @"";
+    }
+}
 
+
+-(void)getAllCitieWith:(int)stateId {
+    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+    BOOL reachable = reach. isReachable;
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    if (reachable){
+        CommonServiceHandler *service = [[CommonServiceHandler alloc]init];
+        NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:stateId] ,@"state_id", nil];
+        selectedStateId = stateId;
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [service getAllCityDataWith:parameter WithCompletionBlock:^(NSArray *state, NSError *error) {
+            //NSLog(@"States %@",state.class);
+            arrcityList = state;
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }];
+    }
+    else {
+        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
+        _txtCountry.text = @"";
+        _txtCity.text = @"";
+        _txtState.text = @"";
+    }
+}
+
+#pragma mark Text Field delegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
     if (textField == self.txtgender) {
@@ -704,11 +586,6 @@ static int selectedCityId;
     [_datePickerView removeFromSuperview];
 }
 
-#pragma mark - IBAction Methods
-
--(IBAction)changeImage:(id)sender {
-    [self editImgClicked:sender];
-}
 
 -(IBAction)editImgClicked:(id)sender{
     
@@ -728,103 +605,11 @@ static int selectedCityId;
         popup.tag = 1;
         [popup showInView:self.view];
     }
+    
+    
 }
 
-- (IBAction)btnSubmitPressed:(id)sender{
-    
-    if (![IODUtils getError:self.txtFullName minVlue:@"4" minVlue:@"50" onlyNumeric:nil
-                  onlyChars:YES canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]) {
-    }
-    if (![IODUtils getError:self.txtEmail minVlue:@"4" minVlue:@"50" onlyNumeric:nil
-                  onlyChars:NO canBeEmpty:NO checkEmail:YES minAge:nil maxAge:nil canBeSameDate:nil ]) {
-    }
-    else if(![IODUtils getError:self.txtgender minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]){
-    }
-    else if(![IODUtils getError:self.txtDOB minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:@"18" maxAge:@"110" canBeSameDate:NO ]){
-    }
-    
-    else if(![IODUtils getError:self.txtMobile minVlue:@"10" minVlue:@"10" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if (![IODUtils getError:self.txtCountry minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]) {
-    }
-    
-    else if(![IODUtils getError:self.txtPinCode minVlue:@"5" minVlue:@"6" onlyNumeric:nil onlyChars:nil canBeEmpty:YES checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if(![IODUtils getError:self.txtExperince minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if(![IODUtils getError:self.txtLanguageKnown minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]){
-    }
-    else if(![IODUtils getError:self.txtHighestQualificaion minVlue:@"1" minVlue:@"15" onlyNumeric:NO onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if(![IODUtils getError:self.txtregistration minVlue:@"15" minVlue:nil onlyNumeric:NO onlyChars:NO canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if(![IODUtils getError:self.txtUnitversity minVlue:@"15" minVlue:nil onlyNumeric:NO onlyChars:NO canBeEmpty:YES checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    
-    else if(self.txtViewAboutMe.text.length ==0){
-        UILabel *lab=[IODUtils getErrorLabel:(UITextField *)self.txtViewAboutMe];
-        lab.text=@"About Me cannot be blank";
-        [IODUtils showFCAlertMessage:@"About Me cannot be blank" withTitle:@"" withViewController:self with:@"error"];
-        
-        
-    }
-    else if(self.txtViewAboutMe.text.length > 500){
-        UILabel *lab=[IODUtils getErrorLabel:(UITextField *)self.txtViewAboutMe];
-        lab.text= VALID_ABOUTME;
-        
-    }
-    else if([_txtCountry.text isEqualToString:@"United States"]) {
-        if(![IODUtils getError:self.txtDea minVlue:@"1" minVlue:@"15" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil
-             ]){
-        }else if(![IODUtils getError:self.txtLicenseStates minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-        }
-        else if(![IODUtils getError:self.txtState minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-        }
-        else {
-            Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-            BOOL reachable = reach. isReachable;
-            if (reachable) {
-                
-                if(_txtUnitversity.text.length > 0) {
-                    if(![IODUtils getError:self.txtregistration minVlue:nil minVlue:nil onlyNumeric:NO onlyChars:NO canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-                    }
-                    else{
-                        [self editProfile];
-                    }
-                }
-                else {
-                    [self editProfile];
-                }
-            }
-            else{
-                //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-            }
-        }
-    }
-    else{
-        Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-        BOOL reachable = reach. isReachable;
-        if (reachable) {
-            if(![IODUtils getError:self.txtDOB minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:@"18" maxAge:@"110" canBeSameDate:NO ]){
-            }
-            else if(_txtUnitversity.text.length > 0) {
-                if(![IODUtils getError:self.txtregistration minVlue:nil minVlue:nil onlyNumeric:NO onlyChars:NO canBeEmpty:YES checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-                }
-                else{
-                    [self editProfile];
-                }
-            }
-            else {
-                [self editProfile];
-            }
-        }
-        else{
-            //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-        }
-    }
-}
-
-# pragma mark -  ActionSheet Deleagte.
+# pragma mark Delegates for Action sheet.
 - (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     switch (popup.tag) {
@@ -847,7 +632,21 @@ static int selectedCityId;
 }
 
 
-#pragma mark - ImagePickerController Delegate Methods
+- (void)takePhoto{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void)selectPhoto {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:NULL];
+}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
@@ -862,7 +661,19 @@ static int selectedCityId;
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
-#pragma mark - StringPickerView Delegate
+
+-(void)saveImage{
+    NSData *imageData = UIImageJPEGRepresentation(_imgProfile.image, 0.2);
+    // UDSet(@"propic", [NSKeyedArchiver archivedDataWithRootObject:_imgProfile.image]);
+    NSArray *arrimage = [[NSArray alloc] initWithObjects:imageData, nil];
+    NSArray *arrimageNames = [[NSArray alloc] initWithObjects:@"profile_pic", nil];
+    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
+    [service editProfilePicture:nil andImageName:arrimage andImages:arrimageNames WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
+     //   NSLog(@"Response");
+    }];
+}
+
+#pragma mark - StringPickerViewDelegate
 - (void)stringPickerViewDidSelectDone:(StringPickerView *)view
 {
     if( [self.pickerView.refernceView isKindOfClass:[UITextField class]] )
@@ -943,12 +754,202 @@ static int selectedCityId;
     [self.multiSelect removeFromSuperview];
 }
 
+- (IBAction)btnSubmitPressed:(id)sender{
+    
+    if (![IODUtils getError:self.txtFullName minVlue:@"4" minVlue:@"50" onlyNumeric:nil
+                  onlyChars:YES canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]) {
+    }
+    if (![IODUtils getError:self.txtEmail minVlue:@"4" minVlue:@"50" onlyNumeric:nil
+                  onlyChars:NO canBeEmpty:NO checkEmail:YES minAge:nil maxAge:nil canBeSameDate:nil ]) {
+    }
+    else if(![IODUtils getError:self.txtgender minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]){
+    }
+    else if(![IODUtils getError:self.txtDOB minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:@"18" maxAge:@"110" canBeSameDate:NO ]){
+    }
+    
+    else if(![IODUtils getError:self.txtMobile minVlue:@"10" minVlue:@"10" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if (![IODUtils getError:self.txtCountry minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]) {
+    }
+    
+    else if(![IODUtils getError:self.txtPinCode minVlue:@"5" minVlue:@"6" onlyNumeric:nil onlyChars:nil canBeEmpty:YES checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if(![IODUtils getError:self.txtExperince minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if(![IODUtils getError:self.txtLanguageKnown minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]){
+    }
+    else if(![IODUtils getError:self.txtHighestQualificaion minVlue:@"1" minVlue:@"15" onlyNumeric:NO onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if(![IODUtils getError:self.txtregistration minVlue:@"15" minVlue:nil onlyNumeric:NO onlyChars:NO canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if(![IODUtils getError:self.txtUnitversity minVlue:@"15" minVlue:nil onlyNumeric:NO onlyChars:NO canBeEmpty:YES checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    
+    else if(self.txtViewAboutMe.text.length ==0){
+        UILabel *lab=[IODUtils getErrorLabel:(UITextField *)self.txtViewAboutMe];
+        lab.text=@"About Me cannot be blank";
+        [IODUtils showFCAlertMessage:@"About Me cannot be blank" withTitle:@"" withViewController:self with:@"error"];
+
+        
+    }
+    else if(self.txtViewAboutMe.text.length > 500){
+        UILabel *lab=[IODUtils getErrorLabel:(UITextField *)self.txtViewAboutMe];
+        lab.text= VALID_ABOUTME;
+        
+    }
+    else if([_txtCountry.text isEqualToString:@"United States"]) {
+        if(![IODUtils getError:self.txtDea minVlue:@"1" minVlue:@"15" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil
+             ]){
+        }else if(![IODUtils getError:self.txtLicenseStates minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+        }
+        else if(![IODUtils getError:self.txtState minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+        }
+        else {
+            Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+            BOOL reachable = reach. isReachable;
+            if (reachable) {
+                
+                if(_txtUnitversity.text.length > 0) {
+                    if(![IODUtils getError:self.txtregistration minVlue:nil minVlue:nil onlyNumeric:NO onlyChars:NO canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+                    }
+                    else{
+                        [self editProfile];
+                    }
+                }
+                else {
+                    [self editProfile];
+                }
+            }
+            else{
+                //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
+            }
+        }
+    }
+    else{
+        Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+        BOOL reachable = reach. isReachable;
+        if (reachable) {
+            if(![IODUtils getError:self.txtDOB minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:@"18" maxAge:@"110" canBeSameDate:NO ]){
+            }
+            else if(_txtUnitversity.text.length > 0) {
+                if(![IODUtils getError:self.txtregistration minVlue:nil minVlue:nil onlyNumeric:NO onlyChars:NO canBeEmpty:YES checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+                }
+                else{
+                    [self editProfile];
+                }
+            }
+            else {
+                [self editProfile];
+            }
+        }
+        else{
+            //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
+        }
+    }
+}
+
+-(void)editProfile{
+    NSData *imageData = UIImageJPEGRepresentation(_imgProfile.image, 0.2);
+    NSArray *arrimage = [[NSArray alloc] initWithObjects:imageData, nil];
+    NSArray *arrimageNames = [[NSArray alloc] initWithObjects:@"profile_pic", nil];
+    
+    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    NSDate *orignalDate   =  [dateFormatter dateFromString:_txtDOB.text];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *strDob = [dateFormatter stringFromDate:orignalDate];
+    
+    NSMutableDictionary *parameter =[[NSMutableDictionary alloc] init];
+    int gender = [IODUtils getGenderId:_txtgender.text];
+    if(_txtgender.text.length >0){
+        [parameter setObject:[NSNumber numberWithInt:gender] forKey:@"gender"];
+    }
+    else{
+    }
+    [parameter setObject:_txtFullName.text forKey:@"name"];
+   // [parameter setObject:[NSNumber numberWithInt:gender] forKey:@"gender"];
+    [parameter setObject:_txtEmail.text forKey:@"email"];
+    [parameter setObject:_txtMobile.text forKey:@"mobile"];
+    [parameter setObject:_txtPinCode.text forKey:@"pincode"];
+    [parameter setObject:_txtViewAdress.text forKey:@"address"];
+    [parameter setObject:strDob forKey:@"dob"];
+    [parameter setObject:_txtQualificationyear.text forKey:@"qualification_year"];
+    [parameter setObject:_txtDea.text forKey:@"dea_no"];
+    [parameter setObject:_txtExperince.text forKey:@"experience"];
+    [parameter setObject:_txtUnitversity.text forKey:@"university"];
+    [parameter setObject:specializationList forKey:@"specialization_id"];
+    [parameter setObject:_txtHighestQualificaion.text forKey:@"qualification"];
+    [parameter setObject:_txtregistration.text forKey:@"registration_no_npi_no"];
+    [parameter setObject:_txtLanguageKnown.text forKey:@"language"];
+    [parameter setObject:_txtAdditionalQualification.text forKey:@"additional_qualification"];
+    [parameter setObject:[NSNumber numberWithInt:selectedCountryId] forKey:@"country"];
+    [parameter setObject:[NSNumber numberWithInt:selectedStateId] forKey:@"state"];
+    
+    if(_txtCity.text.length > 0){
+        [parameter setObject:[NSNumber numberWithInt:selectedCityId] forKey:@"city"];
+    }
+    
+    [parameter setObject:strDob forKey:@"dob"];
+    [parameter setObject:_txtViewAboutMe.text forKey:@"about_me"];
+    
+    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [service editDoctorProfile:parameter andImageName:arrimageNames andImages:arrimage WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
+        
+        //NSLog(@"response code");
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+       // if([[responseCode valueForKey:@"status"] isEqualToString:@"success"])
+        
+        {
+            [self.navigationController popViewControllerAnimated:YES];
+            //
+            [IODUtils showFCAlertMessage:[responseCode valueForKey:@"message"] withTitle:@"" withViewController:self with:@"error"];
+
+            UDSet(@"propicdoc", [NSKeyedArchiver archivedDataWithRootObject:_imgProfile.image]);
+            
+            NSString *strname = _txtFullName.text;
+            NSString *strCountry = _txtCountry.text;
+            NSString *strState = [NSString stringWithFormat:@"%@,", _txtState.text ];
+            NSString *strCity =_txtCity.text;
+            
+            if([strCity isEqualToString:@""]){
+                strCity = @"";
+            }
+            else{
+                strCity = [NSString stringWithFormat:@"%@, ", strCity];
+            }
+            
+            if([strState isEqualToString:@""]){
+                strState = @"";
+            }
+            else{
+                strState = [NSString stringWithFormat:@"%@, ", strState];
+            }
+            
+            NSString *strAddress = [NSString stringWithFormat:@"%@%@%@",strCity,strState,strCountry];
+            strAddress = [strAddress stringByReplacingOccurrencesOfString:@",," withString:@","];
+            UDSet(@"userinfodoc", ([NSKeyedArchiver archivedDataWithRootObject:@{@"name":strname,@"address":strAddress}]));
+            
+        }
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - RefreshView Methods If Internet Connection Lost
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
 
 -(void)refreshView:(NSNotification*)notification{
     [self getUserPrfile];

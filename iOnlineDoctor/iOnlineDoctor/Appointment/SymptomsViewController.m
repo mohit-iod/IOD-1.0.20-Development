@@ -34,7 +34,8 @@
     //set the title for the navigation bar.
     self.title = @"Medical Info";
     NSString *strSymptoms = UDGet(@"SelectedSymptoms");
-    hvc =  [self.storyboard instantiateViewControllerWithIdentifier:@"HealthIssueViewController"];
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+    hvc =  [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"HealthIssueViewController"];
 
     // Check if the symptoms are already selected
     if(strSymptoms != nil){

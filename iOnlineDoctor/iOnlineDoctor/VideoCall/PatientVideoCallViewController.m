@@ -311,7 +311,7 @@ static NSString* kApiKey = @"45960372";
     doctorService.isFromVideo = 0;
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
     [service postEndCallData:paramater WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-    patientService.isFromLiveVideoCall = @"yes";
+        patientService.isFromLiveVideoCall = @"yes";
         
         [self.navigationController popViewControllerAnimated:YES];
       //  [self.navigationController popViewControllerAnimated:YES];

@@ -32,7 +32,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5r-2t-iLc">
                                 <rect key="frame" x="0.0" y="69" width="320" height="430"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-t7-3nq">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet.png" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-t7-3nq">
                                         <rect key="frame" x="70" y="20" width="180" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="bmT-Sa-NBg">
@@ -128,7 +128,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="no-internet" width="552" height="462"/>
+        <image name="no-internet.png" width="552" height="462"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

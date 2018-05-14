@@ -538,7 +538,7 @@ streamDestroyed:(OTStream *)stream
         }
         _chatInputTextField.text = @"";
     }
-    [self.view endEditing:YES];
+   // [self.view endEditing:YES];
     [_chatView resignFirstResponder ];
     
     

@@ -18,15 +18,17 @@
 -(void)backPop{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-#pragma mark - View Controller Methods
-
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
 
     [super viewDidLoad];
     self.title = @"Digital Signature";
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -39,9 +41,7 @@
     signatureView.layer.borderColor=[UIColor greenColor].CGColor;
     signatureView.layer.cornerRadius=3;
 }
-
-#pragma mark - IBAction Methods
-
+#pragma mark - Buton Action Events
 - (IBAction)clearImageBtnPressed:(id)sender
 {
     [signatureView clearSignature];
@@ -70,7 +70,6 @@
     }
 }
 
-#pragma mark - Void Methods
 
 -(void)redirectDoctor {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"StoryboardDoctor" bundle:nil];
@@ -113,6 +112,8 @@
         //Your logic
     }
 }
+
+
 
 -(void)saveImage {
     signatureView.layer.borderWidth=0;

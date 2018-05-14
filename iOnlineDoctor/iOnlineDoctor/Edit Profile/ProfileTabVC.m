@@ -14,12 +14,16 @@
 @end
 
 @implementation ProfileTabVC
+
 {
     UIView *vewSelect;
 }
-
-#pragma mark - View Controller Methods
-
+-(void)viewDidLayoutSubviews{
+    self.tabBar.itemPositioning=UITabBarItemPositioningFill;
+}
+-(void)backPop{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
     
@@ -48,16 +52,6 @@
     UITabBarItem *tabItem = [self.tabBar.items objectAtIndex:0];
     [self tabBar:self.tabBar didSelectItem:tabItem];
 }
-
-#pragma mark - Void Methods
-
--(void)viewDidLayoutSubviews{
-    self.tabBar.itemPositioning=UITabBarItemPositioningFill;
-}
--(void)backPop{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     
     NSInteger widthItem=self.tabBar.frame.size.width/[[tabBar items] count];

@@ -37,7 +37,8 @@
     arrAllergies = [[NSMutableArray alloc] init];
     
     patientService = [PatientAppointService sharedManager];
-    avc =  [self.storyboard instantiateViewControllerWithIdentifier:@"HealthConditionViewController"];
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+    avc =  [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"HealthConditionViewController"];
 
     //Bar button
     btnNext = [[UIBarButtonItem alloc] initWithTitle:kSkip style:UIBarButtonItemStyleDone target:self action:@selector(goNextPage:)];

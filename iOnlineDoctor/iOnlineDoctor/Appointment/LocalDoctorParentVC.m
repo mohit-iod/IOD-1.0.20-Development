@@ -26,9 +26,10 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
 
     [super viewDidLoad];
-    
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     pageViewControllerVC *pageVC=[self.storyboard instantiateViewControllerWithIdentifier:@"pageViewControllerVC"];
-    pageVC.arrPageController=@[[self.storyboard instantiateViewControllerWithIdentifier:@"localDoctorTypeVC"],[self.storyboard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"UploadDocumentsViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"paymentViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"searchDoctorVC"]].mutableCopy;
+    pageVC.arrPageController=@[[mainSB instantiateViewControllerWithIdentifier:@"localDoctorTypeVC"],[medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"],[mainSB instantiateViewControllerWithIdentifier:@"UploadDocumentsViewController"],[mainSB instantiateViewControllerWithIdentifier:@"paymentViewController"],[mainSB instantiateViewControllerWithIdentifier:@"searchDoctorVC"]].mutableCopy;
 
     //pageVC.shouldScroll=YES;searchDoctorVC
     [self addChildViewController:pageVC];

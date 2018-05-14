@@ -149,7 +149,7 @@
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 
         [service callToPatientByDoctor:parameter WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-             NSLog(@"Response %@",responseCode);
+            // NSLog(@"Response %@",responseCode);
             if(responseCode){
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 if([[responseCode objectForKey:@"status"] isEqualToString:@"success"]) {

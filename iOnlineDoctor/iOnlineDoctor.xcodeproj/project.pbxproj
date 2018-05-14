@@ -20,27 +20,6 @@
 		7C0D914E1F594F1000694120 /* D-my-patients.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D914B1F594F1000694120 /* D-my-patients.png */; };
 		7C0D914F1F594F1000694120 /* D-my-profile-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D914C1F594F1000694120 /* D-my-profile-icon.png */; };
 		7C0D915C1F59983A00694120 /* Upload-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D91591F59983A00694120 /* Upload-btn.png */; };
-		7C129EDB20A9466F00271F25 /* ExploreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C129ED920A9466F00271F25 /* ExploreCell.m */; };
-		7C129EDC20A9466F00271F25 /* ExploreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EDA20A9466F00271F25 /* ExploreCell.xib */; };
-		7C129EF420A9877000271F25 /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE120A9877000271F25 /* Apache License.txt */; };
-		7C129EF520A9877000271F25 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE220A9877000271F25 /* Roboto-Black.ttf */; };
-		7C129EF620A9877000271F25 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE320A9877000271F25 /* Roboto-BlackItalic.ttf */; };
-		7C129EF720A9877000271F25 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE420A9877000271F25 /* Roboto-Bold.ttf */; };
-		7C129EF820A9877000271F25 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE520A9877000271F25 /* Roboto-BoldItalic.ttf */; };
-		7C129EF920A9877000271F25 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE620A9877000271F25 /* Roboto-Italic.ttf */; };
-		7C129EFA20A9877000271F25 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE720A9877000271F25 /* Roboto-Light.ttf */; };
-		7C129EFB20A9877000271F25 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE820A9877000271F25 /* Roboto-LightItalic.ttf */; };
-		7C129EFC20A9877000271F25 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EE920A9877000271F25 /* Roboto-Medium.ttf */; };
-		7C129EFD20A9877000271F25 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EEA20A9877000271F25 /* Roboto-MediumItalic.ttf */; };
-		7C129EFE20A9877000271F25 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EEB20A9877000271F25 /* Roboto-Regular.ttf */; };
-		7C129EFF20A9877000271F25 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EEC20A9877000271F25 /* Roboto-Thin.ttf */; };
-		7C129F0020A9877000271F25 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EED20A9877000271F25 /* Roboto-ThinItalic.ttf */; };
-		7C129F0120A9877000271F25 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EEE20A9877000271F25 /* RobotoCondensed-Bold.ttf */; };
-		7C129F0220A9877000271F25 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EEF20A9877000271F25 /* RobotoCondensed-BoldItalic.ttf */; };
-		7C129F0320A9877000271F25 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EF020A9877000271F25 /* RobotoCondensed-Italic.ttf */; };
-		7C129F0420A9877000271F25 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EF120A9877000271F25 /* RobotoCondensed-Light.ttf */; };
-		7C129F0520A9877000271F25 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EF220A9877000271F25 /* RobotoCondensed-LightItalic.ttf */; };
-		7C129F0620A9877000271F25 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C129EF320A9877000271F25 /* RobotoCondensed-Regular.ttf */; };
 		7C1678901F70CBCB00DEFA10 /* MedicalInfoDropDownVIews.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C16788C1F70CBCB00DEFA10 /* MedicalInfoDropDownVIews.m */; };
 		7C1678911F70CBCB00DEFA10 /* medicalInfoMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C16788E1F70CBCB00DEFA10 /* medicalInfoMainVC.m */; };
 		7C1678951F70CF5500DEFA10 /* medicalInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1678921F70CF5500DEFA10 /* medicalInfoCell.xib */; };
@@ -58,6 +37,25 @@
 		7C3CE1741F53BFC400D1648E /* RegisterPatientVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CE1731F53BFC400D1648E /* RegisterPatientVCViewController.m */; };
 		7C3CE1771F53BFFD00D1648E /* DashboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CE1761F53BFFD00D1648E /* DashboardVC.m */; };
 		7C3CE1941F53C8AD00D1648E /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CE17D1F53C8AD00D1648E /* AppSettings.m */; };
+		7C3CE1951F53C8AD00D1648E /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE17F1F53C8AD00D1648E /* Apache License.txt */; };
+		7C3CE1961F53C8AD00D1648E /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1801F53C8AD00D1648E /* Roboto-Black.ttf */; };
+		7C3CE1971F53C8AD00D1648E /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1811F53C8AD00D1648E /* Roboto-BlackItalic.ttf */; };
+		7C3CE1981F53C8AD00D1648E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1821F53C8AD00D1648E /* Roboto-Bold.ttf */; };
+		7C3CE1991F53C8AD00D1648E /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1831F53C8AD00D1648E /* Roboto-BoldItalic.ttf */; };
+		7C3CE19A1F53C8AD00D1648E /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1841F53C8AD00D1648E /* Roboto-Italic.ttf */; };
+		7C3CE19B1F53C8AD00D1648E /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1851F53C8AD00D1648E /* Roboto-Light.ttf */; };
+		7C3CE19C1F53C8AD00D1648E /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1861F53C8AD00D1648E /* Roboto-LightItalic.ttf */; };
+		7C3CE19D1F53C8AD00D1648E /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1871F53C8AD00D1648E /* Roboto-Medium.ttf */; };
+		7C3CE19E1F53C8AD00D1648E /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1881F53C8AD00D1648E /* Roboto-MediumItalic.ttf */; };
+		7C3CE19F1F53C8AD00D1648E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1891F53C8AD00D1648E /* Roboto-Regular.ttf */; };
+		7C3CE1A01F53C8AD00D1648E /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE18A1F53C8AD00D1648E /* Roboto-Thin.ttf */; };
+		7C3CE1A11F53C8AD00D1648E /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE18B1F53C8AD00D1648E /* Roboto-ThinItalic.ttf */; };
+		7C3CE1A21F53C8AD00D1648E /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE18C1F53C8AD00D1648E /* RobotoCondensed-Bold.ttf */; };
+		7C3CE1A31F53C8AD00D1648E /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE18D1F53C8AD00D1648E /* RobotoCondensed-BoldItalic.ttf */; };
+		7C3CE1A41F53C8AD00D1648E /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE18E1F53C8AD00D1648E /* RobotoCondensed-Italic.ttf */; };
+		7C3CE1A51F53C8AD00D1648E /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE18F1F53C8AD00D1648E /* RobotoCondensed-Light.ttf */; };
+		7C3CE1A61F53C8AD00D1648E /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1901F53C8AD00D1648E /* RobotoCondensed-LightItalic.ttf */; };
+		7C3CE1A71F53C8AD00D1648E /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3CE1911F53C8AD00D1648E /* RobotoCondensed-Regular.ttf */; };
 		7C3CE1A81F53C8AD00D1648E /* IODUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CE1931F53C8AD00D1648E /* IODUtils.m */; };
 		7C3CE1AE1F53E07D00D1648E /* NSUserDefaults+AppDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CE1AD1F53E07D00D1648E /* NSUserDefaults+AppDefaults.m */; };
 		7C3CE1B61F53FA8800D1648E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CE1B51F53FA8800D1648E /* LoginVC.m */; };
@@ -128,6 +126,25 @@
 		7CAECE991F52A3970086B736 /* Signin-7-Country.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECE881F52A3970086B736 /* Signin-7-Country.png */; };
 		7CAECE9A1F52A3970086B736 /* Signin-8-state.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECE891F52A3970086B736 /* Signin-8-state.png */; };
 		7CAECE9B1F52A3970086B736 /* Signin-9-city.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECE8A1F52A3970086B736 /* Signin-9-city.png */; };
+		7CAECEC31F52E6EA0086B736 /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB01F52E6EA0086B736 /* Apache License.txt */; };
+		7CAECEC41F52E6EA0086B736 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB11F52E6EA0086B736 /* Roboto-Black.ttf */; };
+		7CAECEC51F52E6EA0086B736 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB21F52E6EA0086B736 /* Roboto-BlackItalic.ttf */; };
+		7CAECEC61F52E6EA0086B736 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB31F52E6EA0086B736 /* Roboto-Bold.ttf */; };
+		7CAECEC71F52E6EA0086B736 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB41F52E6EA0086B736 /* Roboto-BoldItalic.ttf */; };
+		7CAECEC81F52E6EA0086B736 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB51F52E6EA0086B736 /* Roboto-Italic.ttf */; };
+		7CAECEC91F52E6EA0086B736 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB61F52E6EA0086B736 /* Roboto-Light.ttf */; };
+		7CAECECA1F52E6EA0086B736 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB71F52E6EA0086B736 /* Roboto-LightItalic.ttf */; };
+		7CAECECB1F52E6EA0086B736 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB81F52E6EA0086B736 /* Roboto-Medium.ttf */; };
+		7CAECECC1F52E6EA0086B736 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEB91F52E6EA0086B736 /* Roboto-MediumItalic.ttf */; };
+		7CAECECD1F52E6EA0086B736 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEBA1F52E6EA0086B736 /* Roboto-Regular.ttf */; };
+		7CAECECE1F52E6EA0086B736 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEBB1F52E6EA0086B736 /* Roboto-Thin.ttf */; };
+		7CAECECF1F52E6EA0086B736 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEBC1F52E6EA0086B736 /* Roboto-ThinItalic.ttf */; };
+		7CAECED01F52E6EA0086B736 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEBD1F52E6EA0086B736 /* RobotoCondensed-Bold.ttf */; };
+		7CAECED11F52E6EA0086B736 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEBE1F52E6EA0086B736 /* RobotoCondensed-BoldItalic.ttf */; };
+		7CAECED21F52E6EA0086B736 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEBF1F52E6EA0086B736 /* RobotoCondensed-Italic.ttf */; };
+		7CAECED31F52E6EA0086B736 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEC01F52E6EA0086B736 /* RobotoCondensed-Light.ttf */; };
+		7CAECED41F52E6EA0086B736 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEC11F52E6EA0086B736 /* RobotoCondensed-LightItalic.ttf */; };
+		7CAECED51F52E6EA0086B736 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAECEC21F52E6EA0086B736 /* RobotoCondensed-Regular.ttf */; };
 		7CC485BF1F583F650096BC91 /* SignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC485BD1F583F650096BC91 /* SignViewController.m */; };
 		7CC485C21F58404A0096BC91 /* PJRSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC485C11F58404A0096BC91 /* PJRSignatureView.m */; };
 		7CEBF3951F5530E300713584 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CEBF3941F5530E300713584 /* Background.png */; };
@@ -138,6 +155,8 @@
 		A7874CA6EEC0787E3E551F35 /* libPods-iOnlineDoctorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD48F16B30E557B388C00E33 /* libPods-iOnlineDoctorTests.a */; };
 		BB4D40A1ECBDA8FB0C73905C /* libPods-iOnlineDoctorUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6007CDC5A12FE2BCBBB682 /* libPods-iOnlineDoctorUITests.a */; };
 		C49CF8E320A45EA300A746F7 /* close-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C49CF8E220A45EA300A746F7 /* close-icon.png */; };
+		C4B5BC2F20A9481D0019F828 /* NoInternet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B5BC2D20A9481C0019F828 /* NoInternet.storyboard */; };
+		C4B5BC3120A94B850019F828 /* MedicalInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B5BC3020A94B840019F828 /* MedicalInfo.storyboard */; };
 		CA010B9F1F8A2F2900E4DB9F /* secondOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA010B9E1F8A2F2900E4DB9F /* secondOpinionViewController.m */; };
 		CA010BA41F8A2F3500E4DB9F /* PatientDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CA010BA11F8A2F3500E4DB9F /* PatientDocVC.m */; };
 		CA010BA51F8A2F3500E4DB9F /* PatientViewDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CA010BA31F8A2F3500E4DB9F /* PatientViewDetailVC.m */; };
@@ -263,7 +282,6 @@
 		CA7933FF20A00DC700DFA9A6 /* one.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CA7933FE20A00DC700DFA9A6 /* one.pdf */; };
 		CA79340220A3206D00DFA9A6 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79340120A3206D00DFA9A6 /* SQLiteManager.m */; };
 		CA79340520A4077900DFA9A6 /* NoInternetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79340420A4077900DFA9A6 /* NoInternetVC.m */; };
-		CA79340820A407C100DFA9A6 /* NoInternet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA79340620A407C100DFA9A6 /* NoInternet.storyboard */; };
 		CA79340F20A40EC500DFA9A6 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA79340920A40EC500DFA9A6 /* iPad.storyboard */; };
 		CA79341020A40EC500DFA9A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA79340B20A40EC500DFA9A6 /* Main.storyboard */; };
 		CA79341120A40EC500DFA9A6 /* StoryboardDoctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA79340D20A40EC500DFA9A6 /* StoryboardDoctor.storyboard */; };
@@ -585,6 +603,9 @@
 /* Begin PBXFileReference section */
 		4DBBC34897C5174C583C97B8 /* Pods-iOnlineDoctorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctorUITests/Pods-iOnlineDoctorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		52CC60D3AD5DAAE301E5F920 /* Pods-iOnlineDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctorTests/Pods-iOnlineDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A3A04C42CC5EBFE2AB87282 /* Pods-iOnlineDoctorTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctorTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctorTests/Pods-iOnlineDoctorTests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		5CD591F8D53BE3B09E6A91D0 /* Pods-iOnlineDoctorUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctorUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctorUITests/Pods-iOnlineDoctorUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		69444560B4E9D83E53C36E00 /* Pods-iOnlineDoctor.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctor.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor.adhoc.xcconfig"; sourceTree = "<group>"; };
 		6DEE25BDC365D59C9827792D /* Pods-iOnlineDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		7B6007CDC5A12FE2BCBBB682 /* libPods-iOnlineDoctorUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOnlineDoctorUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C07EBF81F6E354D00CD3626 /* height.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = height.json; sourceTree = "<group>"; };
@@ -603,30 +624,6 @@
 		7C0D914B1F594F1000694120 /* D-my-patients.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D-my-patients.png"; sourceTree = "<group>"; };
 		7C0D914C1F594F1000694120 /* D-my-profile-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D-my-profile-icon.png"; sourceTree = "<group>"; };
 		7C0D91591F59983A00694120 /* Upload-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload-btn.png"; sourceTree = "<group>"; };
-		7C129ED820A9466F00271F25 /* ExploreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExploreCell.h; sourceTree = "<group>"; };
-		7C129ED920A9466F00271F25 /* ExploreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExploreCell.m; sourceTree = "<group>"; };
-		7C129EDA20A9466F00271F25 /* ExploreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCell.xib; sourceTree = "<group>"; };
-		7C129EDE20A986D300271F25 /* ValidMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValidMacros.h; path = Utils/ValidMacros.h; sourceTree = "<group>"; };
-		7C129EDF20A986D400271F25 /* Message+Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Message+Constant.h"; path = "Utils/Message+Constant.h"; sourceTree = "<group>"; };
-		7C129EE120A9877000271F25 /* Apache License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License.txt"; sourceTree = "<group>"; };
-		7C129EE220A9877000271F25 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
-		7C129EE320A9877000271F25 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
-		7C129EE420A9877000271F25 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		7C129EE520A9877000271F25 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
-		7C129EE620A9877000271F25 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		7C129EE720A9877000271F25 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
-		7C129EE820A9877000271F25 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
-		7C129EE920A9877000271F25 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		7C129EEA20A9877000271F25 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
-		7C129EEB20A9877000271F25 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		7C129EEC20A9877000271F25 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		7C129EED20A9877000271F25 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		7C129EEE20A9877000271F25 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
-		7C129EEF20A9877000271F25 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
-		7C129EF020A9877000271F25 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
-		7C129EF120A9877000271F25 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
-		7C129EF220A9877000271F25 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
-		7C129EF320A9877000271F25 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		7C16788B1F70CBCB00DEFA10 /* MedicalInfoDropDownVIews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalInfoDropDownVIews.h; sourceTree = "<group>"; };
 		7C16788C1F70CBCB00DEFA10 /* MedicalInfoDropDownVIews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalInfoDropDownVIews.m; sourceTree = "<group>"; };
 		7C16788D1F70CBCB00DEFA10 /* medicalInfoMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = medicalInfoMainVC.h; sourceTree = "<group>"; };
@@ -658,6 +655,25 @@
 		7C3CE1761F53BFFD00D1648E /* DashboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DashboardVC.m; path = Dashboard/DashboardVC.m; sourceTree = "<group>"; };
 		7C3CE17C1F53C8AD00D1648E /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSettings.h; path = Utils/AppSettings.h; sourceTree = "<group>"; };
 		7C3CE17D1F53C8AD00D1648E /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppSettings.m; path = Utils/AppSettings.m; sourceTree = "<group>"; };
+		7C3CE17F1F53C8AD00D1648E /* Apache License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License.txt"; sourceTree = "<group>"; };
+		7C3CE1801F53C8AD00D1648E /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		7C3CE1811F53C8AD00D1648E /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7C3CE1821F53C8AD00D1648E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		7C3CE1831F53C8AD00D1648E /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7C3CE1841F53C8AD00D1648E /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		7C3CE1851F53C8AD00D1648E /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		7C3CE1861F53C8AD00D1648E /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		7C3CE1871F53C8AD00D1648E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		7C3CE1881F53C8AD00D1648E /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		7C3CE1891F53C8AD00D1648E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		7C3CE18A1F53C8AD00D1648E /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		7C3CE18B1F53C8AD00D1648E /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		7C3CE18C1F53C8AD00D1648E /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		7C3CE18D1F53C8AD00D1648E /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7C3CE18E1F53C8AD00D1648E /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		7C3CE18F1F53C8AD00D1648E /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		7C3CE1901F53C8AD00D1648E /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		7C3CE1911F53C8AD00D1648E /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		7C3CE1921F53C8AD00D1648E /* IODUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IODUtils.h; path = Utils/IODUtils.h; sourceTree = "<group>"; };
 		7C3CE1931F53C8AD00D1648E /* IODUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IODUtils.m; path = Utils/IODUtils.m; sourceTree = "<group>"; };
 		7C3CE1AC1F53E07D00D1648E /* NSUserDefaults+AppDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AppDefaults.h"; sourceTree = "<group>"; };
@@ -756,6 +772,25 @@
 		7CAECE891F52A3970086B736 /* Signin-8-state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signin-8-state.png"; sourceTree = "<group>"; };
 		7CAECE8A1F52A3970086B736 /* Signin-9-city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signin-9-city.png"; sourceTree = "<group>"; };
 		7CAECEAE1F52E6EA0086B736 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Utils/Constants.h; sourceTree = "<group>"; };
+		7CAECEB01F52E6EA0086B736 /* Apache License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License.txt"; sourceTree = "<group>"; };
+		7CAECEB11F52E6EA0086B736 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		7CAECEB21F52E6EA0086B736 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7CAECEB31F52E6EA0086B736 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		7CAECEB41F52E6EA0086B736 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7CAECEB51F52E6EA0086B736 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		7CAECEB61F52E6EA0086B736 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		7CAECEB71F52E6EA0086B736 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		7CAECEB81F52E6EA0086B736 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		7CAECEB91F52E6EA0086B736 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		7CAECEBA1F52E6EA0086B736 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		7CAECEBB1F52E6EA0086B736 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		7CAECEBC1F52E6EA0086B736 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		7CAECEBD1F52E6EA0086B736 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		7CAECEBE1F52E6EA0086B736 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7CAECEBF1F52E6EA0086B736 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		7CAECEC01F52E6EA0086B736 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		7CAECEC11F52E6EA0086B736 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		7CAECEC21F52E6EA0086B736 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		7CC485BC1F583F650096BC91 /* SignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignViewController.h; sourceTree = "<group>"; };
 		7CC485BD1F583F650096BC91 /* SignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignViewController.m; sourceTree = "<group>"; };
 		7CC485C01F58404A0096BC91 /* PJRSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJRSignatureView.h; sourceTree = "<group>"; };
@@ -771,6 +806,8 @@
 		BF2B88D7D6A416384C7A72D1 /* Pods-iOnlineDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnlineDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor.debug.xcconfig"; sourceTree = "<group>"; };
 		C11BACC8AF5A52A57ABD0F1E /* libPods-iOnlineDoctor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOnlineDoctor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49CF8E220A45EA300A746F7 /* close-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-icon.png"; sourceTree = "<group>"; };
+		C4B5BC2E20A9481C0019F828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NoInternet.storyboard; sourceTree = "<group>"; };
+		C4B5BC3020A94B840019F828 /* MedicalInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MedicalInfo.storyboard; sourceTree = "<group>"; };
 		CA010B9D1F8A2F2900E4DB9F /* secondOpinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondOpinionViewController.h; sourceTree = "<group>"; };
 		CA010B9E1F8A2F2900E4DB9F /* secondOpinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondOpinionViewController.m; sourceTree = "<group>"; };
 		CA010BA01F8A2F3500E4DB9F /* PatientDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientDocVC.h; sourceTree = "<group>"; };
@@ -890,6 +927,7 @@
 		CA6B74061F5BFA980068B760 /* searchDoctorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = searchDoctorCell.xib; path = ../searchDoctorCell.xib; sourceTree = "<group>"; };
 		CA6B74081F5BFAAD0068B760 /* searchDoctorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchDoctorCell.h; path = ../searchDoctorCell.h; sourceTree = "<group>"; };
 		CA6B74091F5BFAAD0068B760 /* searchDoctorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchDoctorCell.m; path = ../searchDoctorCell.m; sourceTree = "<group>"; };
+		CA6B74171F5C084F0068B760 /* ValidMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidMacros.h; sourceTree = "<group>"; };
 		CA6B741B1F5C88AB0068B760 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
 		CA6B741C1F5C88AB0068B760 /* Signin-D-Additional-Qualification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signin-D-Additional-Qualification.png"; sourceTree = "<group>"; };
 		CA6B741D1F5C88AB0068B760 /* Signin-D-Experience.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Signin-D-Experience.png"; sourceTree = "<group>"; };
@@ -937,7 +975,6 @@
 		CA79340120A3206D00DFA9A6 /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteManager.m; path = Utils/SQLiteManager.m; sourceTree = "<group>"; };
 		CA79340320A4077900DFA9A6 /* NoInternetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInternetVC.h; sourceTree = "<group>"; };
 		CA79340420A4077900DFA9A6 /* NoInternetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInternetVC.m; sourceTree = "<group>"; };
-		CA79340720A407C100DFA9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NoInternet.storyboard; sourceTree = "<group>"; };
 		CA79340A20A40EC500DFA9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		CA79340C20A40EC500DFA9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA79340E20A40EC500DFA9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StoryboardDoctor.storyboard; sourceTree = "<group>"; };
@@ -1430,6 +1467,9 @@
 				52CC60D3AD5DAAE301E5F920 /* Pods-iOnlineDoctorTests.release.xcconfig */,
 				4DBBC34897C5174C583C97B8 /* Pods-iOnlineDoctorUITests.debug.xcconfig */,
 				9DA5A4BFD0D528BF8BAED523 /* Pods-iOnlineDoctorUITests.release.xcconfig */,
+				69444560B4E9D83E53C36E00 /* Pods-iOnlineDoctor.adhoc.xcconfig */,
+				5A3A04C42CC5EBFE2AB87282 /* Pods-iOnlineDoctorTests.adhoc.xcconfig */,
+				5CD591F8D53BE3B09E6A91D0 /* Pods-iOnlineDoctorUITests.adhoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1448,32 +1488,6 @@
 				7C0D91591F59983A00694120 /* Upload-btn.png */,
 			);
 			path = Uploads;
-			sourceTree = "<group>";
-		};
-		7C129EE020A9877000271F25 /* Fonts_Roboto */ = {
-			isa = PBXGroup;
-			children = (
-				7C129EE120A9877000271F25 /* Apache License.txt */,
-				7C129EE220A9877000271F25 /* Roboto-Black.ttf */,
-				7C129EE320A9877000271F25 /* Roboto-BlackItalic.ttf */,
-				7C129EE420A9877000271F25 /* Roboto-Bold.ttf */,
-				7C129EE520A9877000271F25 /* Roboto-BoldItalic.ttf */,
-				7C129EE620A9877000271F25 /* Roboto-Italic.ttf */,
-				7C129EE720A9877000271F25 /* Roboto-Light.ttf */,
-				7C129EE820A9877000271F25 /* Roboto-LightItalic.ttf */,
-				7C129EE920A9877000271F25 /* Roboto-Medium.ttf */,
-				7C129EEA20A9877000271F25 /* Roboto-MediumItalic.ttf */,
-				7C129EEB20A9877000271F25 /* Roboto-Regular.ttf */,
-				7C129EEC20A9877000271F25 /* Roboto-Thin.ttf */,
-				7C129EED20A9877000271F25 /* Roboto-ThinItalic.ttf */,
-				7C129EEE20A9877000271F25 /* RobotoCondensed-Bold.ttf */,
-				7C129EEF20A9877000271F25 /* RobotoCondensed-BoldItalic.ttf */,
-				7C129EF020A9877000271F25 /* RobotoCondensed-Italic.ttf */,
-				7C129EF120A9877000271F25 /* RobotoCondensed-Light.ttf */,
-				7C129EF220A9877000271F25 /* RobotoCondensed-LightItalic.ttf */,
-				7C129EF320A9877000271F25 /* RobotoCondensed-Regular.ttf */,
-			);
-			path = Fonts_Roboto;
 			sourceTree = "<group>";
 		};
 		7C2FD4C01F4FFC0000D27CB1 = {
@@ -1501,10 +1515,7 @@
 		7C2FD4CB1F4FFC0000D27CB1 /* iOnlineDoctor */ = {
 			isa = PBXGroup;
 			children = (
-				CA79340920A40EC500DFA9A6 /* iPad.storyboard */,
-				CA79340B20A40EC500DFA9A6 /* Main.storyboard */,
-				CA79340D20A40EC500DFA9A6 /* StoryboardDoctor.storyboard */,
-				CA79340620A407C100DFA9A6 /* NoInternet.storyboard */,
+				C4C03CC620A9462E0093111B /* StoryBoard */,
 				CA79340320A4077900DFA9A6 /* NoInternetVC.h */,
 				CA79340420A4077900DFA9A6 /* NoInternetVC.m */,
 				CA4259E7207DD0C0005909C8 /* include */,
@@ -1517,8 +1528,8 @@
 				CAF4F7C91F888A8E00996FB3 /* HealthRecord */,
 				CAF4F7C21F87BBE600996FB3 /* Book Appointment */,
 				CAD171F11F824CE40034A2B4 /* Evisit */,
-				7C2FD4D01F4FFC0000D27CB1 /* AppDelegate.m */,
 				CABE33F21FF36B2100ABA3C6 /* AppDelegate.h */,
+				7C2FD4D01F4FFC0000D27CB1 /* AppDelegate.m */,
 				7C2FD4DB1F4FFC0000D27CB1 /* Assets.xcassets */,
 				7C2FD4DD1F4FFC0000D27CB1 /* LaunchScreen.storyboard */,
 				7C2FD4E01F4FFC0000D27CB1 /* Info.plist */,
@@ -1569,6 +1580,33 @@
 				7C2FD4F61F4FFC0000D27CB1 /* Info.plist */,
 			);
 			path = iOnlineDoctorUITests;
+			sourceTree = "<group>";
+		};
+		7C3CE17E1F53C8AD00D1648E /* Fonts_Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				7C3CE17F1F53C8AD00D1648E /* Apache License.txt */,
+				7C3CE1801F53C8AD00D1648E /* Roboto-Black.ttf */,
+				7C3CE1811F53C8AD00D1648E /* Roboto-BlackItalic.ttf */,
+				7C3CE1821F53C8AD00D1648E /* Roboto-Bold.ttf */,
+				7C3CE1831F53C8AD00D1648E /* Roboto-BoldItalic.ttf */,
+				7C3CE1841F53C8AD00D1648E /* Roboto-Italic.ttf */,
+				7C3CE1851F53C8AD00D1648E /* Roboto-Light.ttf */,
+				7C3CE1861F53C8AD00D1648E /* Roboto-LightItalic.ttf */,
+				7C3CE1871F53C8AD00D1648E /* Roboto-Medium.ttf */,
+				7C3CE1881F53C8AD00D1648E /* Roboto-MediumItalic.ttf */,
+				7C3CE1891F53C8AD00D1648E /* Roboto-Regular.ttf */,
+				7C3CE18A1F53C8AD00D1648E /* Roboto-Thin.ttf */,
+				7C3CE18B1F53C8AD00D1648E /* Roboto-ThinItalic.ttf */,
+				7C3CE18C1F53C8AD00D1648E /* RobotoCondensed-Bold.ttf */,
+				7C3CE18D1F53C8AD00D1648E /* RobotoCondensed-BoldItalic.ttf */,
+				7C3CE18E1F53C8AD00D1648E /* RobotoCondensed-Italic.ttf */,
+				7C3CE18F1F53C8AD00D1648E /* RobotoCondensed-Light.ttf */,
+				7C3CE1901F53C8AD00D1648E /* RobotoCondensed-LightItalic.ttf */,
+				7C3CE1911F53C8AD00D1648E /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Fonts_Roboto;
+			path = Utils/Fonts_Roboto;
 			sourceTree = "<group>";
 		};
 		7C3CE1AB1F53E07D00D1648E /* Categories */ = {
@@ -1859,8 +1897,8 @@
 		7CAECE731F528D140086B736 /* DoctorRegister */ = {
 			isa = PBXGroup;
 			children = (
-				7C0D91281F591D3E00694120 /* BankAccountVC.h */,
 				7C0D91291F591D3E00694120 /* BankAccountVC.m */,
+				7C0D91281F591D3E00694120 /* BankAccountVC.h */,
 				7C3CE16B1F53BF3900D1648E /* RegisterPageDoctorController.h */,
 				7C3CE16C1F53BF3900D1648E /* RegisterPageDoctorController.m */,
 			);
@@ -1879,7 +1917,6 @@
 		7CAECE781F52A3970086B736 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7C129EE020A9877000271F25 /* Fonts_Roboto */,
 				CA7933F1209B28DB00DFA9A6 /* Assets */,
 				CA7FC1A81FE92BA500E120F4 /* Payment */,
 				CAA795521F90879800AD1826 /* splashscreen */,
@@ -1891,6 +1928,7 @@
 				7C69338B1F57DB6E00FA9D8C /* Dashboard */,
 				7C3CE1C61F54411E00D1648E /* Data */,
 				7CAECE791F52A3970086B736 /* Registration Icons */,
+				CA6B74171F5C084F0068B760 /* ValidMacros.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1972,14 +2010,41 @@
 				7C69339E1F580AF800FA9D8C /* StringDefines.h */,
 				7C3CE17C1F53C8AD00D1648E /* AppSettings.h */,
 				7C3CE17D1F53C8AD00D1648E /* AppSettings.m */,
-				7CAECEAE1F52E6EA0086B736 /* Constants.h */,
-				CACCD2871F5EFD0B0021B948 /* ColorsConstants.h */,
-				7C129EDF20A986D400271F25 /* Message+Constant.h */,
-				7C129EDE20A986D300271F25 /* ValidMacros.h */,
+				7C3CE17E1F53C8AD00D1648E /* Fonts_Roboto */,
 				7C3CE1921F53C8AD00D1648E /* IODUtils.h */,
 				7C3CE1931F53C8AD00D1648E /* IODUtils.m */,
+				7CAECEAE1F52E6EA0086B736 /* Constants.h */,
+				7CAECEAF1F52E6EA0086B736 /* Fonts_Roboto */,
+				CACCD2871F5EFD0B0021B948 /* ColorsConstants.h */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		7CAECEAF1F52E6EA0086B736 /* Fonts_Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				7CAECEB01F52E6EA0086B736 /* Apache License.txt */,
+				7CAECEB11F52E6EA0086B736 /* Roboto-Black.ttf */,
+				7CAECEB21F52E6EA0086B736 /* Roboto-BlackItalic.ttf */,
+				7CAECEB31F52E6EA0086B736 /* Roboto-Bold.ttf */,
+				7CAECEB41F52E6EA0086B736 /* Roboto-BoldItalic.ttf */,
+				7CAECEB51F52E6EA0086B736 /* Roboto-Italic.ttf */,
+				7CAECEB61F52E6EA0086B736 /* Roboto-Light.ttf */,
+				7CAECEB71F52E6EA0086B736 /* Roboto-LightItalic.ttf */,
+				7CAECEB81F52E6EA0086B736 /* Roboto-Medium.ttf */,
+				7CAECEB91F52E6EA0086B736 /* Roboto-MediumItalic.ttf */,
+				7CAECEBA1F52E6EA0086B736 /* Roboto-Regular.ttf */,
+				7CAECEBB1F52E6EA0086B736 /* Roboto-Thin.ttf */,
+				7CAECEBC1F52E6EA0086B736 /* Roboto-ThinItalic.ttf */,
+				7CAECEBD1F52E6EA0086B736 /* RobotoCondensed-Bold.ttf */,
+				7CAECEBE1F52E6EA0086B736 /* RobotoCondensed-BoldItalic.ttf */,
+				7CAECEBF1F52E6EA0086B736 /* RobotoCondensed-Italic.ttf */,
+				7CAECEC01F52E6EA0086B736 /* RobotoCondensed-Light.ttf */,
+				7CAECEC11F52E6EA0086B736 /* RobotoCondensed-LightItalic.ttf */,
+				7CAECEC21F52E6EA0086B736 /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Fonts_Roboto;
+			path = Utils/Fonts_Roboto;
 			sourceTree = "<group>";
 		};
 		7CC485B91F583F650096BC91 /* SignatureView */ = {
@@ -2004,6 +2069,18 @@
 				7B6007CDC5A12FE2BCBBB682 /* libPods-iOnlineDoctorUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4C03CC620A9462E0093111B /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				C4B5BC3020A94B840019F828 /* MedicalInfo.storyboard */,
+				C4B5BC2D20A9481C0019F828 /* NoInternet.storyboard */,
+				CA79340920A40EC500DFA9A6 /* iPad.storyboard */,
+				CA79340B20A40EC500DFA9A6 /* Main.storyboard */,
+				CA79340D20A40EC500DFA9A6 /* StoryboardDoctor.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		CA1334EE1F5AEAEE00FCF93E /* sidePanel */ = {
@@ -2070,13 +2147,10 @@
 		CA4380E420107DCC00A5128B /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				CA89077020259779008D8D94 /* ReferalViewController.h */,
 				CA89076F20259779008D8D94 /* ReferalViewController.m */,
+				CA89077020259779008D8D94 /* ReferalViewController.h */,
 				CA4380E520107DEB00A5128B /* ExploreViewController.h */,
 				CA4380E620107DEB00A5128B /* ExploreViewController.m */,
-				7C129ED820A9466F00271F25 /* ExploreCell.h */,
-				7C129ED920A9466F00271F25 /* ExploreCell.m */,
-				7C129EDA20A9466F00271F25 /* ExploreCell.xib */,
 				CA4380EE2010A4A400A5128B /* blogTableViewCell.h */,
 				CA4380EF2010A4A400A5128B /* blogTableViewCell.m */,
 				CA4380F02010A4A400A5128B /* blogTableViewCell.xib */,
@@ -2673,8 +2747,6 @@
 				7C2FD4C51F4FFC0000D27CB1 /* Sources */,
 				7C2FD4C61F4FFC0000D27CB1 /* Frameworks */,
 				7C2FD4C71F4FFC0000D27CB1 /* Resources */,
-				4D4B994A20FD7265DCFF3B50 /* [CP] Embed Pods Frameworks */,
-				3D40A861F006BE6DF5F09C67 /* [CP] Copy Pods Resources */,
 				CAD228D7206A2BAB00C8CE22 /* ShellScript */,
 			);
 			buildRules = (
@@ -2694,8 +2766,6 @@
 				7C2FD4E11F4FFC0000D27CB1 /* Sources */,
 				7C2FD4E21F4FFC0000D27CB1 /* Frameworks */,
 				7C2FD4E31F4FFC0000D27CB1 /* Resources */,
-				A0B17D684CFE5763EC40F10D /* [CP] Embed Pods Frameworks */,
-				4C2EB4971E39AC95CD4F75A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2715,8 +2785,6 @@
 				7C2FD4EC1F4FFC0000D27CB1 /* Sources */,
 				7C2FD4ED1F4FFC0000D27CB1 /* Frameworks */,
 				7C2FD4EE1F4FFC0000D27CB1 /* Resources */,
-				8FC84A54A7F5742BCDA3C353 /* [CP] Embed Pods Frameworks */,
-				259D0D2771018E1C70332AFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2798,6 +2866,7 @@
 				CA9670BC204A80CA000A3C73 /* Body-Temperature@2x.png in Resources */,
 				7C2FD4DF1F4FFC0000D27CB1 /* LaunchScreen.storyboard in Resources */,
 				7CAECE901F52A3970086B736 /* Signin-01-back.png in Resources */,
+				7C3CE1A71F53C8AD00D1648E /* RobotoCondensed-Regular.ttf in Resources */,
 				CAD824B020523A6100743A7B /* black-transparent-bg.png in Resources */,
 				CA4380DF2010709C00A5128B /* icn-calendar.png in Resources */,
 				CA9D9A2E1F8B71C400A1834C /* smile-2.png in Resources */,
@@ -2806,12 +2875,15 @@
 				CA6B74271F5C88AB0068B760 /* Signin-D-Additional-Qualification.png in Resources */,
 				CA14A183203AAB6300F67B10 /* icn-coupon-referral.png in Resources */,
 				CA9670BE204A80CA000A3C73 /* Pulse-Rate@2x.png in Resources */,
+				7C3CE19C1F53C8AD00D1648E /* Roboto-LightItalic.ttf in Resources */,
 				CAD171581F82204A0034A2B4 /* DocCellXib.xib in Resources */,
+				7CAECED11F52E6EA0086B736 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				CA960B64204FAF560039AF49 /* gender-f-active.png in Resources */,
 				CAE75E472028181200A61597 /* CopponCell.xib in Resources */,
-				7C129F0120A9877000271F25 /* RobotoCondensed-Bold.ttf in Resources */,
+				C4B5BC3120A94B850019F828 /* MedicalInfo.storyboard in Resources */,
 				CA9670B9204A80CA000A3C73 /* blood-pressure.png in Resources */,
 				CA4380CF200F74CD00A5128B /* selected@2x.png in Resources */,
+				7CAECECD1F52E6EA0086B736 /* Roboto-Regular.ttf in Resources */,
 				7CAECE971F52A3970086B736 /* Signin-5-gender.png in Resources */,
 				CAF4F7EC1F88908000996FB3 /* view-invoice.png in Resources */,
 				7C0D914E1F594F1000694120 /* D-my-patients.png in Resources */,
@@ -2819,10 +2891,13 @@
 				CAF4F8141F8890D500996FB3 /* Upload-pdf.png in Resources */,
 				7CEBF39B1F55416400713584 /* states.json in Resources */,
 				CA4380D92010702100A5128B /* icn-doc.png in Resources */,
+				7CAECED21F52E6EA0086B736 /* RobotoCondensed-Italic.ttf in Resources */,
 				CA32F3202020216800881D03 /* video-call-price.png in Resources */,
 				7CAECE8F1F52A3970086B736 /* login-password-icn.png in Resources */,
 				CAF4F7FE1F8890B800996FB3 /* burger-menu.png in Resources */,
 				7C94DF371F6FA2670087DE20 /* ac-type-icon.png in Resources */,
+				7C3CE1A61F53C8AD00D1648E /* RobotoCondensed-LightItalic.ttf in Resources */,
+				7CAECEC71F52E6EA0086B736 /* Roboto-BoldItalic.ttf in Resources */,
 				7CEBF3951F5530E300713584 /* Background.png in Resources */,
 				CA14A17F2036F0A200F67B10 /* coupon-discount@2x.png in Resources */,
 				CA14A188203AAC5B00F67B10 /* icn-coupon-cancle@2x.png in Resources */,
@@ -2834,6 +2909,7 @@
 				CAF4F80D1F8890D500996FB3 /* D-Stepper-icn-2.png in Resources */,
 				CA44DBA31FF5133500FAF785 /* bell.png in Resources */,
 				CA9670CB204AE7D4000A3C73 /* MedicationCell.xib in Resources */,
+				7CAECED31F52E6EA0086B736 /* RobotoCondensed-Light.ttf in Resources */,
 				7C77930A1F5FC4F6008E30AF /* round1.png in Resources */,
 				CA4380EB20109CBA00A5128B /* edit_Explore.png in Resources */,
 				CA4380E3201073A500A5128B /* P-banner-no-img.png in Resources */,
@@ -2849,16 +2925,19 @@
 				CAA7956D1F908A3C00AD1826 /* Default.png in Resources */,
 				CAF4F7E81F88908000996FB3 /* download-Invoice.png in Resources */,
 				7C1678951F70CF5500DEFA10 /* medicalInfoCell.xib in Resources */,
+				C4B5BC2F20A9481D0019F828 /* NoInternet.storyboard in Resources */,
+				7C3CE19B1F53C8AD00D1648E /* Roboto-Light.ttf in Resources */,
 				CA89076E202585EB008D8D94 /* referrals-icn.png in Resources */,
-				7C129EF820A9877000271F25 /* Roboto-BoldItalic.ttf in Resources */,
 				CA14A184203AAB6300F67B10 /* icn-coupon-referral@2x.png in Resources */,
 				CA77D55820171587008FC656 /* camera-flip.png in Resources */,
 				CAA35A131F8D448B00BA7A43 /* download.png in Resources */,
 				CA9670A82047F2DF000A3C73 /* add.png in Resources */,
 				CAB3DD18203DAE7D00C8502B /* GoogleService-Info.plist in Resources */,
 				CAD171541F82204A0034A2B4 /* customXibCommonCell.xib in Resources */,
+				7C3CE19A1F53C8AD00D1648E /* Roboto-Italic.ttf in Resources */,
 				7C94DF381F6FA2670087DE20 /* bank-address-icon.png in Resources */,
 				7C0D915C1F59983A00694120 /* Upload-btn.png in Resources */,
+				7CAECECC1F52E6EA0086B736 /* Roboto-MediumItalic.ttf in Resources */,
 				CA7933F8209B28DB00DFA9A6 /* checkmark-round.png in Resources */,
 				CAF4F80F1F8890D500996FB3 /* digital-sign-icn.png in Resources */,
 				CAED36811F913117008081FD /* Call-Receive.png in Resources */,
@@ -2866,6 +2945,7 @@
 				7C77931C1F5FE9B7008E30AF /* msg-icon.png in Resources */,
 				7C0D91431F59339500694120 /* user-icon.png in Resources */,
 				7CAECE991F52A3970086B736 /* Signin-7-Country.png in Resources */,
+				7C3CE1961F53C8AD00D1648E /* Roboto-Black.ttf in Resources */,
 				7C94DF361F6FA2670087DE20 /* ac-number-icon.png in Resources */,
 				CAB48F902080C3F900F3CE85 /* home.png in Resources */,
 				CAA795691F908A3C00AD1826 /* Default-iPhone6.png in Resources */,
@@ -2879,17 +2959,17 @@
 				CAD824B32052402000743A7B /* check-icn.png in Resources */,
 				7C07EBFB1F6E354D00CD3626 /* weight.json in Resources */,
 				7C74147F1F6D395400E0107B /* down-arrow-icon.png in Resources */,
+				7C3CE19E1F53C8AD00D1648E /* Roboto-MediumItalic.ttf in Resources */,
 				CAF4F7F41F88909600996FB3 /* Bubble-0@2x.png in Resources */,
-				7C129EFA20A9877000271F25 /* Roboto-Light.ttf in Resources */,
 				CA96709F2046D273000A3C73 /* healthConditions.json in Resources */,
+				7C3CE1A41F53C8AD00D1648E /* RobotoCondensed-Italic.ttf in Resources */,
 				CAD172011F824CE40034A2B4 /* E_VisitCell.xib in Resources */,
 				CA179BDC1F8340E500EFABA6 /* direction.json in Resources */,
 				CADB344A201847B2009BFF81 /* dashboard-bg.png in Resources */,
 				CA9787E91F972DA8009C2443 /* P-calling-icon.png in Resources */,
-				7C129F0220A9877000271F25 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				CA179BD51F83393700EFABA6 /* payment-invoice-icn.png in Resources */,
 				CA77D55920171587008FC656 /* mute-off.png in Resources */,
-				CA79340820A407C100DFA9A6 /* NoInternet.storyboard in Resources */,
+				7C3CE1951F53C8AD00D1648E /* Apache License.txt in Resources */,
 				CAA35A0D1F8D34D200BA7A43 /* Quantity-icon.png in Resources */,
 				CAF4F7EB1F88908000996FB3 /* Payment-fail-icon.png in Resources */,
 				C49CF8E320A45EA300A746F7 /* close-icon.png in Resources */,
@@ -2898,14 +2978,18 @@
 				7C7414871F6D395400E0107B /* visa-icon.png in Resources */,
 				CA7933F7209B28DB00DFA9A6 /* alert-round.png in Resources */,
 				CAD824A820514A3700743A7B /* steper2.png in Resources */,
+				7C3CE19D1F53C8AD00D1648E /* Roboto-Medium.ttf in Resources */,
 				7CAECE951F52A3970086B736 /* Signin-3-PW.png in Resources */,
 				CA960B66204FAF560039AF49 /* gender-m-active.png in Resources */,
+				7CAECECF1F52E6EA0086B736 /* Roboto-ThinItalic.ttf in Resources */,
 				CA4380F92010D02F00A5128B /* small-no-img.png in Resources */,
 				CAE75E4D202867A400A61597 /* cupon-77X77.png in Resources */,
 				CAD824AE20514A3700743A7B /* steper8.png in Resources */,
+				7CAECED01F52E6EA0086B736 /* RobotoCondensed-Bold.ttf in Resources */,
 				CA35BC1E1FFB97C500D2C7F1 /* HeaderTableViewCell.xib in Resources */,
 				CAEA03992004CC100033589E /* ReviewCell.xib in Resources */,
 				CAA35A0E1F8D34D200BA7A43 /* Strength-icon.png in Resources */,
+				7CAECEC51F52E6EA0086B736 /* Roboto-BlackItalic.ttf in Resources */,
 				CAAB41301FF4A90300D763FB /* circle.png in Resources */,
 				CA248DDF200369F500483BD0 /* location-icn.png in Resources */,
 				CA6B742D1F5C88AB0068B760 /* Signin-D-Registration.png in Resources */,
@@ -2913,24 +2997,26 @@
 				CAF4F8131F8890D500996FB3 /* Upload-doc.png in Resources */,
 				CA7FC1BD1FE937CA00E120F4 /* currency.json in Resources */,
 				CA6B74261F5C88AB0068B760 /* down-arrow.png in Resources */,
-				7C129EFC20A9877000271F25 /* Roboto-Medium.ttf in Resources */,
+				7C3CE1991F53C8AD00D1648E /* Roboto-BoldItalic.ttf in Resources */,
 				7C0D914F1F594F1000694120 /* D-my-profile-icon.png in Resources */,
 				CAADF0D41FF2D7A70061AF13 /* CouponCellTableViewCell.xib in Resources */,
 				CA8907742026DCDD008D8D94 /* Referral@2x.png in Resources */,
 				CAA35A1B1F8D44D500BA7A43 /* document.png in Resources */,
+				7C3CE1A01F53C8AD00D1648E /* Roboto-Thin.ttf in Resources */,
 				CA86DFDE1FBAA11D00227515 /* payment-done-icon@2x.png in Resources */,
 				CA9D9A311F8B71C400A1834C /* smile-5.png in Resources */,
 				CAF4F8001F8890B800996FB3 /* health-record-e-visit.png in Resources */,
 				CAD171FE1F824CE40034A2B4 /* E-VisitDetailCell.xib in Resources */,
 				CAF4F7FF1F8890B800996FB3 /* health-record-2nd-op.png in Resources */,
-				7C129F0320A9877000271F25 /* RobotoCondensed-Italic.ttf in Resources */,
 				CADB3A011FE386A500F9F385 /* ELCAssetPicker.xib in Resources */,
 				CA4380D520105F7F00A5128B /* trans-bnr-bg.png in Resources */,
 				CA1334FE1F5AEAEE00FCF93E /* what-we-treat-icon.png in Resources */,
 				CA89076C2025858C008D8D94 /* sidePanelDoctor.json in Resources */,
 				CAF4F7E91F88908000996FB3 /* gray-bg.png in Resources */,
+				7CAECEC81F52E6EA0086B736 /* Roboto-Italic.ttf in Resources */,
 				7C0D914D1F594F1000694120 /* D-b-hours-icon.png in Resources */,
 				CAB48F912080C3F900F3CE85 /* home@2x.png in Resources */,
+				7C3CE1971F53C8AD00D1648E /* Roboto-BlackItalic.ttf in Resources */,
 				CA79341020A40EC500DFA9A6 /* Main.storyboard in Resources */,
 				CA9670A92047F2DF000A3C73 /* add@2x.png in Resources */,
 				CA79340F20A40EC500DFA9A6 /* iPad.storyboard in Resources */,
@@ -2940,20 +3026,21 @@
 				7C7414831F6D395400E0107B /* radio-active.png in Resources */,
 				7CAECE8D1F52A3970086B736 /* Icn-uncheck.png in Resources */,
 				CAD824AB20514A3700743A7B /* steper5.png in Resources */,
-				7C129EFE20A9877000271F25 /* Roboto-Regular.ttf in Resources */,
+				7CAECEC31F52E6EA0086B736 /* Apache License.txt in Resources */,
 				CA4380E02010709C00A5128B /* icn-health-record.png in Resources */,
 				CA6B742C1F5C88AB0068B760 /* Signin-D-Qualification-Year.png in Resources */,
 				CAA35A101F8D359200BA7A43 /* refill-icon.png in Resources */,
 				CA50E94020870E15000C29C0 /* video_share.png in Resources */,
 				7C94DF391F6FA2670087DE20 /* bank-name-icon.png in Resources */,
+				7C3CE1A21F53C8AD00D1648E /* RobotoCondensed-Bold.ttf in Resources */,
 				7CAECE8E1F52A3970086B736 /* login-email-icn.png in Resources */,
-				7C129EF620A9877000271F25 /* Roboto-BlackItalic.ttf in Resources */,
 				7C2FD4DC1F4FFC0000D27CB1 /* Assets.xcassets in Resources */,
 				CA9670B8204A80CA000A3C73 /* Blood-Glucose@2x.png in Resources */,
 				CA7FC1B81FE9313400E120F4 /* usd.png in Resources */,
 				CAE75E4B202867A400A61597 /* coupon-circle-72X72.png in Resources */,
 				CA9670BA204A80CA000A3C73 /* blood-pressure@2x.png in Resources */,
 				7CAECE981F52A3970086B736 /* Signin-6-Address.png in Resources */,
+				7C3CE1981F53C8AD00D1648E /* Roboto-Bold.ttf in Resources */,
 				CAA35A0B1F8D34D200BA7A43 /* doc-lab-icon.png in Resources */,
 				CA32F31D2020216800881D03 /* Sec-Op-price-dollar.png in Resources */,
 				7CAECE9A1F52A3970086B736 /* Signin-8-state.png in Resources */,
@@ -2962,13 +3049,12 @@
 				CAA35A0A1F8D34D200BA7A43 /* Direction-icon.png in Resources */,
 				CA7933FF20A00DC700DFA9A6 /* one.pdf in Resources */,
 				7CAECE941F52A3970086B736 /* Signin-2-email.png in Resources */,
-				7C129EFB20A9877000271F25 /* Roboto-LightItalic.ttf in Resources */,
+				7CAECEC91F52E6EA0086B736 /* Roboto-Light.ttf in Resources */,
 				7C94DF3D1F6FA2670087DE20 /* weight-icon.png in Resources */,
 				7C7414821F6D395400E0107B /* Qus-icon.png in Resources */,
 				CA9670B7204A80CA000A3C73 /* Blood-Glucose.png in Resources */,
 				CAD824AD20514A3700743A7B /* steper7.png in Resources */,
 				7C16789B1F71332900DEFA10 /* CreditcardType.json in Resources */,
-				7C129EFD20A9877000271F25 /* Roboto-MediumItalic.ttf in Resources */,
 				7C94DF3A1F6FA2670087DE20 /* blood-group-icon.png in Resources */,
 				CA4380D0200F74CD00A5128B /* unselected.png in Resources */,
 				7C7414801F6D395400E0107B /* expiry-date-icon.png in Resources */,
@@ -2986,6 +3072,7 @@
 				CA4380DA2010702100A5128B /* icn-explore.png in Resources */,
 				CA4380FF2011DEC600A5128B /* icn-my-p-atient.png in Resources */,
 				CA32F31E2020216800881D03 /* Sec-Op-price-inr.png in Resources */,
+				7CAECECB1F52E6EA0086B736 /* Roboto-Medium.ttf in Resources */,
 				CA6B74071F5BFA980068B760 /* searchDoctorCell.xib in Resources */,
 				CA9670C0204A80CA000A3C73 /* Respiratory-Rate@2x.png in Resources */,
 				CACE081D1FCBD6F700EB5759 /* chat-notification.png in Resources */,
@@ -2994,11 +3081,12 @@
 				CA35BC241FFE189E00D2C7F1 /* lab-icon.png in Resources */,
 				7C7414841F6D395400E0107B /* radio-inactive.png in Resources */,
 				7C74147E1F6D395400E0107B /* Doctor-search-icon.png in Resources */,
+				7C3CE1A31F53C8AD00D1648E /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				CA9D9A2D1F8B71C400A1834C /* smile-1.png in Resources */,
-				7C129EF920A9877000271F25 /* Roboto-Italic.ttf in Resources */,
 				CAA7956C1F908A3C00AD1826 /* Default-Portrait~ipad.png in Resources */,
 				CA7933FB209B28DB00DFA9A6 /* star.png in Resources */,
 				CA4380E92010989F00A5128B /* top-profile-bg.png in Resources */,
+				7CAECEC61F52E6EA0086B736 /* Roboto-Bold.ttf in Resources */,
 				CA9D9A301F8B71C400A1834C /* smile-4.png in Resources */,
 				7C77931B1F5FE9B7008E30AF /* call-icon.png in Resources */,
 				CAF4F7F21F88909600996FB3 /* appleiphone.mp3 in Resources */,
@@ -3015,11 +3103,10 @@
 				CAD1716A1F82204A0034A2B4 /* Info.plist in Resources */,
 				CAD171A31F82204B0034A2B4 /* UploadDocCell.xib in Resources */,
 				CA4380F22010A4A400A5128B /* blogTableViewCell.xib in Resources */,
-				7C129F0520A9877000271F25 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				CA6B742B1F5C88AB0068B760 /* Signin-D-Licence.png in Resources */,
 				CA248DE32003945F00483BD0 /* doc-Aboutme.png in Resources */,
-				7C129EF520A9877000271F25 /* Roboto-Black.ttf in Resources */,
 				CA6B742E1F5C88AB0068B760 /* Signin-D-Specialization.png in Resources */,
+				7CAECED41F52E6EA0086B736 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				CAB3AFFA1F836964006292A2 /* bankCode.json in Resources */,
 				CACE08691FCD17B300EB5759 /* call-logo@2x.png in Resources */,
 				CAF4F7EA1F88908000996FB3 /* Payment-done-icon.png in Resources */,
@@ -3028,6 +3115,7 @@
 				7CAECE911F52A3970086B736 /* Signin-1-Full-name.png in Resources */,
 				CA9670BD204A80CA000A3C73 /* Pulse-Rate.png in Resources */,
 				CA44DBA51FF5166300FAF785 /* another-hand-bell.mp3 in Resources */,
+				7C3CE1A51F53C8AD00D1648E /* RobotoCondensed-Light.ttf in Resources */,
 				CA508C331F93386600A7C6CE /* D-calling-icon.png in Resources */,
 				CAAB412E1FF37B5100D763FB /* icn-my-earning.png in Resources */,
 				CADB3A041FE386A500F9F385 /* Overlay@2x.png in Resources */,
@@ -3035,12 +3123,12 @@
 				7C07EBFA1F6E354D00CD3626 /* height.json in Resources */,
 				CA960B69204FAF560039AF49 /* gender-o.png in Resources */,
 				CA89076A202579A3008D8D94 /* my_referral_72X72.png in Resources */,
+				7CAECECE1F52E6EA0086B736 /* Roboto-Thin.ttf in Resources */,
 				CAA35A1C1F8D44D500BA7A43 /* E-rx.png in Resources */,
 				CA1334FC1F5AEAEE00FCF93E /* share-icon.png in Resources */,
 				CA50E93E20870E15000C29C0 /* doc-msg-72X72.png in Resources */,
 				7CAECE9B1F52A3970086B736 /* Signin-9-city.png in Resources */,
 				CA7933F9209B28DB00DFA9A6 /* close-round.png in Resources */,
-				7C129EF720A9877000271F25 /* Roboto-Bold.ttf in Resources */,
 				CAF4F80B1F8890D500996FB3 /* camera.png in Resources */,
 				CAA795731F90914600AD1826 /* PatientListCell.xib in Resources */,
 				7C7793041F5FC438008E30AF /* doctor-bg-img.png in Resources */,
@@ -3062,16 +3150,13 @@
 				CAF4F7E01F888FB600996FB3 /* labXibTableCell.xib in Resources */,
 				CA4380E12010709C00A5128B /* icn-my-appointment.png in Resources */,
 				CA960B67204FAF560039AF49 /* gender-m.png in Resources */,
-				7C129F0420A9877000271F25 /* RobotoCondensed-Light.ttf in Resources */,
 				CAD824B42052402000743A7B /* check-icn@2x.png in Resources */,
 				CA14A1802036F0A200F67B10 /* coupon-discount.png in Resources */,
 				CAD824A720514A3700743A7B /* steper1.png in Resources */,
 				CAD171E41F823E5B0034A2B4 /* view-document-2.png in Resources */,
-				7C129F0620A9877000271F25 /* RobotoCondensed-Regular.ttf in Resources */,
 				CA79341320A422B100DFA9A6 /* no-internet.png in Resources */,
 				CAA71C6A205CFDF40044C3BB /* SO.png in Resources */,
 				CA7FC1B71FE9313400E120F4 /* inr.png in Resources */,
-				7C129EFF20A9877000271F25 /* Roboto-Thin.ttf in Resources */,
 				CA6B742F1F5C88AB0068B760 /* Signin-D-Uni.png in Resources */,
 				CA9670D8204F0922000A3C73 /* MemberCollectionViewCell.xib in Resources */,
 				CADB3A021FE386A500F9F385 /* ELCAssetTablePicker.xib in Resources */,
@@ -3080,6 +3165,8 @@
 				7CEBF3991F55416400713584 /* cities.json in Resources */,
 				CAF4F7E71F88908000996FB3 /* call-interrupted-icon.png in Resources */,
 				CAA71C68205CFDF30044C3BB /* BA.png in Resources */,
+				7CAECEC41F52E6EA0086B736 /* Roboto-Black.ttf in Resources */,
+				7CAECECA1F52E6EA0086B736 /* Roboto-LightItalic.ttf in Resources */,
 				CA1334ED1F5AEA9600FCF93E /* sidePanel.json in Resources */,
 				CADB3A001FE386A500F9F385 /* ELCAlbumPickerController.xib in Resources */,
 				CAA7956E1F908A3C00AD1826 /* Default@2x.png in Resources */,
@@ -3091,10 +3178,8 @@
 				CA248DDE200369F500483BD0 /* first-aid.png in Resources */,
 				CA1303161FC2B3A900A4F729 /* Signin-DEA.png in Resources */,
 				7C0D91491F594C2600694120 /* edit.png in Resources */,
-				7C129F0020A9877000271F25 /* Roboto-ThinItalic.ttf in Resources */,
 				CA960B6B204FB9580039AF49 /* New-mem-active.png in Resources */,
 				7C77931D1F5FE9B7008E30AF /* video-icon.png in Resources */,
-				7C129EDC20A9466F00271F25 /* ExploreCell.xib in Resources */,
 				CA6B74051F5BF9B30068B760 /* doctorOnlineCell.xib in Resources */,
 				CA6B74301F5C88AB0068B760 /* Signin-D-Upload.png in Resources */,
 				CA9670BB204A80CA000A3C73 /* Body-Temperature.png in Resources */,
@@ -3103,14 +3188,16 @@
 				CAD171E21F823E5B0034A2B4 /* my-patient.png in Resources */,
 				7C94DF3C1F6FA2670087DE20 /* ifsc-icon.png in Resources */,
 				CAA35A1D1F8D44D500BA7A43 /* lab.png in Resources */,
+				7C3CE19F1F53C8AD00D1648E /* Roboto-Regular.ttf in Resources */,
 				CA9D9A231F8B4EBB00A1834C /* send-msg.png in Resources */,
 				CAD171DD1F823E5B0034A2B4 /* call-leave.png in Resources */,
 				CA9D9A2C1F8B71C400A1834C /* slider-handle.png in Resources */,
 				7CF5BD341F6A5E49001DEEF5 /* Experience.json in Resources */,
+				7CAECED51F52E6EA0086B736 /* RobotoCondensed-Regular.ttf in Resources */,
 				CAA35A141F8D448B00BA7A43 /* view.png in Resources */,
-				7C129EF420A9877000271F25 /* Apache License.txt in Resources */,
 				CA9670CD204B188D000A3C73 /* delete_basket.png in Resources */,
 				CACF581B1FE3DC5C00014862 /* PaymentCurrency.xib in Resources */,
+				7C3CE1A11F53C8AD00D1648E /* Roboto-ThinItalic.ttf in Resources */,
 				7CAECE961F52A3970086B736 /* Signin-4-DOB.png in Resources */,
 				7C0D91471F5939BF00694120 /* DoctorDashboard.json in Resources */,
 				7C7414811F6D395400E0107B /* online-doc.png in Resources */,
@@ -3136,66 +3223,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		259D0D2771018E1C70332AFF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctorUITests/Pods-iOnlineDoctorUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3D40A861F006BE6DF5F09C67 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C2EB4971E39AC95CD4F75A4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctorTests/Pods-iOnlineDoctorTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D4B994A20FD7265DCFF3B50 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctor/Pods-iOnlineDoctor-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		797CB88996F91C0E1E58A7E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3212,36 +3239,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FC84A54A7F5742BCDA3C353 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctorUITests/Pods-iOnlineDoctorUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A0B17D684CFE5763EC40F10D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOnlineDoctorTests/Pods-iOnlineDoctorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A16606E3EA5E0A59BA05C229 /* [CP] Check Pods Manifest.lock */ = {
@@ -3378,7 +3375,6 @@
 				CAADF0CF1FF2C6C30061AF13 /* CouponListViewController.m in Sources */,
 				CAD171781F82204A0034A2B4 /* IQPreviousNextView.m in Sources */,
 				7C94DF531F6FE1D60087DE20 /* doctorDocVC.m in Sources */,
-				7C129EDB20A9466F00271F25 /* ExploreCell.m in Sources */,
 				CADB39FA1FE386A500F9F385 /* ELCAsset.m in Sources */,
 				CAD1716C1F82204A0034A2B4 /* IODregisterView.m in Sources */,
 				CAD171711F82204A0034A2B4 /* IQUIView+Hierarchy.m in Sources */,
@@ -3563,10 +3559,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		CA79340620A407C100DFA9A6 /* NoInternet.storyboard */ = {
+		C4B5BC2D20A9481C0019F828 /* NoInternet.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CA79340720A407C100DFA9A6 /* Base */,
+				C4B5BC2E20A9481C0019F828 /* Base */,
 			);
 			name = NoInternet.storyboard;
 			sourceTree = "<group>";
@@ -3869,7 +3865,7 @@
 		};
 		CAD9F5DD1FB2CD5A00F82D72 /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DEE25BDC365D59C9827792D /* Pods-iOnlineDoctor.release.xcconfig */;
+			baseConfigurationReference = 69444560B4E9D83E53C36E00 /* Pods-iOnlineDoctor.adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOnlineDoctor/iOnlineDoctor.entitlements;
@@ -3905,7 +3901,7 @@
 		};
 		CAD9F5DE1FB2CD5A00F82D72 /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52CC60D3AD5DAAE301E5F920 /* Pods-iOnlineDoctorTests.release.xcconfig */;
+			baseConfigurationReference = 5A3A04C42CC5EBFE2AB87282 /* Pods-iOnlineDoctorTests.adhoc.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = iOnlineDoctorTests/Info.plist;
@@ -3918,7 +3914,7 @@
 		};
 		CAD9F5DF1FB2CD5A00F82D72 /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DA5A4BFD0D528BF8BAED523 /* Pods-iOnlineDoctorUITests.release.xcconfig */;
+			baseConfigurationReference = 5CD591F8D53BE3B09E6A91D0 /* Pods-iOnlineDoctorUITests.adhoc.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = iOnlineDoctorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

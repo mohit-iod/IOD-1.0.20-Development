@@ -49,9 +49,6 @@ static int uploadCounter;
 -(void)backPop{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-#pragma mark - View Controller Methods
-
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
     
@@ -73,6 +70,15 @@ static int uploadCounter;
     // Do any additional setup after loading the view.
 }
 
+-(void)termsLogin{
+    // call link to terms
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FileViewerVC *fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewerVC"];
+    fileViewMe.strFilePath=@"http://www.ionlinedoctor.com/termsandconditionsm";
+    fileViewMe.strTitle=@"Terms & Conditions, Privacy Policy";
+    fileViewMe.hideMenu=true;
+    [self.navigationController pushViewController:fileViewMe animated:YES];
+}
 -(void)viewWillAppear:(BOOL)animated{
     regServCall=[RegistrationService sharedManager];
     NSUInteger cid = [regServCall.strCountry  intValue];
@@ -87,7 +93,10 @@ static int uploadCounter;
     }
 }
 
-#pragma mark - IBAction Methods
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 - (IBAction)nextPage1:(id)sender {
     
@@ -122,6 +131,7 @@ static int uploadCounter;
 }
 
 - (IBAction)btnNextPage2:(id)sender {
+    
     
     Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
     BOOL reachable = reach. isReachable;
@@ -164,8 +174,7 @@ static int uploadCounter;
     }
 }
 
--(IBAction)termsLogin:(id)sender
-{
+-(IBAction)termsLogin:(id)sender{
     // call link to terms
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FileViewerVC *fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewerVC"];
@@ -175,86 +184,8 @@ static int uploadCounter;
     [self.navigationController pushViewController:fileViewMe animated:YES];
 }
 
-- (IBAction)btnBackPage2:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ForceUpdateLocation" object:self userInfo:@{@"pnumb":@"0",@"direction":@"back"}];
-}
-
-- (IBAction)btnBackPage3:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ForceUpdateLocation" object:self userInfo:@{@"pnumb":@"1",@"direction":@"back"}];
-}
-
-- (IBAction)btniPadSubmitBtnClick:(id)sender
-{
-    if (![IODUtils getError:self.txtFullName minVlue:@"4" minVlue:@"50" onlyNumeric:nil onlyChars:YES canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]) {
-    }
-    else if(![IODUtils getError:self.txtEmail minVlue:@"0" minVlue:@"100" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:YES minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if(![IODUtils getError:self.txtPassword minVlue:@"6" minVlue:@"30" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if(![IODUtils getError:self.txtDOB minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:@"18" maxAge:@"110" canBeSameDate:NO ]){
-    }
-    else if(![IODUtils getError:self.txtgender minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]){
-    }
-    else if(![IODUtils getError:self.txtspecial minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    
-    else if(![IODUtils getError:self.txtExperince minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if(![IODUtils getError:self.txtLanguageKnown minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]){
-    }
-    else if(![IODUtils getError:self.txtHighestQualificaion minVlue:@"1" minVlue:@"15" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if(![IODUtils getError:self.txtMobile minVlue:@"10" minVlue:@"10" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }
-    else if (![IODUtils getError:self.txtCountry minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]) {
-    }
-    else if(![IODUtils getError:self.txtregistration minVlue:@"1" minVlue:@"15" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-    }else if([_txtCountry.text isEqualToString:@"United States"]) {
-        if(![IODUtils getError:self.txtDea minVlue:@"1" minVlue:@"15" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil
-             ]){
-        }else if(![IODUtils getError:self.txtLicenseStates minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-        }
-        else if(![IODUtils getError:self.txtregistration minVlue:@"1" minVlue:@"15" onlyNumeric:NO onlyChars:NO canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-        }
-        else if(![IODUtils getError:self.txtState minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
-        }else{
-            Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-            BOOL reachable = reach. isReachable;
-            if (reachable)
-                [self validateEmail];
-        }
-        
-    }
-    else{
-        Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-        BOOL reachable = reach. isReachable;
-        if (reachable)
-            [self validateEmail];
-        
-        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-    }
-}
-
-#pragma mark - Void Methods
-
--(void)termsLogin{
-    // call link to terms
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    FileViewerVC *fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewerVC"];
-    fileViewMe.strFilePath=@"http://www.ionlinedoctor.com/termsandconditionsm";
-    fileViewMe.strTitle=@"Terms & Conditions, Privacy Policy";
-    fileViewMe.hideMenu=true;
-    [self.navigationController pushViewController:fileViewMe animated:YES];
-}
-
-- (void)updateLabel {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy"];
-    NSString *dateStr = [df stringFromDate:yearPicker.date];
-    _txtQualificationyear.text = [NSString stringWithFormat:@"%@", dateStr];
-}
-
 -(void)NextPageCall{
+    
     
     regServCall.strCountry = [NSString stringWithFormat:@"%d",selectedCountryId];
     regServCall.strState = [NSString stringWithFormat:@"%d",selectedStateId];
@@ -324,164 +255,76 @@ static int uploadCounter;
     }
 }
 
+- (IBAction)btnBackPage2:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ForceUpdateLocation" object:self userInfo:@{@"pnumb":@"0",@"direction":@"back"}];
+}
+
 -(void)verifyReferralCode {
     
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
+    
 }
-
-#pragma mark -- API Calls
--(void)getAllStatesWith:(int)countryId {
-    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-    BOOL reachable = reach. isReachable;
-    if (reachable){
-        if (countryId > 0) {
-            CommonServiceHandler *service = [[CommonServiceHandler alloc]init];
-            NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:countryId] ,@"country_id", nil];
-            // selectedCountryId = countryId;
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [service getAllStatesgetDataWith:parameter WithCompletionBlock:^(NSArray *state, NSError *error) {
-                arrStateList = state;
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            }];
-        }
-    }
-    else {
-        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-        _txtCountry.text =@"";
-        _txtState.text = @"";
-        _txtCity.text = @"";
-    }
-}
-
--(void)getAllCitieWith:(int)stateId {
-    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-    BOOL reachable = reach. isReachable;
-    if (reachable){
-        CommonServiceHandler *service = [[CommonServiceHandler alloc]init];
-        NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:stateId] ,@"state_id", nil];
-        selectedStateId = stateId;
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [service getAllCityDataWith:parameter WithCompletionBlock:^(NSArray *state, NSError *error) {
-            //NSLog(@"States %@",state.class);
-            arrcityList = state;
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }];
-    }
-    else {
-        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-        _txtCountry.text = @"";
-        _txtCity.text = @"";
-        _txtState.text = @"";
-    }
+- (IBAction)btnSubmit:(id)sender {
+    
 }
 
 
--(void)regiserDoctor {
+- (IBAction)btnBackPage3:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ForceUpdateLocation" object:self userInfo:@{@"pnumb":@"1",@"direction":@"back"}];
+}
+
+- (IBAction)btniPadSubmitBtnClick:(id)sender {
+    if (![IODUtils getError:self.txtFullName minVlue:@"4" minVlue:@"50" onlyNumeric:nil onlyChars:YES canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]) {
+    }
+    else if(![IODUtils getError:self.txtEmail minVlue:@"0" minVlue:@"100" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:YES minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if(![IODUtils getError:self.txtPassword minVlue:@"6" minVlue:@"30" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if(![IODUtils getError:self.txtDOB minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:@"18" maxAge:@"110" canBeSameDate:NO ]){
+    }
+    else if(![IODUtils getError:self.txtgender minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]){
+    }
+    else if(![IODUtils getError:self.txtspecial minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
     
-    int country = [regServCall.strCountry intValue];
-    int state = [regServCall.strState intValue];
-    int city = [regServCall.strCity intValue];
-    int pincode = [regServCall.strPinCode intValue];
-    int mobile = [regServCall.strMobile intValue];
-    int gender = [regServCall.strGender intValue];
-    int experience = [regServCall.experience intValue];
-    int specialization = [regServCall.specialization intValue];
-    NSString *strReferal = _txtReferalCode.text;
-    
-    NSMutableDictionary *userdata = [[NSMutableDictionary alloc] init];
-    [userdata setObject:regServCall.strEmail forKey:@"email"];
-    [userdata setObject:regServCall.strPassword  forKey:@"password"];
-    [userdata setObject:regServCall.strFullname forKey:@"name"];
-    [userdata setObject:[NSNumber numberWithInt:gender] forKey:@"gender"];
-    [userdata setObject:regServCall.strDOB forKey:@"dob"];
-    [userdata setObject:[NSNumber numberWithInt:country] forKey:@"country"];
-    [userdata setObject:[NSNumber numberWithInt:state] forKey:@"state"];
-    [userdata setObject:[NSNumber numberWithInt:mobile] forKey:@"mobile"];
-    [userdata setObject:strReferal forKey:@"tier_code"];
-    
-    
-    [userdata setObject:regServCall.highestQualification forKey:@"qualification"];
-    [userdata setObject:regServCall.RegistrationNumber forKey:@"registration_no_npi_no"];
-    [userdata setObject:regServCall.deaNumber forKey:@"dea_no"];
-    [userdata setObject:[NSNumber numberWithInt:experience] forKey:@"experience"];
-    [userdata setObject:[NSNumber numberWithInt:specialization] forKey:@"specialization_id"];
-    [userdata setObject:regServCall.licence forKey:@"license_state_list"];
-    [userdata setObject:regServCall.language forKey:@"language"];
-    [userdata setObject:regServCall.imageData forKey:@"documents[]"];
-    RegistrationService *service = [[RegistrationService alloc] init];
-    
-    if(regServCall.imageData >0){
-        if (self.checkbox.checked == YES) {
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [service doDoctorRegistrationWithParameters:userdata andImageName:regServCall.nameArray andArraray:regServCall.imageData dataType:regServCall.arrDocType withCompletionBlock:^(id response, NSError *error) {
-                //NSLog(@"respinse %@", response);
-                if(response) {
-                    NSString *status = [response objectForKey:@"status"];
-                    if([status isEqualToString:@"success"]) {
-                        //Registration Successful
-                        [self.navigationController popViewControllerAnimated:YES];
-                        [IODUtils showMessage:[response valueForKey:@"message"] withTitle:@"Verify Email"];
-                        regServCall.imageData = [[NSMutableArray alloc]init];
-                    }
-                    if(error)
-                        [IODUtils showMessage:@"Please enter valid data" withTitle:@"Error"];
-                }
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            }];
+    else if(![IODUtils getError:self.txtExperince minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if(![IODUtils getError:self.txtLanguageKnown minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]){
+    }
+    else if(![IODUtils getError:self.txtHighestQualificaion minVlue:@"1" minVlue:@"15" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if(![IODUtils getError:self.txtMobile minVlue:@"10" minVlue:@"10" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }
+    else if (![IODUtils getError:self.txtCountry minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:NO ]) {
+    }
+    else if(![IODUtils getError:self.txtregistration minVlue:@"1" minVlue:@"15" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+    }else if([_txtCountry.text isEqualToString:@"United States"]) {
+        if(![IODUtils getError:self.txtDea minVlue:@"1" minVlue:@"15" onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil
+             ]){
+        }else if(![IODUtils getError:self.txtLicenseStates minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
         }
-        else {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
-            [IODUtils showMessage:@"Please agree to terms and conditions" withTitle:@"Error"];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
-            return;
-            
-            
+        else if(![IODUtils getError:self.txtregistration minVlue:@"1" minVlue:@"15" onlyNumeric:NO onlyChars:NO canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
         }
+        else if(![IODUtils getError:self.txtState minVlue:nil minVlue:nil onlyNumeric:nil onlyChars:nil canBeEmpty:NO checkEmail:nil minAge:nil maxAge:nil canBeSameDate:nil ]){
+        }else{
+            Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+            BOOL reachable = reach. isReachable;
+            if (reachable)
+                [self validateEmail];
+        }
+        
     }
     else{
-        [IODUtils showMessage:@"Please select document" withTitle:@"Error"];
+        Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+        BOOL reachable = reach. isReachable;
+        if (reachable)
+            [self validateEmail];
+        
+            //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
     }
-    
 }
 
--(void)validateEmail {
-    NSMutableDictionary *mparameters = [[NSMutableDictionary alloc] init];
-    [mparameters setObject:_txtEmail.text forKey:@"email"];
-    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *strDob =[NSString stringWithFormat:@"%@",[formatter stringFromDate:datePicker.date]];
-    regServCall.strEmail = self.txtEmail.text;
-    regServCall.strFullname = self.txtFullName.text;
-    regServCall.strPassword = self.txtPassword.text;
-    regServCall.strDOB = strDob;
-    regServCall.strGender = [NSString stringWithFormat:@"%d",selectedGenderId];
-    regServCall.strGender = [NSString stringWithFormat:@"%d",[IODUtils getGenderId:_txtgender.text]];
-    regServCall.highestQualification = self.txtHighestQualificaion.text;
-    regServCall.language = self.txtLanguageKnown.text;
-    regServCall.specialization = [NSString stringWithFormat:@"%d",specializationId ];
-    regServCall.experience = _txtExperince.text;
-    
-    RegistrationService *service = [[RegistrationService alloc] init];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [service validateEmail:mparameters withCompletionBlock:^(id response, NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        if(response){
-            if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
-                [self NextPageCall];
-            }else{
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"ForceUpdateLocation" object:self userInfo:@{@"pnumb":@"1",@"direction":kNext}];
-            }
-        }
-        if(error)
-            //[IODUtils showAlertView:@"Email id already exists" WithTitle:@"Error"];
-            // [IODUtils showMessage:[error valueForKey:@"message"] withTitle:@"Error"];
-            [IODUtils showMessage:[error valueForKey:@"message"] withTitle:@"Error"];
-    }];
-}
-
-#pragma mark - UITextfield Delegate Methods
+#pragma mark Text Field delegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
@@ -761,6 +604,7 @@ static int uploadCounter;
     [self.txtDOB resignFirstResponder];
 }
 
+
 -(void)onCancelButton {
     [self.txtDOB resignFirstResponder];
     [_datePickerView removeFromSuperview];
@@ -776,8 +620,7 @@ static int uploadCounter;
     [self.txtQualificationyear resignFirstResponder];
     [_datePickerView removeFromSuperview];
 }
-
-#pragma mark - Year Picker
+#pragma mark Year Picker
 // Initialize the picker
 - (void) setYearPicker {
     yearPicker = [[NTMonthYearPicker alloc] init];
@@ -815,8 +658,15 @@ static int uploadCounter;
 - (void)onDatePicked:(UITapGestureRecognizer *)gestureRecognizer {
     [self updateLabel];
 }
+- (void)updateLabel {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy"];
+    NSString *dateStr = [df stringFromDate:yearPicker.date];
+    _txtQualificationyear.text = [NSString stringWithFormat:@"%@", dateStr];
+}
 
-#pragma mark - StringPickerView Delegate
+
+#pragma mark - StringPickerViewDelegate
 - (void)stringPickerViewDidSelectDone:(StringPickerView *)view
 {
     if( [self.pickerView.refernceView isKindOfClass:[UITextField class]] )
@@ -924,6 +774,158 @@ static int uploadCounter;
 -(void)multiSelectTableviewCancelClick
 {
     [self.multiSelect removeFromSuperview];
+}
+
+#pragma mark -- API Calls
+-(void)getAllStatesWith:(int)countryId {
+    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+    BOOL reachable = reach. isReachable;
+    if (reachable){
+        if (countryId > 0) {
+            CommonServiceHandler *service = [[CommonServiceHandler alloc]init];
+            NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:countryId] ,@"country_id", nil];
+            // selectedCountryId = countryId;
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [service getAllStatesgetDataWith:parameter WithCompletionBlock:^(NSArray *state, NSError *error) {
+                arrStateList = state;
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }];
+        }
+    }
+    else {
+        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
+        _txtCountry.text =@"";
+        _txtState.text = @"";
+        _txtCity.text = @"";
+    }
+}
+
+-(void)getAllCitieWith:(int)stateId {
+    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+    BOOL reachable = reach. isReachable;
+    if (reachable){
+        CommonServiceHandler *service = [[CommonServiceHandler alloc]init];
+        NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:stateId] ,@"state_id", nil];
+        selectedStateId = stateId;
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [service getAllCityDataWith:parameter WithCompletionBlock:^(NSArray *state, NSError *error) {
+            //NSLog(@"States %@",state.class);
+            arrcityList = state;
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }];
+    }
+    else {
+        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
+        _txtCountry.text = @"";
+        _txtCity.text = @"";
+        _txtState.text = @"";
+    }
+}
+
+
+- (void) regiserDoctor {
+    
+    int country = [regServCall.strCountry intValue];
+    int state = [regServCall.strState intValue];
+    int city = [regServCall.strCity intValue];
+    int pincode = [regServCall.strPinCode intValue];
+    int mobile = [regServCall.strMobile intValue];
+    int gender = [regServCall.strGender intValue];
+    int experience = [regServCall.experience intValue];
+    int specialization = [regServCall.specialization intValue];
+    NSString *strReferal = _txtReferalCode.text;
+    
+    NSMutableDictionary *userdata = [[NSMutableDictionary alloc] init];
+    [userdata setObject:regServCall.strEmail forKey:@"email"];
+    [userdata setObject:regServCall.strPassword  forKey:@"password"];
+    [userdata setObject:regServCall.strFullname forKey:@"name"];
+    [userdata setObject:[NSNumber numberWithInt:gender] forKey:@"gender"];
+    [userdata setObject:regServCall.strDOB forKey:@"dob"];
+    [userdata setObject:[NSNumber numberWithInt:country] forKey:@"country"];
+    [userdata setObject:[NSNumber numberWithInt:state] forKey:@"state"];
+    [userdata setObject:[NSNumber numberWithInt:mobile] forKey:@"mobile"];
+    [userdata setObject:strReferal forKey:@"tier_code"];
+    
+    
+    [userdata setObject:regServCall.highestQualification forKey:@"qualification"];
+    [userdata setObject:regServCall.RegistrationNumber forKey:@"registration_no_npi_no"];
+    [userdata setObject:regServCall.deaNumber forKey:@"dea_no"];
+    [userdata setObject:[NSNumber numberWithInt:experience] forKey:@"experience"];
+    [userdata setObject:[NSNumber numberWithInt:specialization] forKey:@"specialization_id"];
+    [userdata setObject:regServCall.licence forKey:@"license_state_list"];
+    [userdata setObject:regServCall.language forKey:@"language"];
+    [userdata setObject:regServCall.imageData forKey:@"documents[]"];
+    RegistrationService *service = [[RegistrationService alloc] init];
+    
+    if(regServCall.imageData >0){
+        if (self.checkbox.checked == YES) {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [service doDoctorRegistrationWithParameters:userdata andImageName:regServCall.nameArray andArraray:regServCall.imageData dataType:regServCall.arrDocType withCompletionBlock:^(id response, NSError *error) {
+                //NSLog(@"respinse %@", response);
+                if(response) {
+                    NSString *status = [response objectForKey:@"status"];
+                    if([status isEqualToString:@"success"]) {
+                        //Registration Successful
+                        [self.navigationController popViewControllerAnimated:YES];
+                        [IODUtils showMessage:[response valueForKey:@"message"] withTitle:@"Verify Email"];
+                        regServCall.imageData = [[NSMutableArray alloc]init];
+                    }
+                    if(error)
+                        [IODUtils showMessage:@"Please enter valid data" withTitle:@"Error"];
+                }
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }];
+        }
+        else {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            [IODUtils showMessage:@"Please agree to terms and conditions" withTitle:@"Error"];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            return;
+            
+            
+        }
+    }
+    else{
+        [IODUtils showMessage:@"Please select document" withTitle:@"Error"];
+    }
+    
+}
+
+-(void)validateEmail {
+    NSMutableDictionary *mparameters = [[NSMutableDictionary alloc] init];
+    [mparameters setObject:_txtEmail.text forKey:@"email"];
+    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *strDob =[NSString stringWithFormat:@"%@",[formatter stringFromDate:datePicker.date]];
+    regServCall.strEmail = self.txtEmail.text;
+    regServCall.strFullname = self.txtFullName.text;
+    regServCall.strPassword = self.txtPassword.text;
+    regServCall.strDOB = strDob;
+    regServCall.strGender = [NSString stringWithFormat:@"%d",selectedGenderId];
+    regServCall.strGender = [NSString stringWithFormat:@"%d",[IODUtils getGenderId:_txtgender.text]];
+    regServCall.highestQualification = self.txtHighestQualificaion.text;
+    regServCall.language = self.txtLanguageKnown.text;
+    regServCall.specialization = [NSString stringWithFormat:@"%d",specializationId ];
+    regServCall.experience = _txtExperince.text;
+    
+    RegistrationService *service = [[RegistrationService alloc] init];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [service validateEmail:mparameters withCompletionBlock:^(id response, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if(response){
+            if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
+                [self NextPageCall];
+            }else{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"ForceUpdateLocation" object:self userInfo:@{@"pnumb":@"1",@"direction":kNext}];
+            }
+        }
+        if(error)
+            //[IODUtils showAlertView:@"Email id already exists" WithTitle:@"Error"];
+            // [IODUtils showMessage:[error valueForKey:@"message"] withTitle:@"Error"];
+            [IODUtils showMessage:[error valueForKey:@"message"] withTitle:@"Error"];
+    }];
 }
 
 @end

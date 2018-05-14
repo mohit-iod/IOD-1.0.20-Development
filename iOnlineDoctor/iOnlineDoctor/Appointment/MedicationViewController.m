@@ -39,7 +39,8 @@
     self.title = @"Medical Info";
     
     patientService = [PatientAppointService sharedManager];
-    avc =  [self.storyboard instantiateViewControllerWithIdentifier:@"AlergiesViewController"];
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+    avc =  [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"AlergiesViewController"];
     if ([patientService.question_4 isEqualToString:@""]) {
          arrMedication = [[NSMutableArray alloc] init];
     }

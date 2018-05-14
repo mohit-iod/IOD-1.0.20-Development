@@ -15,8 +15,6 @@
 
 @implementation ReferalViewController
 
-#pragma mark - View Controller Methods
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     referalCode = UDGet(@"referalcode");
@@ -26,12 +24,16 @@
     
     self.title = @"Code Share";
     _lblReferalCode.text = referalCode;
+    // Do any additional setup after loading the view.
 }
 
-#pragma mark - IBAction Methods
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 -(IBAction)btnSharePressed:(id)sender {
-    //Share Referal Code
+    
     NSString * title =[NSString stringWithFormat:@"I am excited to share link for I Online Doctor Mobile App. Download and Video Call Doctor from your Mobile! Please use my code %@. \n https://itunes.apple.com/us/app/i-online-doc/id1299763701?ls=1&mt=8",referalCode];
     
     NSArray* dataToShare = @[title];
@@ -44,16 +46,13 @@
             [self presentViewController:activityViewController animated:YES completion:nil];
         });
     }
-    else{
+    else
+    {
+        NSLog(@"iPhone");
         [self presentViewController:activityViewController
                            animated:YES
                          completion:nil];
     }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

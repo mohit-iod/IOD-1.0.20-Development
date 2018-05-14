@@ -20,6 +20,7 @@
 #define EMAIL_ERR @"Please enter a valid Email"
 #define EXPERIENCE_ERR @"Please select number of years"
 #define GRADYEAR_ERR @"Qualification should not be greater than current"
+#define TERMS_CONDITIONS_ERR @"Please accept our Terms and Conditions to continue."
 #define VALID_AGE_ERR @"Age should be "
 
 #define VALID_LINK @"Please enter valid link"
@@ -45,4 +46,8 @@
 
 #define LEAVE_ERROR @"You can write leave note after call"
 
+
+#define Limited_Message_Send @"Only 2 Messages allowed before your second opinion consult. You can upload documents without message if instructed by Doctor"
+
+#define INTERNET_ERROR @"Please check your internet connectivity"
 #endif /* ValidMacros_h */

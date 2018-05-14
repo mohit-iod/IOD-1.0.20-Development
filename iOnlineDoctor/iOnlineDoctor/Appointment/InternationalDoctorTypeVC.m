@@ -180,8 +180,9 @@
     
     if(strSeelctedCategory.length > 0) {
         // [[NSNotificationCenter defaultCenter] postNotificationName:@"ForceUpdateLocation" object:self userInfo:@{@"pnumb":@"1",@"direction":kNext}];
+        UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         pageViewControllerVC *pageVC=[self.storyboard instantiateViewControllerWithIdentifier:@"pageViewControllerVC"];
-        pageVC.arrPageController=@[[self.storyboard instantiateViewControllerWithIdentifier:@"medicalInfoMainVC"],[self.storyboard instantiateViewControllerWithIdentifier:@"UploadDocumentsViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"paymentViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"searchDoctorVC"]].mutableCopy;
+        pageVC.arrPageController=@[[self.storyboard instantiateViewControllerWithIdentifier:@"medicalInfoMainVC"],[mainSB instantiateViewControllerWithIdentifier:@"UploadDocumentsViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"paymentViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"searchDoctorVC"]].mutableCopy;
         //pageVC.shouldScroll=YES;searchDoctorVC
         [self.navigationController pushViewController:pageVC animated:YES];
     }
