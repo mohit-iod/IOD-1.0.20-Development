@@ -276,7 +276,7 @@
 #define kAskCancelAppointment @"Are you sure you wish to cancel the appointment?"
 #define kChooseReason @"Choose Reason"
 #define kGotoNextPage @"Do you wish to Prescribe Medicine, Lab Work or Sick Leave Note?"
-#define kAgreeTerms @"Please agree to terms and conditions"
+#define kAgreeTerms @"Please agree to terms and conditions, Privacy Policy"
 
 //Explore page links
 #define kTermsLink  @"http://www.ionlinedoctor.com/termsandconditionsm"
