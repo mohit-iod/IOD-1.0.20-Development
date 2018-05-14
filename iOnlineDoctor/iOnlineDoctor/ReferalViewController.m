@@ -15,6 +15,8 @@
 
 @implementation ReferalViewController
 
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     referalCode = UDGet(@"referalcode");
@@ -29,7 +31,7 @@
 #pragma mark - IBAction Methods
 
 -(IBAction)btnSharePressed:(id)sender {
-    
+    //Share Referal Code
     NSString * title =[NSString stringWithFormat:@"I am excited to share link for I Online Doctor Mobile App. Download and Video Call Doctor from your Mobile! Please use my code %@. \n https://itunes.apple.com/us/app/i-online-doc/id1299763701?ls=1&mt=8",referalCode];
     
     NSArray* dataToShare = @[title];

@@ -32,6 +32,8 @@
 
 @implementation ExploreViewController
 
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

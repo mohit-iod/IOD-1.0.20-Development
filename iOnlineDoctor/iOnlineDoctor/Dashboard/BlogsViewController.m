@@ -22,6 +22,8 @@
 
 @implementation BlogsViewController
 
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -32,14 +34,14 @@
     
 }
 
-
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:FALSE animated:FALSE];
 }
 
+#pragma mark - Void Methods
 
 -(void)getAllBlogs{
-    
+    //Get List of All Blogs
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
     [service getAllBlogs:nil WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
         if([[responseCode objectForKey:@"status"] isEqualToString:@"success"]){
@@ -49,6 +51,7 @@
     }];
 }
 
+#pragma mark - Tableview Delegate & Datasource Methods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -57,7 +60,6 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return arrBlogs.count;
 }
-
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     blogTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"blogTableViewCell"];
@@ -68,7 +70,6 @@
         strThumbnail = [[arrBlogs objectAtIndex:indexPath.row] objectForKey:@"thumbnail_landscape"];
     }
     [cell.imgBlog sd_setImageWithURL:[NSURL URLWithString:strThumbnail] placeholderImage:[UIImage imageNamed:@"small-no-img.png"]];
-    
     
     cell.lblTitle.text = [NSString stringWithFormat:@"%@",[[arrBlogs objectAtIndex:indexPath.row] valueForKey:@"post_title"]];
     
@@ -86,8 +87,6 @@
     [cell.btnShare addTarget:self action:@selector(shareBlog:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
-
-
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -115,6 +114,8 @@
     [self.navigationController pushViewController:fileViewMe animated:YES];
 }
 
+#pragma mark - IBAction Methods
+
 - (IBAction)shareBlog:(UIButton *)sender{
     int tag = sender.tag;
     NSString *url=[[arrBlogs objectAtIndex:tag] valueForKey:@"guid"];
@@ -126,11 +127,7 @@
     [self presentViewController:activityViewController animated:YES completion:^{}];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - RefreshView Methods If Internet Connection Lost
 
 -(void)refreshView:(NSNotification *) notification {
     [self getAllBlogs];
@@ -138,6 +135,11 @@
 
 -(void)viewDidUnload{
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"RefreshView" object:nil];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

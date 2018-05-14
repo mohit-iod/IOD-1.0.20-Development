@@ -74,7 +74,7 @@
                   moduleName = "iOnlineDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Mohit%20-%20iOS/Project/Refactor%20-%20iOS/IOD-1.0.20-Development/iOnlineDoctor/iOnlineDoctor/Payment/PaymentViewController.m"
-                  timestampString = "547966345.412477"
+                  timestampString = "547983092.812137"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "139"
@@ -89,7 +89,7 @@
                   moduleName = "iOnlineDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Mohit%20-%20iOS/Project/Refactor%20-%20iOS/IOD-1.0.20-Development/iOnlineDoctor/iOnlineDoctor/Payment/PaymentViewController.m"
-                  timestampString = "547966345.4169919"
+                  timestampString = "547983092.81449"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "139"
@@ -170,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOnlineDoctor/Book Appointment/BookAppointmentVC.m"
-            timestampString = "528959930.014224"
+            timestampString = "547983092.593478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "412"
-            endingLineNumber = "412"
-            landmarkName = "-setSelectedTabIndex:"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "-calendar:boundingRectWillChange:animated:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,46 +185,78 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOnlineDoctor/Book Appointment/BookAppointmentVC.m"
-            timestampString = "528960102.399485"
+            filePath = "iOnlineDoctor/VideoCall/PatientVideoCallViewController.m"
+            timestampString = "547983092.593556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[BookAppointmentVC slotsWithBookedEvent]"
-                  moduleName = "iOnlineDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Mohit%20-%20iOS/Project/Refactor%20-%20iOS/IOD-1.0.20-Development/iOnlineDoctor/iOnlineDoctor/Book%20Appointment/BookAppointmentVC.m"
-                  timestampString = "547966345.4884371"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[BookAppointmentVC setSlotsWithBookedEvent:]"
-                  moduleName = "iOnlineDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Mohit%20-%20iOS/Project/Refactor%20-%20iOS/IOD-1.0.20-Development/iOnlineDoctor/iOnlineDoctor/Book%20Appointment/BookAppointmentVC.m"
-                  timestampString = "547966345.493664"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOnlineDoctor/VideoCall/PatientVideoCallViewController.m"
+            timestampString = "547983092.593614"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-viewDidAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOnlineDoctor/VideoCall/PatientVideoCallViewController.m"
+            timestampString = "547983092.593665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-hideallViews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOnlineDoctor/VideoCall/PatientVideoCallViewController.m"
+            timestampString = "547983092.593714"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-startAnimating"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOnlineDoctor/VideoCall/CallInterruptionViewController.m"
+            timestampString = "547983092.593765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-btnCallAgainPressed:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

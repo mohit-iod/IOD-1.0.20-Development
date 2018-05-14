@@ -1859,8 +1859,8 @@
 		7CAECE731F528D140086B736 /* DoctorRegister */ = {
 			isa = PBXGroup;
 			children = (
-				7C0D91291F591D3E00694120 /* BankAccountVC.m */,
 				7C0D91281F591D3E00694120 /* BankAccountVC.h */,
+				7C0D91291F591D3E00694120 /* BankAccountVC.m */,
 				7C3CE16B1F53BF3900D1648E /* RegisterPageDoctorController.h */,
 				7C3CE16C1F53BF3900D1648E /* RegisterPageDoctorController.m */,
 			);

@@ -21,6 +21,7 @@
 #import "PaymentViewController.h"
 #import "SymptomsViewController.h"
 #import "SelectPatientViewController.h"
+#import "Message+Constant.h"
 
 @interface BookAppointmentVC ()<FSCalendarDataSource,FSCalendarDelegate,FSCalendarDelegateAppearance>
 {

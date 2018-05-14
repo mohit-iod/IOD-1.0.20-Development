@@ -44,6 +44,8 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     
     regisService = [RegistrationService sharedManager];
@@ -66,8 +68,6 @@
     [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
 
 }
-
-
 
 -(void)viewWillAppear:(BOOL)animated{
     
@@ -95,19 +95,18 @@
     [self checkReachability];
 }
 
-
 - (void)viewDidDisappear:(BOOL)animated{
     // Called after the view was dismissed, covered
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
+#pragma mark - Void Methods
 
 -(void)checkReachability{
     Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
     BOOL reachable = reach. isReachable;
     if(!reachable) {
     }
-    
 }
 
 -(void) getAllSpecialization {
@@ -117,14 +116,6 @@
     }];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark Button Events
-
 //Click event for Terms and Conditin page. Redirected to webview.
 -(void)termsLogin{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -133,20 +124,6 @@
     fileViewMe.strTitle= kTermsConditions;
     fileViewMe.hideMenu = YES;
     [self.navigationController pushViewController:fileViewMe animated:YES];
-}
-
-//Forgot password event
-- (IBAction)btnForgotPassword:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    [self.navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"ForgotPasswordViewController"] animated:YES];
-    
-}
-
-// Login button event.
-
-- (IBAction)btnGetStarted:(id)sender {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self checkPermissions];
 }
 
 -(void)checkPermissions{
@@ -178,13 +155,13 @@
             isMicrophoneAccess = NO;
         }
     }];
-
+    
     
     // Push notification permissions
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *settings){
         
-    
+        
         if(isMicrophoneAccess == YES && isCameraAccess == YES){
             [self performSelectorOnMainThread:@selector(login) withObject:nil waitUntilDone:NO];
         }
@@ -196,7 +173,7 @@
 
 
 -(void)gotoAppSettings{
-
+    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@""
@@ -205,7 +182,7 @@
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"app-settings:"]];
-    
+        
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         //do something when click button
@@ -220,20 +197,7 @@
 
 - (void)_queryNotificationsStatus
 {
-
-}
-
-//Check box event
--(IBAction)testCheckbox:(id)sender
-{
-}
-
--(IBAction)testChecking {
-    self.checkbox.checked = !self.checkbox.checked;
-}
-
--(IBAction)testDisabling {
-    self.checkbox.disabled = !self.checkbox.disabled;
+    
 }
 
 //Check if the doctor is disable fot first time
@@ -313,10 +277,8 @@
     
 }
 
-
-// Login validation and API call.
 -(void) login {
-    
+// Login validation and API call.
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     // username validation
     if(![IODUtils getError:self.txtUserName minVlue:@"0" minVlue:@"100" onlyNumeric:NO onlyChars:NO canBeEmpty:NO checkEmail:YES minAge:nil maxAge:nil canBeSameDate:NO ]){
@@ -329,7 +291,7 @@
     else {
         NSString *email = _txtUserName.text;
         NSString *password = _txtPassword.text;
-       
+        
         NSString *fcmToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"FCMToken"];
         if(fcmToken == nil)
         {
@@ -372,7 +334,7 @@
                     if([strState isEqualToString:@", "]){
                         strState = @"";
                     }
-
+                    
                     if([strState isEqualToString:@"<null>"]){
                         strState = @"";
                     }
@@ -386,11 +348,11 @@
                         strAddress = [strAddress substringFromIndex:1];
                     }
                     UDSet(@"userinfodoc", ([NSKeyedArchiver archivedDataWithRootObject:@{@"name":strname,@"address":strAddress}]));
-                     UDSet(@"userinfo", ([NSKeyedArchiver archivedDataWithRootObject:@{@"name":strname,@"address":strAddress}]));
+                    UDSet(@"userinfo", ([NSKeyedArchiver archivedDataWithRootObject:@{@"name":strname,@"address":strAddress}]));
                     
                     if([user_type isEqualToString:@"Patient"]){
                         [[NSUserDefaults standardUserDefaults] setValue:@"patient" forKey:@"usertype"];
-                    UDSetBool(@"isdoctor", NO);
+                        UDSetBool(@"isdoctor", NO);
                         int isFirstLogin = [[dict valueForKey:@"is_first_login"] intValue];
                         NSString *referalCode = [NSString stringWithFormat:@"%@",[dict valueForKey:@"referral_code"]];
                         UDSet(@"referalcode", referalCode);
@@ -413,7 +375,7 @@
                 }
                 else  if([[response objectForKey:@"status"] isEqualToString:@"fail"]) {
                     [IODUtils showFCAlertMessage:[response objectForKey:@"message"]  withTitle:@"" withViewController:self with:@"error"];
-
+                    
                 }
                 else if (error) {
                     if([[error  valueForKey:@"message"] isEqualToString:kAccountVerfied]) {
@@ -435,15 +397,15 @@
                         }];
                         [alertController addAction:yesPressed];
                         [alertController addAction:noPressed];
-
+                        
                         [self presentViewController:alertController animated:YES completion:nil];
-
+                        
                         
                     }
                     else if([[error  valueForKey:@"status"] isEqualToString:@"fail"])
                         
-                         [IODUtils showFCAlertMessage:[error  valueForKey:@"message"]  withTitle:@"" withViewController:self with:@"error"];
-                    }
+                        [IODUtils showFCAlertMessage:[error  valueForKey:@"message"]  withTitle:@"" withViewController:self with:@"error"];
+                }
             }]  ;
         }
         else {
@@ -452,23 +414,102 @@
     }
 }
 
-// Resend email if email is not resent.
 - (void) resendEmail{
+    // Resend email if email is not resent.
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
     //postResendEmail/
     
     NSMutableDictionary *parameter  = [[NSMutableDictionary alloc] init];
     [parameter setObject:_txtUserName.text forKey:@"email"];
-
+    
     [service postResendEmail:parameter withCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-         [IODUtils showFCAlertMessage:@"Verification email is resent"  withTitle:@"" withViewController:self with:@"error"];
+        [IODUtils showFCAlertMessage:@"Verification email is resent"  withTitle:@"" withViewController:self with:@"error"];
         
     }];
 }
 
-//Click on Regisgter event.
-- (IBAction)registerPressed:(UIButton *)sender {
+# pragma mark Redirection
 
+-(void) redirectToPatientRegistration {
+    //Action sheet event when regiter patient is clicked.
+    if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"iPad" bundle:nil];
+        RegisterPageDoctorController *registerPageDoctorController = [sb instantiateViewControllerWithIdentifier:@"RegisterPatientVCViewControlleriPad"];
+        registerPageDoctorController.title=@"Sign up";
+        
+        [self.navigationController pushViewController:registerPageDoctorController animated:YES];
+    }else{
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        pageViewControllerVC *pageVC=[sb instantiateViewControllerWithIdentifier:@"pageViewControllerVC"];
+        pageVC.title=@"Sign up";
+        pageVC.arrPageController=@[[self.storyboard instantiateViewControllerWithIdentifier:@"RegisterPatientVCViewController"]].mutableCopy;
+        [self.navigationController pushViewController:pageVC animated:YES];
+    }
+}
+
+-(void) redirectToDoctorRegistration {
+//Actionsheet event when register doctor is clicked.
+    if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"iPad" bundle:nil];
+        RegisterPageDoctorController *registerPageDoctorController = [sb instantiateViewControllerWithIdentifier:@"RegisterPageDoctorControlleriPad"];
+        registerPageDoctorController.title=@"Sign up";
+        
+        [self.navigationController pushViewController:registerPageDoctorController animated:YES];
+    }else{
+        pageViewControllerVC *pageVC=[self.storyboard instantiateViewControllerWithIdentifier:@"pageViewControllerVC"];
+        pageVC.title=@"Sign up";
+        pageVC.arrPageController=@[[self.storyboard instantiateViewControllerWithIdentifier:@"RegisterPageDoctorController"],[self.storyboard instantiateViewControllerWithIdentifier:@"RegisterPageDoctorController2"]].mutableCopy;
+        [self.navigationController pushViewController:pageVC animated:YES];
+    }
+
+}
+
+- (void) prepareError:(NSError *)error withProgressHud:(MBProgressHUD *)hud {
+    if (error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES];
+        });
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES];
+        });
+    }
+}
+
+//Get Country list.
+- (void)getCountryList {
+    CommonServiceHandler *commonService = [[CommonServiceHandler alloc] init];
+    [commonService getAllCountriesWithCompletion:^(NSArray *array) {
+    }];
+}
+
+
+#pragma mark - IBAction Methods
+
+- (IBAction)btnForgotPassword:(id)sender {
+    //Forgot password method
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    [self.navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"ForgotPasswordViewController"] animated:YES];
+}
+
+- (IBAction)btnGetStarted:(id)sender {
+    // Login button method.
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self checkPermissions];
+}
+
+-(IBAction)testChecking {
+    self.checkbox.checked = !self.checkbox.checked;
+}
+
+-(IBAction)testDisabling {
+    self.checkbox.disabled = !self.checkbox.disabled;
+}
+
+- (IBAction)registerPressed:(UIButton *)sender {
+    //Click on Regisgter event.
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"" message:@"Select Registration option" preferredStyle:UIAlertControllerStyleActionSheet];
     UIPopoverPresentationController *popover = actionSheet.popoverPresentationController;
     if (popover)
@@ -520,78 +561,16 @@
 //    }
 //}
 
-# pragma mark Redirection
-
-//Action sheet event when regiter patient is clicked.
--(void) redirectToPatientRegistration {
-    if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"iPad" bundle:nil];
-        RegisterPageDoctorController *registerPageDoctorController = [sb instantiateViewControllerWithIdentifier:@"RegisterPatientVCViewControlleriPad"];
-        registerPageDoctorController.title=@"Sign up";
-        
-        [self.navigationController pushViewController:registerPageDoctorController animated:YES];
-    }else{
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        pageViewControllerVC *pageVC=[sb instantiateViewControllerWithIdentifier:@"pageViewControllerVC"];
-        pageVC.title=@"Sign up";
-        pageVC.arrPageController=@[[self.storyboard instantiateViewControllerWithIdentifier:@"RegisterPatientVCViewController"]].mutableCopy;
-        [self.navigationController pushViewController:pageVC animated:YES];
-    }
-}
-
-//Actionsheet event when register doctor is clicked.
--(void) redirectToDoctorRegistration {
-    
-    if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"iPad" bundle:nil];
-        RegisterPageDoctorController *registerPageDoctorController = [sb instantiateViewControllerWithIdentifier:@"RegisterPageDoctorControlleriPad"];
-        registerPageDoctorController.title=@"Sign up";
-
-        [self.navigationController pushViewController:registerPageDoctorController animated:YES];
-    }else{
-        pageViewControllerVC *pageVC=[self.storyboard instantiateViewControllerWithIdentifier:@"pageViewControllerVC"];
-        pageVC.title=@"Sign up";
-        pageVC.arrPageController=@[[self.storyboard instantiateViewControllerWithIdentifier:@"RegisterPageDoctorController"],[self.storyboard instantiateViewControllerWithIdentifier:@"RegisterPageDoctorController2"]].mutableCopy;
-        [self.navigationController pushViewController:pageVC animated:YES];
-    }
-    
-    
-    
-}
-
-- (void) prepareError:(NSError *)error withProgressHud:(MBProgressHUD *)hud {
-    if (error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [hud hideAnimated:YES];
-        });
-    } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [hud hideAnimated:YES];
-        });
-    }
-}
-
-//Get Country list.
-- (void)getCountryList {
-    CommonServiceHandler *commonService = [[CommonServiceHandler alloc] init];
-    [commonService getAllCountriesWithCompletion:^(NSArray *array) {
-    }];
-}
-
-- (BOOL)touchesShouldCancelInContentView:(UIView *)view
-{
-    return ![view isKindOfClass:[UIButton class]];
-}
+#pragma mark - UITextfield Delegate Methods
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     [IODUtils setPlaceHolderLabelforTextfield:textField];
     return true;
 }
 
-// return NO to not change text
-
-
+- (BOOL)touchesShouldCancelInContentView:(UIView *)view
+{
+    return ![view isKindOfClass:[UIButton class]];
+}
 
 @end

@@ -43,6 +43,76 @@
     return (arc4random()%255)/255.f;
 }
 
+-(void)backPop{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - View Controller Methods
+
+- (void)viewDidLoad {
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
+    [super viewDidLoad];
+    [self setUI];
+    //  [self getAllBlogs];
+    [pageController setDelegate:self];
+    UDSet(@"userType", @"Doctor");
+    
+    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+    BOOL reachable = reach. isReachable;
+    if (reachable) {
+        
+        NSString *fcmToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"FCMToken"];
+        
+        NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
+        [parameter setObject:fcmToken forKey:@"device_token"];
+        
+        if(fcmToken == nil)
+        {
+            fcmToken = @"testtoken";
+        }
+        
+        CommonServiceHandler *service =[[CommonServiceHandler alloc] init];
+        [service updateToken:parameter WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
+            // NSLog(@"response code");
+        }];
+    }
+    else{
+        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
+    }
+    //    for (UIView *view in self.navigationController.navigationBar.subviews) {
+    //        [view setHidden:YES];
+    //    }
+    
+    [_imgProfilePic layoutIfNeeded];
+    _imgProfilePic.layer.cornerRadius=_imgProfilePic.frame.size.height/2;
+    
+    _imgProfilePic.clipsToBounds = YES;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:TRUE animated:FALSE];
+    UIImage *imgPro=[NSKeyedUnarchiver unarchiveObjectWithData: UDGet(@"propicdoc")];
+    if (!imgPro) {
+        imgPro=[UIImage imageNamed:@"P-calling-icon.png"] ;
+    }
+    NSDictionary  *dictUserData=[NSKeyedUnarchiver unarchiveObjectWithData: UDGet(@"userinfodoc")];
+    
+    if (dictUserData) {
+        _lblName.text =[dictUserData objectForKey:@"namedoc"];
+        _lblAddress.text = [dictUserData objectForKey:@"addressdoc"];
+    }
+    _imgProfilePic.image=imgPro;
+    _imgProfilePic.clipsToBounds = YES;
+    
+    [self setUI];
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    [self getAllBlogs];
+}
+
 #pragma mark - Add Pages To ScrollView (Testing)
 - (void) addNoOfPagesHorizontally:(NSInteger)pages {
     
@@ -98,15 +168,6 @@
     [_scrollView setPagingEnabled:YES];
     [_scrollView setShowsHorizontalScrollIndicator:NO];
     [_scrollView setShowsVerticalScrollIndicator:NO];
-}
-
--(IBAction)clickOnBlog:(UIButton *) btn {
-    int tag = btn.tag;
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    FileViewController *fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewController"];
-    fileViewMe.strFilePath=[[arrBlogs objectAtIndex:tag] valueForKey:@"guid"];
-    fileViewMe.strTitle=[[arrBlogs objectAtIndex:tag] valueForKey:@"post_title"];
-    [self.navigationController pushViewController:fileViewMe animated:YES];
 }
 
 - (void) configureHorizontalControllerWithTotalPages:(NSInteger)totalPages {
@@ -195,6 +256,8 @@
     }];
 }
 
+#pragma mark - Void Methods
+
 -(void)getAllBlogs{
     
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
@@ -219,11 +282,6 @@
     }];
 }
 
--(void) viewDidAppear:(BOOL)animated{
-    [self getAllBlogs];
-}
-
-
 -(void)callAfter4Second:(NSTimer*) t {
     int opt1 = _wrapper.frame.size.width+1;
     int opt2 = _wrapper.frame.size.width *2 +1;
@@ -240,74 +298,9 @@
 
 
 -(void)viewDidLayoutSubviews{
-  
     _imgProfilePic.layer.cornerRadius=_imgProfilePic.frame.size.height/2;
       [self.imgProfilePic.layer setBorderColor:[UIColor whiteColor].CGColor];
     _imgProfilePic.clipsToBounds = YES;
-}
-
-
--(void)viewWillAppear:(BOOL)animated{
-    [self.navigationController setNavigationBarHidden:TRUE animated:FALSE];
-    UIImage *imgPro=[NSKeyedUnarchiver unarchiveObjectWithData: UDGet(@"propicdoc")];
-    if (!imgPro) {
-        imgPro=[UIImage imageNamed:@"P-calling-icon.png"] ;
-    }
-    NSDictionary  *dictUserData=[NSKeyedUnarchiver unarchiveObjectWithData: UDGet(@"userinfodoc")];
-    
-    if (dictUserData) {
-        _lblName.text =[dictUserData objectForKey:@"namedoc"];
-        _lblAddress.text = [dictUserData objectForKey:@"addressdoc"];
-    }
-      _imgProfilePic.image=imgPro;
-     _imgProfilePic.clipsToBounds = YES;
-
-     [self setUI];
-}
--(void)backPop{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-- (void)viewDidLoad {
-    
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
-    [super viewDidLoad];
-    [self setUI];
-    [self getPatientDate];
-  //  [self getAllBlogs];
-    [pageController setDelegate:self];
-     UDSet(@"userType", @"Doctor");
-
-    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-    BOOL reachable = reach. isReachable;
-    if (reachable) {
-        
-        NSString *fcmToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"FCMToken"];
-        
-        NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
-        [parameter setObject:fcmToken forKey:@"device_token"];
-        
-        if(fcmToken == nil)
-        {
-            fcmToken = @"testtoken";
-        }
-        
-        CommonServiceHandler *service =[[CommonServiceHandler alloc] init];
-        [service updateToken:parameter WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-           // NSLog(@"response code");
-        }];
-    }
-    else{
-        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-    }
-//    for (UIView *view in self.navigationController.navigationBar.subviews) {
-//        [view setHidden:YES];
-//    }
-    
-    [_imgProfilePic layoutIfNeeded];
-    _imgProfilePic.layer.cornerRadius=_imgProfilePic.frame.size.height/2;
-  
-    _imgProfilePic.clipsToBounds = YES;
-    
 }
 
 - (void)setUI{
@@ -352,78 +345,6 @@
     [(DEMONavigationController *)self.parentViewController showMenu];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Collection view delegates
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.item ==1) {
-         docService.isFromVideo = 0;
-        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"PatientListViewController"] animated:YES];
-    }
-    else if (indexPath.item == 2) {
-        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"setBusinessHours"] animated:YES];
-    }
-    else if (indexPath.item == 0) {
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ExploreViewController  *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"ExploreViewController"];
-        viewTab.userType = @"doctor";
-        [self.navigationController pushViewController:viewTab animated:YES];
-    }
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.arrDashBoardImages.count;
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(0, 0, 0, 0);
-}
-
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-        return CGSizeMake(self.collectionViewDashbaord.frame.size.width/3.01,self.collectionViewDashbaord.frame.size.height);
-}
-
--(DashboardXibCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    DashboardXibCell *cell=(DashboardXibCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DashboardXibCell" forIndexPath:indexPath];
-    
-    NSString *imgDashboardName = [[self.arrDashBoardImages objectAtIndex:indexPath.row] valueForKey:@"imageName"];
-    NSString *DashboardTitle = [[self.arrDashBoardImages objectAtIndex:indexPath.row] valueForKey:@"Title"];
-    cell.lblDashboardTitle.text=DashboardTitle;
-    
-    cell.lblDashboardTitle.textColor = [UIColor blackColor];
-    
-//    NSString *backgroundColor =[[self.arrDashBoardImages objectAtIndex:indexPath.row] valueForKey:@"Color"];
-//    cell.backgroundColor = [[UIColor colorWithHexRGB:backgroundColor] colorWithAlphaComponent:1.0];
-    
-    cell.backgroundColor = [UIColor clearColor];
-    cell.imgDashboardCell.image = [UIImage imageNamed:imgDashboardName];
-    return cell;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 0.0;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 2.0;
-}
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-- (void)getPatientDate {
-  
-}
-
 - (void) getUserPrfile{
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
     [service getUserProfile:^(NSDictionary *responseCode, NSError *error) {
@@ -432,7 +353,7 @@
             NSString *strname = [NSString stringWithFormat:@"%@",[dictdata valueForKey:@"name"]];
             NSString *profilePic = [NSString stringWithFormat:@"%@",[dictdata valueForKey:@"profile_pic"]];
             UDSet(@"docprofilePic", profilePic);
-
+            
             [self.imgProfilePic sd_setImageWithURL:[NSURL URLWithString:profilePic] placeholderImage:[UIImage imageNamed:@"P-calling-icon.png"]];
             UIImage *imgPro=[NSKeyedUnarchiver unarchiveObjectWithData: UDGet(@"propicdoc")];
             
@@ -448,13 +369,13 @@
             }
             [self.imgProfilePic sd_setImageWithURL:[NSURL URLWithString:profilePic] placeholderImage:imgPro completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
                 
-            UDSet(@"propicdoc", [NSKeyedArchiver archivedDataWithRootObject:image]);
+                UDSet(@"propicdoc", [NSKeyedArchiver archivedDataWithRootObject:image]);
             }];
             _lblName.text =strname;
             
             NSString *strCountry =[NSString stringWithFormat:@"%@",[dictdata valueForKey:@"country"]];
             UDSet(@"country", strCountry);
-
+            
             NSString *strState =[NSString stringWithFormat:@"%@, ",[dictdata valueForKey:@"state"]];
             NSString *strCity =[NSString stringWithFormat:@"%@, ",[dictdata valueForKey:@"city"]];
             
@@ -477,19 +398,12 @@
             if([firstLetter isEqualToString:@","]){
                 strAddress = [strAddress substringFromIndex:1];
             }
-             _lblAddress.text = strAddress;
+            _lblAddress.text = strAddress;
             _imgProfilePic.clipsToBounds = YES;
             UDSet(@"userinfodoc", ([NSKeyedArchiver archivedDataWithRootObject:@{@"name":strname,@"address":strAddress}]));
         }
     }];
 }
-
-- (IBAction)editButton:(id)sender {
-//      [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"EditDoctorViewController"] animated:YES];
-    UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarEdit"];
-    [self.navigationController pushViewController:viewTab animated:YES];
-}
-
 
 -(void)logOut{
     
@@ -520,5 +434,78 @@
     
 }
 
+#pragma mark - IBAction Methods
+
+-(IBAction)clickOnBlog:(UIButton *) btn
+{
+    int tag = btn.tag;
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FileViewController *fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewController"];
+    fileViewMe.strFilePath=[[arrBlogs objectAtIndex:tag] valueForKey:@"guid"];
+    fileViewMe.strTitle=[[arrBlogs objectAtIndex:tag] valueForKey:@"post_title"];
+    [self.navigationController pushViewController:fileViewMe animated:YES];
+}
+
+- (IBAction)editButton:(id)sender {
+    //      [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"EditDoctorViewController"] animated:YES];
+    UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarEdit"];
+    [self.navigationController pushViewController:viewTab animated:YES];
+}
+
+#pragma mark - Collectionview Delegates & DataSource Methods
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.arrDashBoardImages.count;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(self.collectionViewDashbaord.frame.size.width/3.01,self.collectionViewDashbaord.frame.size.height);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 2.0;
+}
+
+-(DashboardXibCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    DashboardXibCell *cell=(DashboardXibCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DashboardXibCell" forIndexPath:indexPath];
+    
+    NSString *imgDashboardName = [[self.arrDashBoardImages objectAtIndex:indexPath.row] valueForKey:@"imageName"];
+    NSString *DashboardTitle = [[self.arrDashBoardImages objectAtIndex:indexPath.row] valueForKey:@"Title"];
+    cell.lblDashboardTitle.text=DashboardTitle;
+    
+    cell.lblDashboardTitle.textColor = [UIColor blackColor];
+    
+//    NSString *backgroundColor =[[self.arrDashBoardImages objectAtIndex:indexPath.row] valueForKey:@"Color"];
+//    cell.backgroundColor = [[UIColor colorWithHexRGB:backgroundColor] colorWithAlphaComponent:1.0];
+    
+    cell.backgroundColor = [UIColor clearColor];
+    cell.imgDashboardCell.image = [UIImage imageNamed:imgDashboardName];
+    return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.item ==1) {
+        docService.isFromVideo = 0;
+        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"PatientListViewController"] animated:YES];
+    }
+    else if (indexPath.item == 2) {
+        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"setBusinessHours"] animated:YES];
+    }
+    else if (indexPath.item == 0) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ExploreViewController  *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"ExploreViewController"];
+        viewTab.userType = @"doctor";
+        [self.navigationController pushViewController:viewTab animated:YES];
+    }
+}
 
 @end

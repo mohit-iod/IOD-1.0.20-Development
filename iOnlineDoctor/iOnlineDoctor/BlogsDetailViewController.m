@@ -15,11 +15,12 @@
 
 @implementation BlogsDetailViewController
 
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UIActivityIndicatorView *activity;
-    DoctorAppointmentServiceHandler *docService;
     [super viewDidLoad];
     
     self.title=@"";
@@ -36,17 +37,11 @@
     [_webView loadRequest:request];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark - Webview Delegate Methods
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
@@ -57,5 +52,9 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

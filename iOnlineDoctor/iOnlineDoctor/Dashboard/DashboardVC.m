@@ -54,6 +54,118 @@
     return (arc4random()%255)/255.f;
 }
 
+#pragma mark - View Controller Methods
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    if(_isFirstLogin == 1 ){
+        if(![_strPrice isEqualToString:@"(null)"]){
+            [self showCoupon];
+        }
+    }
+    else{
+    }
+    //  [self getAllBlogs];
+    [self getUserPrfile];
+    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+    BOOL reachable = reach. isReachable;
+    if (reachable) {
+        NSString *fcmToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"FCMToken"];
+        
+        NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
+        [parameter setObject:fcmToken forKey:@"device_token"];
+        if(fcmToken == nil)
+        {
+            fcmToken = @"testtoken";
+        }
+        CommonServiceHandler *service =[[CommonServiceHandler alloc] init];
+        [service updateToken:parameter WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
+            //NSLog(@"response code");
+        }];
+    }
+    else{
+        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
+    }
+    patientService = [PatientAppointService sharedManager];
+    docService = [DoctorAppointmentServiceHandler sharedManager];
+    regisService = [RegistrationService sharedManager];
+    
+    patientService.documentName = [[NSMutableArray alloc] init];
+    patientService.arrDocumentData =[[NSMutableArray alloc] init];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
+    
+    self.title=@"Home";
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
+    UINib *cellNib = [UINib nibWithNibName:@"DashboardXibCell" bundle:nil];
+    [self.collectionViewDashbaord registerNib:cellNib forCellWithReuseIdentifier:@"DashboardXibCell"];
+    [self.collectionViewDashbaord setContentInset:UIEdgeInsetsMake(0,0,0,0)];
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    NSDictionary *dictdashboard = (NSDictionary *)[IODUtils loadJsonDataFromPath:[[NSBundle mainBundle]pathForResource:@"PatientDashboard" ofType:@"json"]];
+    self.arrDashBoardImages  = [dictdashboard valueForKey:@"PatientDashboard"];
+    // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tapG=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(editImgClicked)];
+    // [_editProfileImg setUserInteractionEnabled:YES];
+    //  [_editProfileImg addGestureRecognizer:tapG];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithHexRGB:kNavigatinBarColor]];
+    //  _imgProfilePic.clipsToBounds = YES;
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refreshView:) name:@"RefreshView" object:nil];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
+    BOOL reachable = reach. isReachable;
+    if (reachable) {
+    }
+    regisService = [RegistrationService sharedManager];
+    [self getBadgeCounts];
+    [self getAllSpecialization];
+    
+    [_collectionViewDashbaord reloadData];
+    if([docService.isEVisit isEqualToString:@"yes"]){
+        NSError *error;
+        audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"another-hand-bell" ofType:@"mp3"]] error:&error];
+        if (error) {
+            // NSLog(@"Error : %@", [error localizedDescription]);
+        } else {
+            [audioPlayer prepareToPlay];
+            [audioPlayer play];
+            myTimer = [NSTimer scheduledTimerWithTimeInterval: 30.0 target: self
+                                                     selector: @selector(callAfterSixtySecond:) userInfo: nil repeats: YES];
+        }
+    }
+    [self.navigationController setNavigationBarHidden:TRUE animated:FALSE];
+    
+    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc]
+                                     initWithImage:[UIImage imageNamed:@""]
+                                     style:UIBarButtonItemStylePlain
+                                     target:self action:@selector(showMenu)];
+    //[logoutButton setTintColor:[UIColor whiteColor]];
+    menu = [[DEMONavigationController alloc] init];
+    self.navigationItem.leftBarButtonItem = logoutButton;
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    [self getAllBlogs];
+    patientService.question_3 = @"";
+    patientService.isFromLiveVideoCall = @"no";
+    patientService.question_4 = @"";
+    patientService.question_5 = @"";
+    patientService.question_6 = @"";
+    UDSet(@"SelectedSymptoms", @"");
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 #pragma mark - Add Pages To ScrollView (Testing)
 - (void) addNoOfPagesHorizontally:(NSInteger)pages {
     for (id v in _scrollView.subviews) {
@@ -197,10 +309,11 @@
     }];
 }
 
+#pragma mark - Void Methods
+
 -(void)backPop{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 -(void)showCoupon {
     couponBackgroundV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -256,116 +369,6 @@
     [couponBackgroundV addSubview:btnCloseView];
 }
 
--(IBAction)hideCouponView:(id)sender{
-    [couponBackgroundV setHidden:YES];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    if(_isFirstLogin == 1 ){
-        if(![_strPrice isEqualToString:@"(null)"]){
-            [self showCoupon];
-        }
-    }
-    else{
-    }
-  //  [self getAllBlogs];
-    [self getUserPrfile];
-    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-    BOOL reachable = reach. isReachable;
-    if (reachable) {
-        NSString *fcmToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"FCMToken"];
-    
-        NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
-        [parameter setObject:fcmToken forKey:@"device_token"];
-        if(fcmToken == nil)
-        {
-            fcmToken = @"testtoken";
-        }
-        CommonServiceHandler *service =[[CommonServiceHandler alloc] init];
-        [service updateToken:parameter WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-           //NSLog(@"response code");
-          }];
-    }
-    else{
-        //[IODUtils showMessage:INTERNET_ERROR withTitle:@"Error"];
-    }
-    patientService = [PatientAppointService sharedManager];
-    docService = [DoctorAppointmentServiceHandler sharedManager];
-    regisService = [RegistrationService sharedManager];
-    
-    patientService.documentName = [[NSMutableArray alloc] init];
-    patientService.arrDocumentData =[[NSMutableArray alloc] init];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
-    
-    self.title=@"Home";
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
-    UINib *cellNib = [UINib nibWithNibName:@"DashboardXibCell" bundle:nil];
-    [self.collectionViewDashbaord registerNib:cellNib forCellWithReuseIdentifier:@"DashboardXibCell"];
-    [self.collectionViewDashbaord setContentInset:UIEdgeInsetsMake(0,0,0,0)];
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    NSDictionary *dictdashboard = (NSDictionary *)[IODUtils loadJsonDataFromPath:[[NSBundle mainBundle]pathForResource:@"PatientDashboard" ofType:@"json"]];
-    self.arrDashBoardImages  = [dictdashboard valueForKey:@"PatientDashboard"];
-    // Do any additional setup after loading the view.
-
-    UITapGestureRecognizer *tapG=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(editImgClicked)];
-   // [_editProfileImg setUserInteractionEnabled:YES];
-  //  [_editProfileImg addGestureRecognizer:tapG];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithHexRGB:kNavigatinBarColor]];
-  //  _imgProfilePic.clipsToBounds = YES;
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refreshView:) name:@"RefreshView" object:nil];
-    
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    
-    Reachability* reach = [Reachability reachabilityWithHostname:kreachability];
-    BOOL reachable = reach. isReachable;
-    if (reachable) {
-    }
-    regisService = [RegistrationService sharedManager];
-    [self getBadgeCounts];
-    [self getAllSpecialization];
-    
-    [_collectionViewDashbaord reloadData];
-    if([docService.isEVisit isEqualToString:@"yes"]){
-        NSError *error;
-        audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"another-hand-bell" ofType:@"mp3"]] error:&error];
-        if (error) {
-           // NSLog(@"Error : %@", [error localizedDescription]);
-        } else {
-            [audioPlayer prepareToPlay];
-            [audioPlayer play];
-            myTimer = [NSTimer scheduledTimerWithTimeInterval: 30.0 target: self
-                                                              selector: @selector(callAfterSixtySecond:) userInfo: nil repeats: YES];
-        }
-    }
-    [self.navigationController setNavigationBarHidden:TRUE animated:FALSE];
-
-    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc]
-                                     initWithImage:[UIImage imageNamed:@""]
-                                     style:UIBarButtonItemStylePlain
-                                     target:self action:@selector(showMenu)];
-    //[logoutButton setTintColor:[UIColor whiteColor]];
-    menu = [[DEMONavigationController alloc] init];
-    self.navigationItem.leftBarButtonItem = logoutButton;
-}
-
--(void) viewDidAppear:(BOOL)animated{
-    [self getAllBlogs];
-     patientService.question_3 = @"";
-     patientService.isFromLiveVideoCall = @"no";
-     patientService.question_4 = @"";
-     patientService.question_5 = @"";
-     patientService.question_6 = @"";
-     UDSet(@"SelectedSymptoms", @"");
-}
-
 -(void)getAllBlogs{
     CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
     [MBProgressHUD showHUDAddedTo:_wrapper animated:YES];
@@ -386,16 +389,6 @@
             }
         }
     }];
-}
-
--(IBAction)clickOnBlog:(UIButton *) btn {
-    int tag = btn.tag;
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    FileViewController *fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewController"];
-    fileViewMe.strFilePath=[[arrBlogs objectAtIndex:tag] valueForKey:@"guid"];
-    fileViewMe.strTitle=[[arrBlogs objectAtIndex:tag] valueForKey:@"post_title"];
-    [self.navigationController pushViewController:fileViewMe animated:YES];
 }
 
 -(void)callAfter4Second:(NSTimer*) t {
@@ -429,91 +422,146 @@
     [self.navigationController pushViewController:viewTab animated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)animateLabel:(UILabel *)lbl {
+    
+    lbl.text = [[self.arrDashBoardImages objectAtIndex:4] valueForKey:@"Title"];
+    lbl.alpha = 1;
+    [UIView animateWithDuration:1 delay:0.5 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse animations:^{
+        lbl.alpha = 0;
+    } completion:nil];
 }
 
-#pragma mark - Collection view delegates
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    patientService.payment_mode_id = 0;
-    
-    
-    if(indexPath.item == 0 ) {
-            patientService.visit_type_id = @"1";
-            patientService.isFromliveCall = @"no";
-            patientService.slot_id = @"";
-            patientService.documentName = [[NSMutableArray alloc] init];
-            patientService.arrDocumentData = [[NSMutableArray alloc] init];
-          //  UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"TabbarCategoryViewController"];
-        
-         SelectPatientViewController *selectPatientVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"];
-            [self.navigationController pushViewController:selectPatientVC animated:YES];
-        
-    }
-    if(indexPath.item == 1) {
-            patientService.visit_type_id = @"2";
-            patientService.isFromliveCall = @"no";
-            patientService.documentName = [[NSMutableArray alloc] init];
-            patientService.arrDocumentData = [[NSMutableArray alloc] init];
-            UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"TabbarCategoryViewController"];
-            [self.navigationController pushViewController:viewTab animated:YES];
-            patientService.isFromliveCall = @"no";
-    }
-    if(indexPath.item == 2) {
-            patientService.visit_type_id = @"3";
-            patientService.documentName = [[NSMutableArray alloc] init];
-            patientService.arrDocumentData = [[NSMutableArray alloc] init];
-            patientService.documentName = [[NSMutableArray alloc]init];
-        
-            patientService.fromDashboard = 0;
-             UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"TabbarCategoryViewController"];
-           [self.navigationController pushViewController:viewTab animated:YES];
-        
-         //   UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarEditView"];
-         //   [self.navigationController pushViewController:viewTab animated:YES];
-    }
-    if (indexPath.item == 5) {
-     
-//        patientService.visit_type_id = @"4";
-//        patientService.selectedTab = @"0";
-//        
-//        UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarEdit"];
-//        [self.navigationController pushViewController:viewTab animated:YES];
-        
-        patientService.visit_type_id = @"4";
-        patientService.isFrom = @"MyAppointment";
-        UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"E_VisitPage"];
-        [self.navigationController pushViewController:viewTab animated:YES];
-        
-        
-    }
-    if (indexPath.item == 3){
-        
-//        patientService.visit_type_id = @"4";
-         ExploreViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"ExploreViewController"];
-        
-        viewTab.userType = @"patient";
-        [self.navigationController pushViewController:viewTab animated:YES];
-    }
-    if (indexPath.item == 4){
-
-        patientService.selectedTab = @"1";
-        patientService.visit_type_id = @"5";
-        patientService.isFrom = @"healthrecord";
-
-        [_collectionViewDashbaord reloadData];
-         DashboardXibCell *cell = (DashboardXibCell *)[_collectionViewDashbaord cellForItemAtIndexPath:indexPath];
-        [cell.lblDashboardTitle.layer removeAllAnimations];
-         docService.isEVisit = @"no";
-        [_collectionViewDashbaord reloadData];
-        
-        UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarHealthRecord"];
-            [self.navigationController pushViewController:viewTab animated:YES];
-    }
-    
+- (void) getUserPrfile{
+    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
+    //  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [service getUserProfile:^(NSDictionary *responseCode, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if([[responseCode valueForKey:@"status"] isEqualToString:@"success"]){
+            NSMutableDictionary *dictdata = [[responseCode objectForKey:@"data"] mutableCopy];
+            [dictdata removeObjectForKey:@"weightt"];
+            [dictdata removeObjectForKey:@"blood_group"];
+            [dictdata removeObjectForKey:@"height"];
+            UDSet(@"UserData", dictdata);
+            
+            NSString *strname = [NSString stringWithFormat:@"%@",[dictdata valueForKey:@"name"]];
+            UDSet(@"usname", strname);
+            
+            NSString *profilePic = [NSString stringWithFormat:@"%@", [dictdata valueForKey:@"profile_pic"]];
+            UDSet(@"profilePic", profilePic);
+            UIImage *imgPro=[NSKeyedUnarchiver unarchiveObjectWithData: UDGet(@"propic")];
+            
+            if (!imgPro) {
+                imgPro=[UIImage imageNamed:@"D-calling-icon.png"] ;
+            }
+            
+            //        [self.imgProfilePic sd_setImageWithURL:[NSURL URLWithString:profilePic] placeholderImage:imgPro completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            //            UDSet(@"propic", [NSKeyedArchiver archivedDataWithRootObject:image]);
+            //        }];
+            //            _lblName.text =strname;
+            //
+            
+            NSString *strCountry =[NSString stringWithFormat:@"%@",[dictdata valueForKey:@"country"]];
+            
+            NSString *strState =[NSString stringWithFormat:@"%@, ",[dictdata valueForKey:@"state"]];
+            NSString *strCity =[NSString stringWithFormat:@"%@, ",[dictdata valueForKey:@"city"]];
+            
+            if([strCity isEqualToString:@", "]){
+                strCity = @"";
+            }
+            
+            if([strState isEqualToString:@", "]){
+                strState = @"";
+            }
+            
+            if([strCountry isEqualToString:@""]){
+                strCountry = @"";
+            }
+            NSString *strAddress = [NSString stringWithFormat:@"%@%@%@",strCity,strState,strCountry];
+            
+            UDSet(@"userinfo", ([NSKeyedArchiver archivedDataWithRootObject:@{@"name":strname,@"address":strAddress}]));
+            UDSet(@"userType", @"Patient");
+        }
+    }];
 }
+
+-(void)logOut{
+    
+    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
+    [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
+    
+    [service logoutWithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
+        if (responseCode){
+            UDSet(@"userinfodoc",nil);
+            UDSet(@"propicdoc",nil);
+            UDSet(@"propic", nil);
+            
+            if([[responseCode objectForKey:@"status"] isEqualToString:@"success"]){
+                [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedIn"];
+                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UINavigationController *navController = [[UINavigationController alloc] init];
+                UDSet(@"auth", AuthKey);
+                UDSet(@"userinfodoc", nil);
+                
+                LoginVC *dashDoc = [sb instantiateViewControllerWithIdentifier:@"LoginVC"];
+                [navController addChildViewController:dashDoc];
+                [[[UIApplication sharedApplication] delegate] window].rootViewController = navController;
+                [[[UIApplication sharedApplication] delegate] window].backgroundColor = [UIColor whiteColor];
+            }
+        }
+    }];
+}
+
+- (void)getAllSpecialization {
+    NSString *visitId = patientService.visit_type_id;
+    NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:visitId,@"categoryId",nil];
+    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
+    [service getAllDoctorCategories:parameter andVisitID:visitId WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
+        
+        if([[responseCode objectForKey:@"status"] isEqualToString:@"succes"]){
+            int isPracticeCallDone = [[[responseCode valueForKey:@"data"] valueForKey:@"is_practice_call_done"] intValue];
+            patientService.isPracticeCallDone = isPracticeCallDone;
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
+//Mohit
+-(void)getBadgeCounts{
+    CommonServiceHandler * service = [[CommonServiceHandler alloc]init];
+    [service getBadgeCounts:nil WithCompletionBlock:^(NSDictionary * responseData, NSError* error){
+        //NSLog(@"Response data is:-%@",responseData);
+        if([[responseData valueForKey:@"status"] isEqualToString:@"success"]){
+            healthRecordCount = [[[responseData objectForKey:@"data" ] objectForKey:@"totalcount"] intValue];
+            // NSLog(@"Health Count is:-%d",healthRecordCount);
+            appointmentCount = [[[responseData objectForKey:@"data" ] objectForKey:@"totalmessagesCount"] intValue];
+            
+            
+            if(appointmentCount > 0 || healthRecordCount >0){
+                [self.collectionViewDashbaord reloadData];
+            }
+        }
+        else{
+        }
+    }];
+}
+
+
+#pragma mark - IBAction Methods
+
+-(IBAction)hideCouponView:(id)sender{
+    [couponBackgroundV setHidden:YES];
+}
+
+-(IBAction)clickOnBlog:(UIButton *) btn {
+    int tag = btn.tag;
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FileViewController *fileViewMe  = [sb instantiateViewControllerWithIdentifier:@"FileViewController"];
+    fileViewMe.strFilePath=[[arrBlogs objectAtIndex:tag] valueForKey:@"guid"];
+    fileViewMe.strTitle=[[arrBlogs objectAtIndex:tag] valueForKey:@"post_title"];
+    [self.navigationController pushViewController:fileViewMe animated:YES];
+}
+
+#pragma mark - Collectionview Delegate & Datasource Methods
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.arrDashBoardImages.count;
@@ -522,6 +570,14 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
  
     return CGSizeMake(self.collectionViewDashbaord.frame.size.width/3.01,self.collectionViewDashbaord.frame.size.height/2);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
 }
 
 -(DashboardXibCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -579,141 +635,86 @@
     return cell;
 }
 
--(void)animateLabel:(UILabel *)lbl {
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    patientService.payment_mode_id = 0;
     
-    lbl.text = [[self.arrDashBoardImages objectAtIndex:4] valueForKey:@"Title"];
-    lbl.alpha = 1;
-    [UIView animateWithDuration:1 delay:0.5 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse animations:^{
-        lbl.alpha = 0;
-    } completion:nil];
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 0.0;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 0.0;
-}
-
-- (void) getUserPrfile{
-    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
-  //  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [service getUserProfile:^(NSDictionary *responseCode, NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        if([[responseCode valueForKey:@"status"] isEqualToString:@"success"]){
-            NSMutableDictionary *dictdata = [[responseCode objectForKey:@"data"] mutableCopy];
-            [dictdata removeObjectForKey:@"weightt"];
-            [dictdata removeObjectForKey:@"blood_group"];
-            [dictdata removeObjectForKey:@"height"];
-            UDSet(@"UserData", dictdata);
-
-            NSString *strname = [NSString stringWithFormat:@"%@",[dictdata valueForKey:@"name"]];
-            UDSet(@"usname", strname);
-
-            NSString *profilePic = [NSString stringWithFormat:@"%@", [dictdata valueForKey:@"profile_pic"]];
-             UDSet(@"profilePic", profilePic);
-              UIImage *imgPro=[NSKeyedUnarchiver unarchiveObjectWithData: UDGet(@"propic")];
-
-            if (!imgPro) {
-                imgPro=[UIImage imageNamed:@"D-calling-icon.png"] ;
-            }
-            
-//        [self.imgProfilePic sd_setImageWithURL:[NSURL URLWithString:profilePic] placeholderImage:imgPro completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-//            UDSet(@"propic", [NSKeyedArchiver archivedDataWithRootObject:image]);
-//        }];
-//            _lblName.text =strname;
-//           
-
-            NSString *strCountry =[NSString stringWithFormat:@"%@",[dictdata valueForKey:@"country"]];
-           
-            NSString *strState =[NSString stringWithFormat:@"%@, ",[dictdata valueForKey:@"state"]];
-            NSString *strCity =[NSString stringWithFormat:@"%@, ",[dictdata valueForKey:@"city"]];
-            
-            if([strCity isEqualToString:@", "]){
-                strCity = @"";
-            }
-            
-            if([strState isEqualToString:@", "]){
-                strState = @"";
-            }
-            
-            if([strCountry isEqualToString:@""]){
-                strCountry = @"";
-            }
-            NSString *strAddress = [NSString stringWithFormat:@"%@%@%@",strCity,strState,strCountry];
-            
-            UDSet(@"userinfo", ([NSKeyedArchiver archivedDataWithRootObject:@{@"name":strname,@"address":strAddress}]));
-             UDSet(@"userType", @"Patient");
-        }
-    }];
-}
-
--(void)viewDidDisappear:(BOOL)animated{
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
-
-
--(void)logOut{
     
-    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
-    [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
-    
-    [service logoutWithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
-        if (responseCode){
-            UDSet(@"userinfodoc",nil);
-            UDSet(@"propicdoc",nil);
-            UDSet(@"propic", nil);
-            
-            if([[responseCode objectForKey:@"status"] isEqualToString:@"success"]){
-                [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedIn"];
-                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                UINavigationController *navController = [[UINavigationController alloc] init];
-                UDSet(@"auth", AuthKey);
-                UDSet(@"userinfodoc", nil);
-                
-                LoginVC *dashDoc = [sb instantiateViewControllerWithIdentifier:@"LoginVC"];
-                [navController addChildViewController:dashDoc];
-                [[[UIApplication sharedApplication] delegate] window].rootViewController = navController;
-                [[[UIApplication sharedApplication] delegate] window].backgroundColor = [UIColor whiteColor];
-            }
-        }
-    }];
-}
-
-- (void)getAllSpecialization {
-    NSString *visitId = patientService.visit_type_id;
-    NSDictionary *parameter = [[NSDictionary alloc] initWithObjectsAndKeys:visitId,@"categoryId",nil];
-    CommonServiceHandler *service = [[CommonServiceHandler alloc] init];
-    [service getAllDoctorCategories:parameter andVisitID:visitId WithCompletionBlock:^(NSDictionary *responseCode, NSError *error) {
+    if(indexPath.item == 0 ) {
+        patientService.visit_type_id = @"1";
+        patientService.isFromliveCall = @"no";
+        patientService.slot_id = @"";
+        patientService.documentName = [[NSMutableArray alloc] init];
+        patientService.arrDocumentData = [[NSMutableArray alloc] init];
+        //  UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"TabbarCategoryViewController"];
         
-        if([[responseCode objectForKey:@"status"] isEqualToString:@"succes"]){
-            int isPracticeCallDone = [[[responseCode valueForKey:@"data"] valueForKey:@"is_practice_call_done"] intValue];
-            patientService.isPracticeCallDone = isPracticeCallDone;
-        }
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    }];
-}
-//Mohit
--(void)getBadgeCounts{
-    CommonServiceHandler * service = [[CommonServiceHandler alloc]init];
-    [service getBadgeCounts:nil WithCompletionBlock:^(NSDictionary * responseData, NSError* error){
-        //NSLog(@"Response data is:-%@",responseData);
-        if([[responseData valueForKey:@"status"] isEqualToString:@"success"]){
-            healthRecordCount = [[[responseData objectForKey:@"data" ] objectForKey:@"totalcount"] intValue];
-           // NSLog(@"Health Count is:-%d",healthRecordCount);
-            appointmentCount = [[[responseData objectForKey:@"data" ] objectForKey:@"totalmessagesCount"] intValue];
-            
-            
-            if(appointmentCount > 0 || healthRecordCount >0){
-                [self.collectionViewDashbaord reloadData];
-            }
-        }
-        else{
-        }
-    }];
+        SelectPatientViewController *selectPatientVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectPatientViewController"];
+        [self.navigationController pushViewController:selectPatientVC animated:YES];
+        
+    }
+    if(indexPath.item == 1) {
+        patientService.visit_type_id = @"2";
+        patientService.isFromliveCall = @"no";
+        patientService.documentName = [[NSMutableArray alloc] init];
+        patientService.arrDocumentData = [[NSMutableArray alloc] init];
+        UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"TabbarCategoryViewController"];
+        [self.navigationController pushViewController:viewTab animated:YES];
+        patientService.isFromliveCall = @"no";
+    }
+    if(indexPath.item == 2) {
+        patientService.visit_type_id = @"3";
+        patientService.documentName = [[NSMutableArray alloc] init];
+        patientService.arrDocumentData = [[NSMutableArray alloc] init];
+        patientService.documentName = [[NSMutableArray alloc]init];
+        
+        patientService.fromDashboard = 0;
+        UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"TabbarCategoryViewController"];
+        [self.navigationController pushViewController:viewTab animated:YES];
+        
+        //   UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarEditView"];
+        //   [self.navigationController pushViewController:viewTab animated:YES];
+    }
+    if (indexPath.item == 5) {
+        
+        //        patientService.visit_type_id = @"4";
+        //        patientService.selectedTab = @"0";
+        //
+        //        UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarEdit"];
+        //        [self.navigationController pushViewController:viewTab animated:YES];
+        
+        patientService.visit_type_id = @"4";
+        patientService.isFrom = @"MyAppointment";
+        UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"E_VisitPage"];
+        [self.navigationController pushViewController:viewTab animated:YES];
+        
+        
+    }
+    if (indexPath.item == 3){
+        
+        //        patientService.visit_type_id = @"4";
+        ExploreViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"ExploreViewController"];
+        
+        viewTab.userType = @"patient";
+        [self.navigationController pushViewController:viewTab animated:YES];
+    }
+    if (indexPath.item == 4){
+        
+        patientService.selectedTab = @"1";
+        patientService.visit_type_id = @"5";
+        patientService.isFrom = @"healthrecord";
+        
+        [_collectionViewDashbaord reloadData];
+        DashboardXibCell *cell = (DashboardXibCell *)[_collectionViewDashbaord cellForItemAtIndexPath:indexPath];
+        [cell.lblDashboardTitle.layer removeAllAnimations];
+        docService.isEVisit = @"no";
+        [_collectionViewDashbaord reloadData];
+        
+        UIViewController *viewTab=[self.storyboard instantiateViewControllerWithIdentifier:@"tabbarHealthRecord"];
+        [self.navigationController pushViewController:viewTab animated:YES];
+    }
+    
 }
 
+#pragma mark - RefreshView Methods If Internet Connection Lost
 
 -(void)refreshView:(NSNotification*)notification{
     [self getUserPrfile];

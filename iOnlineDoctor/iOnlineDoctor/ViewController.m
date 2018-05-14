@@ -18,6 +18,9 @@
 -(void)backPop{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - View Controller Methods
+
 - (void)viewDidLoad {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"   <" style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
 
