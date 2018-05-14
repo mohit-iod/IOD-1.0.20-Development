@@ -30,7 +30,8 @@
 
     patientService = [PatientAppointService sharedManager];
     // Do any additional setup after loading the view.
-    mvc =  [self.storyboard instantiateViewControllerWithIdentifier:@"MedicationViewController"];
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+    mvc =  [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"MedicationViewController"];
 
     [_txtvHEalthIssue.layer setBorderColor:[UIColor colorWithHexRGB:kBorderColor].CGColor];
     [_txtvHEalthIssue.layer  setBorderWidth:1.0];

@@ -19,3 +19,10 @@ iOnlineDoctor/Pods/OpenTok/OpenTok.framework/OpenTok
 iOnlineDoctor/Pods/OpenTok/OpenTok.framework/PrivateHeaders/OTNetworkDeviceManagement.h
 iOnlineDoctor/Pods/OpenTok/OpenTok.framework/PrivateHeaders/OTNetworkReachabilityMonitor.h
 iOnlineDoctor/Pods/OpenTok/README.md
+*.xcbkptlist
+iOnlineDoctor/iOnlineDoctor/.DS_Store
+iOnlineDoctor/.DS_Store
+iOnlineDoctor/iOnlineDoctor/.DS_Store
+iOnlineDoctor/Pods/PayeezySDK/sdk/FDToken/FirstAPIClient/.DS_Store
+*.xcbkptlist
+iOnlineDoctor/iOnlineDoctor/.DS_Store

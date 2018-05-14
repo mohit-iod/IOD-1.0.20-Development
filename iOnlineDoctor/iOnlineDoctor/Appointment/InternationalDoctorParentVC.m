@@ -23,8 +23,9 @@
 
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    pageViewControllerVC *pageVC=[self.storyboard instantiateViewControllerWithIdentifier:@"pageViewControllerVC"];
-    pageVC.arrPageController=@[[self.storyboard instantiateViewControllerWithIdentifier:@"localDoctorTypeVC"],[self.storyboard instantiateViewControllerWithIdentifier:@"medicalInfoMainVC"],[self.storyboard instantiateViewControllerWithIdentifier:@"UploadDocumentsViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"paymentViewController"],[self.storyboard instantiateViewControllerWithIdentifier:@"searchDoctorVC"]].mutableCopy;
+    UIStoryboard *mainSb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    pageViewControllerVC *pageVC=[mainSb instantiateViewControllerWithIdentifier:@"pageViewControllerVC"];
+    pageVC.arrPageController=@[[mainSb instantiateViewControllerWithIdentifier:@"localDoctorTypeVC"],[mainSb instantiateViewControllerWithIdentifier:@"medicalInfoMainVC"],[mainSb instantiateViewControllerWithIdentifier:@"UploadDocumentsViewController"],[mainSb instantiateViewControllerWithIdentifier:@"paymentViewController"],[mainSb instantiateViewControllerWithIdentifier:@"searchDoctorVC"]].mutableCopy;
     //pageVC.shouldScroll=YES;
     [self addChildViewController:pageVC];
     [[self view] addSubview:[pageVC view]];

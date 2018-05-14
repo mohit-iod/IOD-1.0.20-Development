@@ -43,7 +43,12 @@
     
     
     UILabel *labelPlaceholder=[UILabel new];
-    [labelPlaceholder setFrame:CGRectMake(44, self.frame.size.height-50, self.frame.size.width, 15)];
+    if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
+        [labelPlaceholder setFrame:CGRectMake(50, self.frame.size.height-60, self.frame.size.width, 15)];
+    }else{
+        [labelPlaceholder setFrame:CGRectMake(44, self.frame.size.height-50, self.frame.size.width, 15)];
+    }
+    
     labelPlaceholder.tag=11;
     //labelError.text=@"sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf";
     [labelPlaceholder setFont:[UIFont systemFontOfSize:10]];

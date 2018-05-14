@@ -30,7 +30,8 @@
     [_tblOptions.layer  setBorderWidth:1.0];
     [_tblOptions.layer setCornerRadius:6.0];
     self.title = @"Medical Info";
-     hvc =  [self.storyboard instantiateViewControllerWithIdentifier:@"VitalsViewController"];
+    UIStoryboard *medicalInfoStoryBoard = [UIStoryboard storyboardWithName:@"MedicalInfo" bundle:nil];
+     hvc =  [medicalInfoStoryBoard instantiateViewControllerWithIdentifier:@"VitalsViewController"];
 
     patientService = [PatientAppointService sharedManager];
     if (![patientService.question_6 isEqualToString:@""]) {
